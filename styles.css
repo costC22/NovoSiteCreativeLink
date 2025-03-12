@@ -18,6 +18,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header .logo {
@@ -35,6 +36,7 @@ header nav ul {
     display: flex;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
@@ -56,7 +58,7 @@ header nav ul li a:hover {
 .hero {
     background-color: #002244; /* Azul Escuro */
     color: #ffffff;
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -73,7 +75,7 @@ header nav ul li a:hover {
 
 /* Section Styles */
 .services, .about, .contact {
-    padding: 40px 0;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -147,4 +149,46 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9em;
+}
+
+/* Media Queries para Dispositivos Móveis */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .services .service-item, .contact form {
+        margin: 10px 0;
+    }
+
+    .about p {
+        font-size: 1em;
+    }
+
+    .contact form input, .contact form textarea {
+        max-width: 100%;
+    }
 }
