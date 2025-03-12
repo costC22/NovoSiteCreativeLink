@@ -1,150 +1,41 @@
-/* Global Styles */
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #333333;
 }
 
-/* Header Styles */
-header {
-    background-color: #003366;
-    color: #ffffff;
-    padding: 20px 0;
+/* Estilos para o contêiner */
+.container {
+    width: 90%; /* Usar porcentagem */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    height: 50px;
-    margin-right: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8em;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #cccccc;
-}
-
-/* Hero Section Styles */
-.hero {
-    background-color: #002244;
-    color: #ffffff;
-    padding: 60px 0;
+.header,
+.content,
+.footer {
+    padding: 20px;
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+/* Garantir que as imagens não excedam a largura do contêiner */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin: 0 auto;
-    max-width: 600px;
-}
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
 
-/* Section Styles */
-.services, .about, .contact {
-    padding: 40px 0;
-    text-align: center;
-}
-
-.services .service-item, .contact form {
-    margin: 20px 0;
-}
-
-.services .service-item h3 {
-    color: #003366;
-    font-size: 1.5em;
-}
-
-.services .service-item p {
-    color: #555555;
-    font-size: 1em;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.about p {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #555555;
-    line-height: 1.6;
-    font-size: 1.1em;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact form label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-
-.contact form input, .contact form textarea {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact form button {
-    background-color: #003366;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact form button:hover {
-    background-color: #002244;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #003366;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
+    .header,
+    .content,
+    .footer {
+        padding: 10px;
+        text-align: center;
+    }
 }
