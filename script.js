@@ -70,35 +70,27 @@ form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
     submitButton.textContent = 'Enviando...';
     submitButton.disabled = true;
 
     try {
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
         const response = await fetch('https://formspree.io/f/mldbzboj', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(data)
+            body: formData
         });
         
         if (response.ok) {
             alert('Mensagem enviada com sucesso!');
             form.reset();
         } else {
-            const errorData = await response.json();
-            throw new Error(errorData.error || 'Erro ao enviar mensagem');
+            throw new Error('Erro ao enviar mensagem');
         }
     } catch (error) {
         console.error('Erro:', error);
         alert('Erro ao enviar mensagem. Por favor, tente novamente.');
     } finally {
-        submitButton.textContent = originalText;
+        submitButton.textContent = 'Enviar Mensagem';
         submitButton.disabled = false;
     }
 });
