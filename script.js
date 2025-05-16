@@ -64,37 +64,6 @@ document.querySelectorAll('.fade-in').forEach(element => {
     observer.observe(element);
 });
 
-// Formulário de contato
-const form = document.querySelector('form');
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const submitButton = form.querySelector('button[type="submit"]');
-    submitButton.textContent = 'Enviando...';
-    submitButton.disabled = true;
-
-    try {
-        const formData = new FormData(form);
-        const response = await fetch('https://formspree.io/f/mldbzboj', {
-            method: 'POST',
-            body: formData
-        });
-        
-        if (response.ok) {
-            alert('Mensagem enviada com sucesso!');
-            form.reset();
-        } else {
-            throw new Error('Erro ao enviar mensagem');
-        }
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
-    } finally {
-        submitButton.textContent = 'Enviar Mensagem';
-        submitButton.disabled = false;
-    }
-});
-
 // Header fixo com efeito de scroll
 let lastScroll = 0;
 const header = document.querySelector('header');
