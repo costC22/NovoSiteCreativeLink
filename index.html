@@ -1,83 +1,227 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Link</title>
-    <!-- Adiciona o favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreativeLink - Soluções Digitais</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <img src="WhatsApp_Image_2025-03-11_at_11.10.08__1___1_-removebg-preview.png" alt="Creative Link Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#about">Sobre Nós</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
+      <div class="container">
+        <div class="logo-container">
+          <img src="logo.png" alt="CreativeLink Logo" class="logo" />
+          <h1>CreativeLink</h1>
         </div>
+        <button class="menu-button">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
+
     <section id="home" class="hero">
-        <div class="container">
-            <h2>Bem-vindo à Creative Link</h2>
-            <p>Fornecemos suporte de TI com telecom e realizamos intermediações entre o cliente e a operadora.</p>
-        </div>
+      <div class="container">
+        <h2 class="fade-in">Transformando Ideias em Realidade Digital</h2>
+        <p class="fade-in">
+          Soluções inovadoras em desenvolvimento web, design e marketing digital
+          para impulsionar seu negócio.
+        </p>
+        <a href="#contact" class="cta-button fade-in">Comece Agora</a>
+      </div>
     </section>
-    
+
     <section id="services" class="services">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            <div class="service-item">
-                <h3>Suporte de TI</h3>
-                <p>Oferecemos suporte técnico especializado para garantir que sua infraestrutura de TI funcione perfeitamente.</p>
-            </div>
-            <div class="service-item">
-                <h3>Telecom</h3>
-                <p>Gerenciamos soluções de telecomunicações para sua empresa, garantindo conectividade e eficiência.</p>
-            </div>
-            <div class="service-item">
-                <h3>Intermediação</h3>
-                <p>Realizamos intermediações entre o cliente e a operadora, facilitando a comunicação e resolução de problemas.</p>
-            </div>
+      <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="service-grid">
+          <div class="service-item fade-in">
+            <i class="fas fa-laptop-code service-icon"></i>
+            <h3>Desenvolvimento Web</h3>
+            <p>
+              Criamos sites e aplicações web modernas, responsivas e otimizadas
+              para SEO.
+            </p>
+          </div>
+          <div class="service-item fade-in">
+            <i class="fas fa-paint-brush service-icon"></i>
+            <h3>Design Gráfico</h3>
+            <p>
+              Designs únicos e profissionais que comunicam a identidade da sua
+              marca.
+            </p>
+          </div>
+          <div class="service-item fade-in">
+            <i class="fas fa-bullhorn service-icon"></i>
+            <h3>Marketing Digital</h3>
+            <p>
+              Estratégias de marketing digital para aumentar sua presença
+              online.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-    
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item fade-in">
+            <i class="fas fa-project-diagram"></i>
+            <h3>500+</h3>
+            <p>Projetos Entregues</p>
+          </div>
+          <div class="stat-item fade-in">
+            <i class="fas fa-users"></i>
+            <h3>300+</h3>
+            <p>Clientes Satisfeitos</p>
+          </div>
+          <div class="stat-item fade-in">
+            <i class="fas fa-award"></i>
+            <h3>15+</h3>
+            <p>Anos de Experiência</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="about">
-        <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>A Creative Link é uma empresa líder no fornecimento de suporte de TI e soluções de telecomunicações. Com anos de experiência no setor, nossa equipe de especialistas está comprometida em oferecer serviços de alta qualidade, garantindo que sua infraestrutura de TI opere com máxima eficiência e que suas necessidades de telecomunicações sejam atendidas de forma eficaz.</p>
-            <p>Nossa missão é proporcionar uma experiência impecável aos nossos clientes, facilitando a comunicação e resolvendo problemas de maneira ágil e profissional. Entendemos a importância de uma infraestrutura de TI robusta e de uma comunicação eficiente para o sucesso do seu negócio. Oferecemos uma gama completa de serviços que incluem suporte técnico, gerenciamento de telecomunicações e intermediação entre clientes e operadoras. Na Creative Link, seu sucesso é o nosso compromisso.</p>
+      <div class="container">
+        <h2>Sobre Nós</h2>
+        <div class="about-content">
+          <p>
+            Somos uma equipe apaixonada por tecnologia e inovação, dedicada a
+            criar soluções digitais que transformam negócios. Nossa missão é
+            ajudar empresas a alcançarem seu potencial máximo através de
+            estratégias digitais eficientes.
+          </p>
+          <p>
+            Com mais de 15 anos de experiência no mercado, combinamos
+            criatividade, tecnologia e estratégia para entregar resultados
+            excepcionais aos nossos clientes.
+          </p>
         </div>
+      </div>
     </section>
-    
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <h2>Depoimentos</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-item fade-in">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                A CreativeLink transformou completamente nossa presença online.
+                O novo site superou todas as nossas expectativas.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <img src="client1.jpg" alt="Cliente 1" class="author-image" />
+              <div class="author-info">
+                <h4>Maria Silva</h4>
+                <p>CEO, Empresa ABC</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item fade-in">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                Profissionalismo e qualidade excepcional. O trabalho da equipe
+                fez toda a diferença para nosso negócio.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <img src="client2.jpg" alt="Cliente 2" class="author-image" />
+              <div class="author-info">
+                <h4>João Santos</h4>
+                <p>Diretor, Empresa XYZ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco para saber mais sobre nossos serviços.</p>
-            <form action="https://formspree.io/f/maneyblq" method="POST">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+      <div class="container">
+        <h2>Entre em Contato</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Av. Paulista, 1000 - São Paulo, SP</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <p>(11) 9999-9999</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <p>contato@creativelink.com.br</p>
+            </div>
+          </div>
+          <form>
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Enviar Mensagem</button>
+          </form>
         </div>
+      </div>
     </section>
-    
+
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Creative Link. Todos os direitos reservados.</p>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="logo.png" alt="CreativeLink Logo" class="logo" />
+            <h3>CreativeLink</h3>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2024 CreativeLink. Todos os direitos reservados.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

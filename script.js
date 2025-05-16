@@ -14,3 +14,106 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Menu Mobile
+const menuButton = document.querySelector('.menu-button');
+const nav = document.querySelector('nav');
+
+menuButton.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('active');
+    });
+});
+
+// Animação de scroll suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Animação de elementos ao scroll
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(element => {
+    observer.observe(element);
+});
+
+// Formulário de contato
+const form = document.querySelector('form');
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    try {
+        const response = await fetch('https://formspree.io/f/maneyblq', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            alert('Mensagem enviada com sucesso!');
+            form.reset();
+        } else {
+            throw new Error('Erro ao enviar mensagem');
+        }
+    } catch (error) {
+        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+        console.error('Erro:', error);
+    }
+});
+
+// Header fixo com efeito de scroll
+let lastScroll = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        header.classList.remove('scroll-up');
+        return;
+    }
+    
+    if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        // Scroll Down
+        header.classList.remove('scroll-up');
+        header.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+        // Scroll Up
+        header.classList.remove('scroll-down');
+        header.classList.add('scroll-up');
+    }
+    
+    lastScroll = currentScroll;
+});
