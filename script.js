@@ -64,33 +64,53 @@ document.querySelectorAll('.fade-in').forEach(element => {
     observer.observe(element);
 });
 
-// Formulário de contato
-const form = document.querySelector('form');
-form.addEventListener('submit', async (e) => {
+// Inicializa o EmailJS
+(function() {
+    emailjs.init("SEU_PUBLIC_KEY"); // Substitua com sua chave pública do EmailJS
+})();
+
+// Função para enviar o e-mail
+function sendEmail(e) {
     e.preventDefault();
-    
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    
-    try {
-        const response = await fetch('https://formspree.io/f/maneyblq', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        
-        if (response.ok) {
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Mostra mensagem de carregamento
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Enviando...';
+    submitButton.disabled = true;
+
+    // Parâmetros do e-mail
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_name: 'CreativeLink',
+        to_email: 'creativelinkdns@gmail.com'
+    };
+
+    // Envia o e-mail
+    emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+        .then(function(response) {
             alert('Mensagem enviada com sucesso!');
-            form.reset();
-        } else {
-            throw new Error('Erro ao enviar mensagem');
-        }
-    } catch (error) {
-        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
-        console.error('Erro:', error);
-    }
+            e.target.reset();
+        }, function(error) {
+            alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+            console.error('Erro:', error);
+        })
+        .finally(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+}
+
+// Adiciona o evento de submit ao formulário
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', sendEmail);
 });
 
 // Header fixo com efeito de scroll
