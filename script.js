@@ -69,14 +69,20 @@ const form = document.querySelector('form');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Enviando...';
+    submitButton.disabled = true;
+
     try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
         const response = await fetch('https://formspree.io/f/xpzvnqkz', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(data)
         });
@@ -85,11 +91,15 @@ form.addEventListener('submit', async (e) => {
             alert('Mensagem enviada com sucesso!');
             form.reset();
         } else {
-            throw new Error('Erro ao enviar mensagem');
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Erro ao enviar mensagem');
         }
     } catch (error) {
-        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
         console.error('Erro:', error);
+        alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+    } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
     }
 });
 
