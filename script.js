@@ -78,7 +78,7 @@ form.addEventListener('submit', async (e) => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
         
-        const response = await fetch('https://formspree.io/f/xpzvnqkz', {
+        const response = await fetch('https://formspree.io/f/mldbzboj', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
