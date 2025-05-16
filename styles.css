@@ -56,6 +56,8 @@ header .container {
 
 .logo {
     height: 50px;
+    width: auto;
+    object-fit: contain;
     transition: var(--transition);
 }
 
@@ -273,6 +275,7 @@ nav a:hover {
 .testimonial-content {
     position: relative;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .testimonial-content i {
@@ -329,14 +332,14 @@ nav a:hover {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .contact-info {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 1.5rem;
 }
 
@@ -344,10 +347,11 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 1rem;
+    font-size: 1.2rem;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--accent-color);
 }
 
@@ -428,6 +432,8 @@ footer {
 
 .footer-logo .logo {
     height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .social-links {
