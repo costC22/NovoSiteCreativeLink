@@ -14,16 +14,16 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #0b1b4b;
-    --secondary-color: #09143a;
-    --accent-color: #82b1ff;
-    --text-color: #e6e6e6;
+    --primary-color: #0f1e54; /* navy principal */
+    --secondary-color: #0b1438; /* navy profundo */
+    --accent-color: #64b5ff; /* azul céu para destaques */
+    --text-color: #e8edf7; /* texto levemente mais claro/frio */
     --light-text: #ffffff;
-    --background-light: #0b1020;
-    --background-white: #111726;
-    --shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
-    --muted: #1a2236;
-    --border-color: rgba(255,255,255,0.08);
+    --background-light: #0a1024; /* fundo geral */
+    --background-white: #10172b; /* cartões/áreas elevadas */
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.46);
+    --muted: #121b33;
+    --border-color: rgba(255,255,255,0.09);
 }
 
 /* Reset e Estilos Globais */
@@ -149,8 +149,9 @@ header.scroll-up {
 /* Hero Section */
 .hero {
     position: relative;
-    background: radial-gradient(1200px 500px at 80% -10%, rgba(255,255,255,0.25), transparent),
-                linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background:
+        radial-gradient(900px 380px at 75% -8%, rgba(100, 181, 255, 0.25), transparent 60%),
+        linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--light-text);
     padding: 8rem 0 4rem;
 }
@@ -189,7 +190,7 @@ header.scroll-up {
 }
 
 .cta-button:hover {
-    background-color: var(--secondary-color);
+    background-color: #4fa7ff;
     transform: translateY(-2px);
 }
 
@@ -269,7 +270,7 @@ header.scroll-up {
 
 .service-icon {
     font-size: 2.5rem;
-    color: var(--accent-color);
+    color: #79c2ff;
     margin-bottom: 1rem;
 }
 
@@ -305,7 +306,7 @@ header.scroll-up {
 .stat-item i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--accent-color);
+    color: #79c2ff;
 }
 
 .stat-item h3 {
