@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const serviceItems = document.querySelectorAll('.service-item');
-    const themeToggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
 
     serviceItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
@@ -16,26 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Tema salvo
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        root.setAttribute('data-theme', 'dark');
-        themeToggle && (themeToggle.innerHTML = '<i class="fas fa-sun"></i>');
-    }
-
-    // Alternar tema claro/escuro
-    themeToggle && themeToggle.addEventListener('click', () => {
-        const isDark = root.getAttribute('data-theme') === 'dark';
-        if (isDark) {
-            root.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'light');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
-            root.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-    });
+    // Tema escuro fixo (garantia)
+    document.documentElement.setAttribute('data-theme', 'dark');
+    try { localStorage.setItem('theme', 'dark'); } catch (_) {}
 });
 
 // Menu Mobile
