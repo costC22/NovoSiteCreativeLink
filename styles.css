@@ -14,16 +14,16 @@
 }
 
 [data-theme="dark"] {
-    --primary-color: #152665; /* um pouco mais claro */
-    --secondary-color: #101d4d; /* navy menos escuro */
-    --accent-color: #74c0ff; /* acento mais claro */
-    --text-color: #eef3fb; /* texto um tom mais claro */
+    --primary-color: #1a2f7a; /* mais claro */
+    --secondary-color: #142662; /* navy mais suave */
+    --accent-color: #7eccff; /* acento um tom acima */
+    --text-color: #f3f7fe; /* texto ainda mais claro */
     --light-text: #ffffff;
-    --background-light: #0d1430; /* fundo geral mais claro */
-    --background-white: #121b33; /* cartões um tom acima */
-    --shadow: 0 10px 24px rgba(0, 0, 0, 0.40);
-    --muted: #162044;
-    --border-color: rgba(255,255,255,0.11);
+    --background-light: #111a3d; /* fundo geral mais claro */
+    --background-white: #172149; /* cartões mais claros */
+    --shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+    --muted: #1a2a52;
+    --border-color: rgba(255,255,255,0.12);
 }
 
 /* Reset e Estilos Globais */
@@ -150,7 +150,7 @@ header.scroll-up {
 .hero {
     position: relative;
     background:
-        radial-gradient(900px 380px at 75% -8%, rgba(116, 192, 255, 0.28), transparent 62%),
+        radial-gradient(900px 380px at 75% -8%, rgba(126, 204, 255, 0.32), transparent 64%),
         linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--light-text);
     padding: 8rem 0 4rem;
