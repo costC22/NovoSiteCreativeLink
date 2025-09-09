@@ -136,25 +136,7 @@ nav .button.primary:hover {
     }
 }
 
-/* Alternador de tema */
-.theme-toggle {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--light-text);
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-left: 0.5rem;
-    transition: var(--transition);
-}
-
-.theme-toggle:hover {
-    transform: translateY(-2px);
-}
+/* (removido) estilos de alternador de tema */
 
 header.scroll-down {
     transform: translateY(-100%);
