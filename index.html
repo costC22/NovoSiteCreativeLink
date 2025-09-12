@@ -3,15 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CreativeLink - Soluções Digitais</title>
+    <title>ByteStorm Tech - Soluções de Software e Service Desk</title>
+    <meta
+      name="description"
+      content="ByteStorm Tech - Especialistas em soluções de software personalizadas e service desk de alta performance para empresas modernas."
+    />
+    <meta
+      name="keywords"
+      content="software, service desk, desenvolvimento, suporte técnico, soluções empresariais, TI"
+    />
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
@@ -19,27 +27,32 @@
       <div class="container">
         <div class="logo-container">
           <img
-            src="WhatsApp_Image_2025-03-11_at_11.10.08__1___1_-removebg-preview.png"
-            alt="CreativeLink Logo"
+            src="WhatsApp_Image_2025-09-12_at_11.13.14-removebg-preview.png"
+            alt="ByteStorm Tech Logo"
             class="logo"
           />
+          <div class="logo-text">
+            <span class="logo-byte">Byte</span
+            ><span class="logo-storm">Storm</span>
+            <span class="logo-tech">Tech</span>
+          </div>
         </div>
         <button class="menu-button">
           <i class="fas fa-bars"></i>
         </button>
         <nav>
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#home">Início</a></li>
             <li><a href="#services">Serviços</a></li>
+            <li><a href="#technologies">Tecnologias</a></li>
             <li><a href="#about">Sobre</a></li>
             <li><a href="#testimonials">Depoimentos</a></li>
             <li><a href="#contact">Contato</a></li>
             <li class="nav-cta">
-              <a href="#contact" class="button primary">Fale Conosco</a>
+              <a href="#contact" class="button primary">Solicitar Orçamento</a>
             </li>
           </ul>
         </nav>
-        
       </div>
     </header>
 
@@ -47,23 +60,49 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <h2 class="fade-in">Soluções em Telecomunicações</h2>
+            <h1 class="fade-in">Soluções de Software & Service Desk</h1>
             <p class="fade-in">
-              Fornecemos intermediação de serviços de telecom e soluções
-              personalizadas que são mais viáveis para o seu negócio.
+              Transformamos ideias em software de alta performance e oferecemos
+              service desk especializado para impulsionar seu negócio digital.
             </p>
-            <a href="#contact" class="cta-button fade-in"
-              >Solicite uma Proposta</a
-            >
+            <div class="hero-buttons fade-in">
+              <a href="#contact" class="cta-button primary"
+                >Solicitar Orçamento</a
+              >
+              <a href="#services" class="cta-button secondary"
+                >Nossos Serviços</a
+              >
+            </div>
           </div>
           <div class="hero-visual fade-in">
-            <div class="blob"></div>
-            <div class="ring"></div>
-            <img
-              src="WhatsApp_Image_2025-03-11_at_11.10.08__1___1_-removebg-preview.png"
-              alt="CreativeLink"
-              class="hero-logo"
-            />
+            <div class="code-animation">
+              <div class="code-line">
+                <span class="code-keyword">const</span>
+                <span class="code-variable">solutions</span>
+                <span class="code-operator">=</span>
+                <span class="code-string">"ByteStorm Tech"</span>
+              </div>
+              <div class="code-line">
+                <span class="code-keyword">function</span>
+                <span class="code-function">transformBusiness</span>
+                <span class="code-bracket">()</span>
+                <span class="code-bracket">{</span>
+              </div>
+              <div class="code-line indent">
+                <span class="code-keyword">return</span>
+                <span class="code-string">"Success"</span>
+              </div>
+              <div class="code-line">
+                <span class="code-bracket">}</span>
+              </div>
+            </div>
+            <div class="tech-icons">
+              <i class="fab fa-react"></i>
+              <i class="fab fa-node-js"></i>
+              <i class="fab fa-python"></i>
+              <i class="fab fa-aws"></i>
+              <i class="fab fa-docker"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -74,28 +113,88 @@
         <h2>Nossos Serviços</h2>
         <div class="service-grid">
           <div class="service-item fade-in">
-            <i class="fas fa-network-wired service-icon"></i>
-            <h3>Intermediação de Telecom</h3>
+            <i class="fas fa-code service-icon"></i>
+            <h3>Desenvolvimento de Software</h3>
             <p>
-              Realizamos a intermediação entre sua empresa e as operadoras,
-              garantindo as melhores condições e suporte.
+              Criamos aplicações web e mobile personalizadas, sistemas de gestão
+              e soluções digitais sob medida para seu negócio.
             </p>
+            <ul class="service-features">
+              <li>Aplicações Web Responsivas</li>
+              <li>Apps Mobile Nativos</li>
+              <li>Sistemas de Gestão</li>
+              <li>APIs e Integrações</li>
+            </ul>
+          </div>
+          <div class="service-item fade-in">
+            <i class="fas fa-headset service-icon"></i>
+            <h3>Service Desk Especializado</h3>
+            <p>
+              Suporte técnico 24/7 com equipe especializada em resolução rápida
+              de problemas e manutenção preventiva.
+            </p>
+            <ul class="service-features">
+              <li>Suporte 24/7</li>
+              <li>Monitoramento Proativo</li>
+              <li>Resolução Remota</li>
+              <li>Relatórios Detalhados</li>
+            </ul>
+          </div>
+          <div class="service-item fade-in">
+            <i class="fas fa-cloud service-icon"></i>
+            <h3>Infraestrutura Cloud</h3>
+            <p>
+              Migração e gerenciamento de infraestrutura na nuvem, garantindo
+              escalabilidade, segurança e alta disponibilidade.
+            </p>
+            <ul class="service-features">
+              <li>Migração para Cloud</li>
+              <li>Backup Automatizado</li>
+              <li>Segurança Avançada</li>
+              <li>Monitoramento 24/7</li>
+            </ul>
+          </div>
+          <div class="service-item fade-in">
+            <i class="fas fa-shield-alt service-icon"></i>
+            <h3>Segurança Digital</h3>
+            <p>
+              Proteção completa dos seus dados e sistemas com soluções de
+              segurança avançadas e monitoramento contínuo.
+            </p>
+            <ul class="service-features">
+              <li>Auditoria de Segurança</li>
+              <li>Proteção de Dados</li>
+              <li>Firewall Avançado</li>
+              <li>Treinamento de Equipe</li>
+            </ul>
           </div>
           <div class="service-item fade-in">
             <i class="fas fa-chart-line service-icon"></i>
-            <h3>Análise de Viabilidade</h3>
+            <h3>Consultoria em TI</h3>
             <p>
-              Avaliamos e propomos as soluções mais adequadas e econômicas para
-              suas necessidades de telecomunicação.
+              Análise estratégica e implementação de soluções tecnológicas para
+              otimizar processos e aumentar produtividade.
             </p>
+            <ul class="service-features">
+              <li>Análise de Processos</li>
+              <li>Estratégia Digital</li>
+              <li>Otimização de Sistemas</li>
+              <li>Treinamento Técnico</li>
+            </ul>
           </div>
           <div class="service-item fade-in">
-            <i class="fas fa-handshake service-icon"></i>
-            <h3>Gestão de Contratos</h3>
+            <i class="fas fa-tools service-icon"></i>
+            <h3>Manutenção e Suporte</h3>
             <p>
-              Gerenciamos seus contratos de telecom, garantindo as melhores
-              condições e suporte técnico especializado.
+              Manutenção preventiva e corretiva de sistemas, garantindo
+              funcionamento contínuo e performance otimizada.
             </p>
+            <ul class="service-features">
+              <li>Manutenção Preventiva</li>
+              <li>Atualizações de Sistema</li>
+              <li>Correção de Bugs</li>
+              <li>Otimização de Performance</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -105,19 +204,119 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item fade-in">
-            <i class="fas fa-building"></i>
-            <h3>100+</h3>
-            <p>Empresas Atendidas</p>
+            <i class="fas fa-code"></i>
+            <h3>150+</h3>
+            <p>Projetos Desenvolvidos</p>
           </div>
           <div class="stat-item fade-in">
-            <i class="fas fa-percentage"></i>
-            <h3>30%</h3>
-            <p>Economia Média</p>
+            <i class="fas fa-users"></i>
+            <h3>200+</h3>
+            <p>Clientes Satisfeitos</p>
           </div>
           <div class="stat-item fade-in">
             <i class="fas fa-clock"></i>
             <h3>24/7</h3>
-            <p>Suporte Técnico</p>
+            <p>Service Desk</p>
+          </div>
+          <div class="stat-item fade-in">
+            <i class="fas fa-shield-alt"></i>
+            <h3>99.9%</h3>
+            <p>Uptime Garantido</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="technologies" class="technologies">
+      <div class="container">
+        <h2>Tecnologias que Dominamos</h2>
+        <div class="tech-categories">
+          <div class="tech-category fade-in">
+            <h3>Frontend</h3>
+            <div class="tech-items">
+              <div class="tech-item">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-vue"></i>
+                <span>Vue.js</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-angular"></i>
+                <span>Angular</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-html5"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS3</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-category fade-in">
+            <h3>Backend</h3>
+            <div class="tech-items">
+              <div class="tech-item">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-java"></i>
+                <span>Java</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-php"></i>
+                <span>PHP</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-database"></i>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-database"></i>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-category fade-in">
+            <h3>Cloud & DevOps</h3>
+            <div class="tech-items">
+              <div class="tech-item">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-google"></i>
+                <span>Google Cloud</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-server"></i>
+                <span>Kubernetes</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-cloud"></i>
+                <span>Azure</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -125,42 +324,94 @@
 
     <section id="about" class="about">
       <div class="container">
-        <h2>Sobre Nós</h2>
+        <h2>Sobre a ByteStorm Tech</h2>
         <div class="about-content">
-          <p>
-            Somos especialistas em intermediação de serviços de
-            telecomunicações, oferecendo soluções personalizadas e mais viáveis
-            para empresas de todos os portes.
-          </p>
-          <p>
-            Nossa missão é simplificar a gestão de telecomunicações das
-            empresas, garantindo as melhores condições comerciais e suporte
-            técnico especializado.
-          </p>
+          <div class="about-text">
+            <p>
+              A ByteStorm Tech é uma empresa especializada em soluções de
+              software personalizadas e service desk de alta performance. Nossa
+              equipe de desenvolvedores e especialistas em TI trabalha com as
+              mais modernas tecnologias para entregar resultados excepcionais.
+            </p>
+            <p>
+              Nossa missão é transformar ideias em realidade digital, oferecendo
+              soluções tecnológicas que impulsionam o crescimento dos nossos
+              clientes e garantem a máxima eficiência operacional.
+            </p>
+            <div class="about-values">
+              <div class="value-item">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Inovação</h4>
+                <p>
+                  Sempre buscando as melhores tecnologias e práticas do mercado
+                </p>
+              </div>
+              <div class="value-item">
+                <i class="fas fa-handshake"></i>
+                <h4>Parceria</h4>
+                <p>Relacionamento próximo e transparente com nossos clientes</p>
+              </div>
+              <div class="value-item">
+                <i class="fas fa-rocket"></i>
+                <h4>Performance</h4>
+                <p>Entregamos soluções de alta performance e escalabilidade</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="testimonials" class="testimonials">
       <div class="container">
-        <h2>Depoimentos</h2>
+        <h2>O que nossos clientes dizem</h2>
         <div class="testimonials-grid">
           <div class="testimonial-item fade-in">
             <div class="testimonial-content">
               <i class="fas fa-quote-left"></i>
               <p>
-                A CreativeLink transformou completamente nossa presença online.
-                O novo site superou todas as nossas expectativas.
+                A ByteStorm Tech revolucionou nossa infraestrutura de TI. O
+                service desk 24/7 e as soluções personalizadas aumentaram nossa
+                produtividade em 40%.
               </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Carlos Silva</h4>
+                <p>CTO - TechCorp Solutions</p>
+              </div>
             </div>
           </div>
           <div class="testimonial-item fade-in">
             <div class="testimonial-content">
               <i class="fas fa-quote-left"></i>
               <p>
-                Profissionalismo e qualidade excepcional. O trabalho da equipe
-                fez toda a diferença para nosso negócio.
+                Desenvolvimento excepcional! A equipe da ByteStorm criou um
+                sistema de gestão que superou todas as nossas expectativas.
+                Profissionais de altíssima qualidade.
               </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Maria Santos</h4>
+                <p>Diretora - Inovação Digital Ltda</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-item fade-in">
+            <div class="testimonial-content">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                Suporte técnico impecável e soluções cloud que transformaram
+                nossa operação. Recomendo a ByteStorm Tech para qualquer empresa
+                que busca excelência.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-info">
+                <h4>Roberto Lima</h4>
+                <p>CEO - GlobalTech Industries</p>
+              </div>
             </div>
           </div>
         </div>
@@ -169,33 +420,84 @@
 
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Entre em Contato</h2>
+        <h2>Vamos Transformar sua Ideia em Realidade</h2>
         <div class="contact-content">
           <div class="contact-info">
             <div class="contact-item">
               <i class="fas fa-envelope"></i>
-              <p>creativelinkdns@gmail.com</p>
+              <div>
+                <h4>E-mail</h4>
+                <p>contato@bytestormtech.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Telefone</h4>
+                <p>+55 (11) 99999-9999</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Endereço</h4>
+                <p>São Paulo, SP - Brasil</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Horário de Atendimento</h4>
+                <p>24/7 - Service Desk</p>
+              </div>
             </div>
           </div>
           <form action="https://formspree.io/f/mldbzboj" method="POST">
-            <div class="form-group">
-              <label for="name">Nome</label>
-              <input type="text" id="name" name="name" required />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" id="company" name="company" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required />
+              <label for="service">Tipo de Serviço</label>
+              <select id="service" name="service">
+                <option value="">Selecione um serviço</option>
+                <option value="desenvolvimento">
+                  Desenvolvimento de Software
+                </option>
+                <option value="service-desk">Service Desk</option>
+                <option value="cloud">Infraestrutura Cloud</option>
+                <option value="seguranca">Segurança Digital</option>
+                <option value="consultoria">Consultoria em TI</option>
+                <option value="manutencao">Manutenção e Suporte</option>
+              </select>
             </div>
             <div class="form-group">
-              <label for="message">Mensagem</label>
+              <label for="message">Descreva seu projeto</label>
               <textarea
                 id="message"
                 name="message"
                 rows="5"
+                placeholder="Conte-nos sobre sua ideia ou necessidade..."
                 required
               ></textarea>
             </div>
-            <button type="submit">Enviar Mensagem</button>
+            <button type="submit">Solicitar Orçamento</button>
           </form>
         </div>
       </div>
@@ -206,26 +508,56 @@
         <div class="footer-content">
           <div class="footer-logo">
             <img
-              src="WhatsApp_Image_2025-03-11_at_11.10.08__1___1_-removebg-preview.png"
-              alt="CreativeLink Logo"
+              src="WhatsApp_Image_2025-09-12_at_11.13.14-removebg-preview.png"
+              alt="ByteStorm Tech Logo"
               class="logo"
             />
+            <div class="logo-text">
+              <span class="logo-byte">Byte</span
+              ><span class="logo-storm">Storm</span>
+              <span class="logo-tech">Tech</span>
+            </div>
+            <p>Transformando ideias em realidade digital</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Serviços</h4>
+              <ul>
+                <li><a href="#services">Desenvolvimento de Software</a></li>
+                <li><a href="#services">Service Desk</a></li>
+                <li><a href="#services">Infraestrutura Cloud</a></li>
+                <li><a href="#services">Segurança Digital</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Empresa</h4>
+              <ul>
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#technologies">Tecnologias</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#contact">Contato</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Contato</h4>
+              <ul>
+                <li>
+                  <i class="fas fa-envelope"></i> contato@bytestormtech.com
+                </li>
+                <li><i class="fas fa-phone"></i> +55 (11) 99999-9999</li>
+                <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+              </ul>
+            </div>
           </div>
           <div class="social-links">
-            <a href="https://www.facebook.com/CreativeLinkti" target="_blank"
-              ><i class="fab fa-facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/creativelinkti?igsh=MTd0cXdkNDF6YWE2cw=="
-              target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 CreativeLink. Todos os direitos reservados.</p>
+          <p>&copy; 2025 ByteStorm Tech. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
