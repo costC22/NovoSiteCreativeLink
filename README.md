@@ -16,17 +16,9 @@ A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modern
 
 ### Tecnologias que Dominamos
 
-#### Frontend
-
-- React, Vue.js, Angular
-- JavaScript, HTML5, CSS3
-- TypeScript, SASS/SCSS
-
-#### Backend
-
-- Node.js, Python, Java, PHP
-- PostgreSQL, MongoDB
-- Express, Django, Spring Boot
+- **JavaScript**: Linguagem de programação para desenvolvimento web
+- **Python**: Linguagem de programação versátil e poderosa
+- **Linux**: Sistema operacional para servidores e desenvolvimento
 
 ## 🛠️ Instalação
 
