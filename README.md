@@ -10,7 +10,6 @@ A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modern
 
 - **Desenvolvimento de Sites**: Sites modernos, responsivos e otimizados, com design profissional e alta performance
 - **Service Desk Especializado**: Suporte técnico 24/7 com equipe especializada em resolução rápida de problemas
-- **Infraestrutura Cloud**: Migração e gerenciamento de infraestrutura na nuvem com alta disponibilidade
 - **Segurança Digital**: Proteção completa dos dados e sistemas com soluções avançadas
 - **Consultoria em TI**: Análise estratégica e implementação de soluções tecnológicas
 - **Manutenção e Suporte**: Manutenção preventiva e corretiva de sistemas
@@ -28,12 +27,6 @@ A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modern
 - Node.js, Python, Java, PHP
 - PostgreSQL, MongoDB
 - Express, Django, Spring Boot
-
-#### Cloud & DevOps
-
-- AWS, Google Cloud, Azure
-- Docker, Kubernetes
-- Git, CI/CD
 
 ## 🛠️ Instalação
 
