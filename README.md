@@ -1,14 +1,14 @@
-# ByteStorm Tech - Soluções de Software e Service Desk
+# ByteStorm Tech - Desenvolvimento de Sites e Service Desk
 
-Bem-vindo ao repositório da ByteStorm Tech! Somos especialistas em soluções de software personalizadas e service desk de alta performance para empresas modernas.
+Bem-vindo ao repositório da ByteStorm Tech! Somos especialistas em desenvolvimento de sites personalizados e service desk de alta performance para empresas modernas.
 
 ## 🚀 Sobre a ByteStorm Tech
 
-A ByteStorm Tech é uma empresa especializada em transformar ideias em realidade digital. Oferecemos soluções tecnológicas completas que impulsionam o crescimento dos nossos clientes e garantem máxima eficiência operacional.
+A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modernos e service desk de alta performance. Oferecemos desenvolvimento web de qualidade e suporte técnico especializado que impulsionam o crescimento dos nossos clientes e garantem máxima eficiência operacional.
 
 ### Nossos Serviços
 
-- **Desenvolvimento de Software**: Aplicações web e mobile personalizadas, sistemas de gestão e soluções digitais sob medida
+- **Desenvolvimento de Sites**: Sites modernos, responsivos e otimizados, com design profissional e alta performance
 - **Service Desk Especializado**: Suporte técnico 24/7 com equipe especializada em resolução rápida de problemas
 - **Infraestrutura Cloud**: Migração e gerenciamento de infraestrutura na nuvem com alta disponibilidade
 - **Segurança Digital**: Proteção completa dos dados e sistemas com soluções avançadas
@@ -108,7 +108,7 @@ site-byteStorm/
 
 ## 🎯 Objetivos
 
-- Apresentar a ByteStorm Tech como referência em soluções de software
+- Apresentar a ByteStorm Tech como referência em desenvolvimento de sites
 - Demonstrar expertise técnica através do design e funcionalidades
 - Facilitar o contato com clientes potenciais
 - Mostrar portfólio de tecnologias e serviços
