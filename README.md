@@ -101,7 +101,7 @@ site-byteStorm/
 
 ## 📞 Contato
 
-- **E-mail**: contato@bytestormtech.com
+- **E-mail**: bytestormtechti@gmail.com
 - **Telefone**: +55 (11) 99999-9999
 - **Localização**: São Paulo, SP - Brasil
 - **Service Desk**: 24/7
