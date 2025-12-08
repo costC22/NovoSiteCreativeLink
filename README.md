@@ -103,7 +103,7 @@ site-byteStorm/
 
 - **E-mail**: bytestormtechti@gmail.com
 - **Telefone**: +55 (11) 99999-9999
-- **Localização**: São Paulo, SP - Brasil
+- **Localização**: Osasco, São Paulo
 - **Service Desk**: 24/7
 
 ## 🤝 Contribuição
