@@ -1,390 +1,175 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Configuração inicial
-    initializeTheme();
-    initializeAnimations();
-    initializeMenu();
-    initializeScrollEffects();
-    initializeFormValidation();
-    initializeTypewriterEffect();
-    initializeParticleEffect();
+document.addEventListener('DOMContentLoaded', function () {
+  initMenu();
+  initDropdowns();
+  initSmoothScroll();
+  initForm();
+  initScrollEffects();
 });
 
-// Tema escuro fixo
-function initializeTheme() {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    try { 
-        localStorage.setItem('theme', 'dark'); 
-    } catch (_) {}
-}
+// Menu mobile
+function initMenu() {
+  var menuBtn = document.querySelector('.menu-button');
+  var nav = document.querySelector('nav');
 
-// Animações dos elementos
-function initializeAnimations() {
-    const serviceItems = document.querySelectorAll('.service-item');
-    const techItems = document.querySelectorAll('.tech-item');
-    const statItems = document.querySelectorAll('.stat-item');
+  if (!menuBtn || !nav) return;
 
-    // Animações dos cards de serviço
-    serviceItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            item.style.transform = 'translateY(-10px) scale(1.02)';
-            item.style.boxShadow = '0 20px 40px rgba(0, 212, 255, 0.2)';
-        });
+  menuBtn.addEventListener('click', function () {
+    nav.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+  });
 
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0) scale(1)';
-            item.style.boxShadow = '0 8px 32px rgba(0, 212, 255, 0.1)';
-        });
+  document.querySelectorAll('nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('active');
+      menuBtn.classList.remove('active');
+      document.body.style.overflow = '';
     });
+  });
 
-    // Animações dos itens de tecnologia
-    techItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            const icon = item.querySelector('i');
-            if (icon) {
-                icon.style.transform = 'scale(1.3) rotate(10deg)';
-                icon.style.color = 'var(--accent-color)';
-            }
-        });
-
-        item.addEventListener('mouseleave', () => {
-            const icon = item.querySelector('i');
-            if (icon) {
-                icon.style.transform = 'scale(1) rotate(0deg)';
-                icon.style.color = 'var(--primary-color)';
-            }
-        });
-    });
-
-    // Animação dos números nas estatísticas
-    statItems.forEach(item => {
-        const number = item.querySelector('h3');
-        if (number) {
-            const finalNumber = parseInt(number.textContent);
-            if (!isNaN(finalNumber)) {
-                animateNumber(number, 0, finalNumber, 2000);
-            }
-        }
-    });
-}
-
-// Animação de números
-function animateNumber(element, start, end, duration) {
-    const startTime = performance.now();
-    const isPercentage = element.textContent.includes('%');
-    const isPlus = element.textContent.includes('+');
-    
-    function updateNumber(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        const current = Math.floor(start + (end - start) * progress);
-        let displayValue = current;
-        
-        if (isPercentage) displayValue += '%';
-        if (isPlus) displayValue += '+';
-        
-        element.textContent = displayValue;
-        
-        if (progress < 1) {
-            requestAnimationFrame(updateNumber);
-        }
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+      nav.classList.remove('active');
+      menuBtn.classList.remove('active');
+      document.body.style.overflow = '';
     }
-    
-    requestAnimationFrame(updateNumber);
+  });
 }
 
-// Menu Mobile
-function initializeMenu() {
-    const menuButton = document.querySelector('.menu-button');
-    const nav = document.querySelector('nav');
+// Dropdowns (mobile: clique para abrir)
+function initDropdowns() {
+  var hasDropdown = document.querySelectorAll('.has-dropdown');
 
-    if (menuButton && nav) {
-        menuButton.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            menuButton.classList.toggle('active');
-        });
+  hasDropdown.forEach(function (item) {
+    var link = item.querySelector('a');
+    if (!link) return;
 
-        // Fechar menu ao clicar em um link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuButton.classList.remove('active');
-            });
-        });
-
-        // Fechar menu ao clicar fora
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !menuButton.contains(e.target)) {
-                nav.classList.remove('active');
-                menuButton.classList.remove('active');
-            }
-        });
-    }
-}
-
-// Efeitos de scroll
-function initializeScrollEffects() {
-    // Scroll suave para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Animação de elementos ao scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-in').forEach(element => {
-        observer.observe(element);
-    });
-
-    // Header com efeito de scroll
-    let lastScroll = 0;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            header.classList.remove('scroll-up');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-            // Scroll Down
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-            // Scroll Up
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
-        }
-        
-        lastScroll = currentScroll;
-    });
-}
-
-// Validação de formulário
-function initializeFormValidation() {
-    const form = document.querySelector('form');
-    if (!form) return;
-
-    form.addEventListener('submit', function(e) {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
         e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        // Validação básica
-        if (!data.name || !data.email || !data.message) {
-            showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
-            return;
-        }
-
-        // Validação de email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            showNotification('Por favor, insira um email válido.', 'error');
-            return;
-        }
-
-        // Simular envio
-        showNotification('Enviando mensagem...', 'info');
-        
-        // Aqui você pode adicionar a lógica real de envio
-        setTimeout(() => {
-            showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
-            form.reset();
-        }, 2000);
+        item.classList.toggle('active');
+      }
     });
+  });
 }
 
-// Efeito typewriter no código
-function initializeTypewriterEffect() {
-    const codeLines = document.querySelectorAll('.code-line');
-    codeLines.forEach((line, index) => {
-        const text = line.innerHTML;
-        line.innerHTML = '';
-        line.style.opacity = '1';
-        
-        setTimeout(() => {
-            typeWriter(line, text, 50);
-        }, index * 500);
-    });
-}
+// Scroll suave para âncoras
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        var header = document.querySelector('header');
+        var topBar = document.querySelector('.top-bar');
+        var offset = (header ? header.offsetHeight : 0) + (topBar ? topBar.offsetHeight : 0);
+        var pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
 
-function typeWriter(element, text, speed) {
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-// Efeito de partículas no hero
-function initializeParticleEffect() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    // Criar partículas flutuantes
-    for (let i = 0; i < 20; i++) {
-        createParticle(hero);
-    }
-}
-
-function createParticle(container) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.cssText = `
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: var(--primary-color);
-        border-radius: 50%;
-        pointer-events: none;
-        opacity: 0.6;
-        animation: float 6s ease-in-out infinite;
-    `;
-    
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 6 + 's';
-    particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-    
-    container.appendChild(particle);
-}
-
-// Sistema de notificações
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        color: white;
-        font-weight: 500;
-        z-index: 10000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 300px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    `;
-    
-    // Cores baseadas no tipo
-    const colors = {
-        success: '#4ade80',
-        error: '#f87171',
-        info: '#60a5fa',
-        warning: '#fbbf24'
-    };
-    
-    notification.style.backgroundColor = colors[type] || colors.info;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    // Animar entrada
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Remover após 5 segundos
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    }, 5000);
-}
-
-// Efeito parallax suave
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero::before');
-    
-    parallaxElements.forEach(element => {
-        const speed = 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
-// Lazy loading para imagens (se houver)
-function initializeLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
+        window.scrollTo({
+          top: pos,
+          behavior: 'smooth'
         });
+      }
     });
-    
-    images.forEach(img => imageObserver.observe(img));
+  });
 }
 
-// Inicializar lazy loading se houver imagens
-document.addEventListener('DOMContentLoaded', initializeLazyLoading);
+// Formulário: validação e notificação (envio real via Formspree)
+function initForm() {
+  var form = document.querySelector('form[action*="formspree"]');
+  if (!form) return;
 
-// Adicionar CSS para as animações de partículas
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes float {
-        0%, 100% { 
-            transform: translateY(0px) rotate(0deg); 
-            opacity: 0.6;
-        }
-        50% { 
-            transform: translateY(-20px) rotate(180deg); 
-            opacity: 1;
-        }
+  form.addEventListener('submit', function (e) {
+    var name = form.querySelector('[name="name"]');
+    var email = form.querySelector('[name="email"]');
+    var message = form.querySelector('[name="message"]');
+
+    if (name && !name.value.trim()) {
+      e.preventDefault();
+      showNotification('Preencha seu nome.', 'error');
+      return;
     }
-    
-    .particle {
-        animation: float 6s ease-in-out infinite;
+    if (email && !email.value.trim()) {
+      e.preventDefault();
+      showNotification('Preencha seu e-mail.', 'error');
+      return;
     }
-    
-    .notification {
-        animation: slideIn 0.3s ease;
+    if (message && !message.value.trim()) {
+      e.preventDefault();
+      showNotification('Preencha a mensagem.', 'error');
+      return;
     }
-    
-    @keyframes slideIn {
-        from { transform: translateX(100%); }
-        to { transform: translateX(0); }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailRegex.test(email.value)) {
+      e.preventDefault();
+      showNotification('Use um e-mail válido.', 'error');
+      return;
     }
-`;
-document.head.appendChild(style);
+
+    showNotification('Enviando mensagem...', 'info');
+    // Formspree processa o envio; a página de sucesso do Formspree ou redirect exibirá confirmação
+  });
+}
+
+function showNotification(message, type) {
+  type = type || 'info';
+  var existing = document.querySelector('.notification-toast');
+  if (existing) existing.remove();
+
+  var el = document.createElement('div');
+  el.className = 'notification-toast notification-' + type;
+  el.textContent = message;
+  el.style.cssText =
+    'position:fixed;top:20px;right:20px;padding:1rem 1.5rem;border-radius:8px;color:#fff;font-weight:500;z-index:10000;' +
+    'max-width:320px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform 0.3s ease;';
+
+  var colors = {
+    success: '#00c0a3',
+    error: '#e74c3c',
+    info: '#1a1f33'
+  };
+  el.style.backgroundColor = colors[type] || colors.info;
+
+  document.body.appendChild(el);
+
+  requestAnimationFrame(function () {
+    el.style.transform = 'translateX(0)';
+  });
+
+  setTimeout(function () {
+    el.style.transform = 'translateX(120%)';
+    setTimeout(function () {
+      if (el.parentNode) el.parentNode.removeChild(el);
+    }, 300);
+  }, 4500);
+}
+
+// Efeito de header no scroll (opcional)
+function initScrollEffects() {
+  var header = document.querySelector('header');
+  if (!header) return;
+
+  var lastScroll = 0;
+  window.addEventListener(
+    'scroll',
+    function () {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      if (y <= 0) {
+        header.classList.remove('scroll-up');
+        return;
+      }
+      if (y > lastScroll) {
+        header.classList.remove('scroll-up');
+        header.classList.add('scroll-down');
+      } else {
+        header.classList.remove('scroll-down');
+        header.classList.add('scroll-up');
+      }
+      lastScroll = y;
+    },
+    { passive: true }
+  );
+}
