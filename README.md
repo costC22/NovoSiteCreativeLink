@@ -101,7 +101,7 @@ site-byteStorm/
 
 ## 📞 Contato
 
-- **E-mail**: bytestormtechti@gmail.com
+- **E-mail**: contato@bytestormtech.com.br
 - **Telefone**: +55 (11) 99999-9999
 - **Localização**: Osasco, São Paulo
 - **Service Desk**: 24/7
