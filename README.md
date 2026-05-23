@@ -1,14 +1,15 @@
-# ByteStorm Tech - Desenvolvimento de Sites e Service Desk
+# ByteStorm Tech - Sites e Automação com Scripts
 
-Bem-vindo ao repositório da ByteStorm Tech! Somos especialistas em desenvolvimento de sites personalizados e service desk de alta performance para empresas modernas.
+Bem-vindo ao repositório da ByteStorm Tech! Somos especialistas em desenvolvimento de sites personalizados, automação de sistemas com scripts e service desk de alta performance para empresas modernas.
 
-## 🚀 Sobre a ByteStorm Tech
+## Sobre a ByteStorm Tech
 
-A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modernos e service desk de alta performance. Oferecemos desenvolvimento web de qualidade e suporte técnico especializado que impulsionam o crescimento dos nossos clientes e garantem máxima eficiência operacional.
+A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modernos, automação de processos com scripts (Python, JavaScript, PowerShell) e service desk. Oferecemos soluções digitais e operacionais que impulsionam o crescimento dos nossos clientes e reduzem trabalho manual repetitivo.
 
 ### Nossos Serviços
 
 - **Desenvolvimento de Sites**: Sites modernos, responsivos e otimizados, com design profissional e alta performance
+- **Automação com Scripts**: Integrações de API, rotinas agendadas, ETL, bots e automação de planilhas e arquivos
 - **Service Desk Especializado**: Suporte técnico 24/7 com equipe especializada em resolução rápida de problemas
 - **Segurança Digital**: Proteção completa dos dados e sistemas com soluções avançadas
 - **Consultoria em TI**: Análise estratégica e implementação de soluções tecnológicas
@@ -16,123 +17,75 @@ A ByteStorm Tech é uma empresa especializada em desenvolvimento de sites modern
 
 ### Tecnologias que Dominamos
 
-- **JavaScript**: Linguagem de programação para desenvolvimento web
-- **Python**: Linguagem de programação versátil e poderosa
+- **JavaScript / Node.js**: Desenvolvimento web e automações
+- **Python**: Scripts, integrações, ETL e automação de dados
+- **PowerShell / Bash**: Automação em servidores Windows e Linux
 - **Linux**: Sistema operacional para servidores e desenvolvimento
 
-## 🛠️ Instalação
+## Instalação
 
 Siga as etapas abaixo para configurar o projeto localmente:
 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/bytestormtech/site-byteStorm.git
+   git clone https://github.com/costC22/NovoSiteCreativeLink.git
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd site-byteStorm
+   cd SiteByteStorm
    ```
 
 3. Abra o arquivo `index.html` em seu navegador ou use um servidor local:
 
    ```bash
-   # Usando Python
    python -m http.server 8000
-
-   # Usando Node.js
-   npx serve .
-
-   # Usando PHP
-   php -S localhost:8000
    ```
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
-site-byteStorm/
-├── index.html          # Página principal
-├── styles.css          # Estilos CSS com tema tech/cyberpunk
-├── script.js           # JavaScript com animações e interações
-├── README.md           # Documentação do projeto
-└── assets/             # Recursos adicionais (imagens, ícones)
+SiteByteStorm/
+├── index.html          # Página principal (sites + automações)
+├── solucoes.html       # Soluções detalhadas
+├── atendimento.html    # Contato e orçamento
+├── ferramentas.html    # Ferramentas e recursos
+├── blog.html           # Blog
+├── cliente.html        # Área do cliente
+├── styles.css          # Estilos com tema tech moderno
+├── script.js           # Interações e animações
+└── README.md           # Documentação
 ```
 
-## 🎨 Características do Design
+## Características do Design
 
-- **Tema Tech/Cyberpunk**: Design moderno com cores neon e efeitos visuais
+- **Tema Tech moderno**: Visual tecnológico com cores teal (#00c0a3) e fundo escuro
 - **Responsivo**: Otimizado para todos os dispositivos
-- **Animações Suaves**: Transições e efeitos visuais modernos
+- **Seção de automação**: Terminal interativo com exemplos de scripts
 - **Performance**: Carregamento rápido e otimizado
-- **Acessibilidade**: Interface acessível e intuitiva
 
-## 🚀 Funcionalidades
+## Seções do Site
 
-- ✅ Design responsivo e moderno
-- ✅ Animações e efeitos visuais
-- ✅ Formulário de contato funcional
-- ✅ Menu mobile interativo
-- ✅ Scroll suave entre seções
-- ✅ Sistema de notificações
-- ✅ Efeito typewriter no código
-- ✅ Partículas animadas
-- ✅ Validação de formulário
-- ✅ Lazy loading de imagens
+1. **Hero**: Sites e automações — proposta de valor principal
+2. **Serviços rápidos**: Hospedagem, e-mail, suporte, SEO e automação
+3. **Automação com Scripts**: Integrações, rotinas, ETL e terminal visual
+4. **Serviços detalhados**: Cards com sites, automação, service desk e mais
+5. **Tecnologias**: Stack utilizada
+6. **Sobre, Depoimentos e Contato**
 
-## 📱 Seções do Site
-
-1. **Hero**: Apresentação principal com animação de código
-2. **Serviços**: Cards interativos com nossos serviços
-3. **Estatísticas**: Números animados de resultados
-4. **Tecnologias**: Grid de tecnologias que dominamos
-5. **Sobre**: Informações sobre a empresa e valores
-6. **Depoimentos**: Testimonials de clientes
-7. **Contato**: Formulário completo de contato
-
-## 🎯 Objetivos
-
-- Apresentar a ByteStorm Tech como referência em desenvolvimento de sites
-- Demonstrar expertise técnica através do design e funcionalidades
-- Facilitar o contato com clientes potenciais
-- Mostrar portfólio de tecnologias e serviços
-- Transmitir confiança e profissionalismo
-
-## 📞 Contato
+## Contato
 
 - **E-mail**: contato@bytestormtech.com.br
 - **Telefone**: +55 (11) 99999-9999
 - **Localização**: Osasco, São Paulo
 - **Service Desk**: 24/7
 
-## 🤝 Contribuição
+## Licença
 
-Contribuições são bem-vindas! Siga as etapas abaixo:
-
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature:
-   ```bash
-   git checkout -b feature/nova-funcionalidade
-   ```
-3. Commit suas alterações:
-   ```bash
-   git commit -m "Adiciona nova funcionalidade"
-   ```
-4. Push para a branch:
-   ```bash
-   git push origin feature/nova-funcionalidade
-   ```
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 🌟 Agradecimentos
-
-Agradecemos a todos os clientes e parceiros que confiam na ByteStorm Tech para suas soluções tecnológicas.
+Este projeto está licenciado sob a Licença MIT.
 
 ---
 
-**ByteStorm Tech** - Transformando ideias em realidade digital 🚀
+**ByteStorm Tech** — Sites que vendem, automações que economizam tempo.
