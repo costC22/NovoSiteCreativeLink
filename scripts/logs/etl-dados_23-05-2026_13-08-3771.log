@@ -1,7 +1,0 @@
-[23/05/2026 13:08:37,76] [INFO] ================================================================
-[23/05/2026 13:08:37,76] [INFO] ByteStorm Tech - ETL e dados [etl-dados]
-[23/05/2026 13:08:37,77] [INFO] Run: 23-05-2026_13-08-3771 - Log: C:\Users\user\Desktop\SiteByteStorm\scripts\logs\etl-dados_23-05-2026_13-08-3771.log
-[23/05/2026 13:08:37,77] [INFO] ================================================================
-[23/05/2026 13:08:37,78] [INFO] ETL de C:\Users\user\Desktop\SiteByteStorm\scripts\data\input\dados.csv para C:\Users\user\Desktop\SiteByteStorm\scripts\data\output\dados_processados.csv
-[23/05/2026 13:08:38,00] [ERROR] FALHA. Codigo de saida: 
-[23/05/2026 13:08:38,01] [INFO] Inicio: 13:08:37,71 - Fim: 13:08:38,01

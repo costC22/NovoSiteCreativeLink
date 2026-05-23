@@ -1,0 +1,6 @@
+logs/*.log
+locks/*.lock
+tmp/*
+data/output/*
+!data/output/.gitkeep
+!data/input/
