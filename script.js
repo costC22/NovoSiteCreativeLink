@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initSmoothScroll();
   initForm();
   initScrollEffects();
+  initCounters();
 });
 
 // Menu mobile
@@ -145,6 +146,55 @@ function showNotification(message, type) {
       if (el.parentNode) el.parentNode.removeChild(el);
     }, 300);
   }, 4500);
+}
+
+// Contadores animados (hero stats)
+function initCounters() {
+  var counters = document.querySelectorAll('.stat-num[data-count]');
+  if (!counters.length) return;
+
+  var animated = false;
+
+  function animateCounters() {
+    if (animated) return;
+    counters.forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var duration = 1800;
+      var start = 0;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        el.textContent = Math.floor(progress * target);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+
+      requestAnimationFrame(step);
+    });
+    animated = true;
+  }
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(counters[0].closest('.hero-stats') || counters[0]);
+  } else {
+    animateCounters();
+  }
 }
 
 // Efeito de header no scroll (opcional)
