@@ -1,0 +1,28 @@
+﻿DIAGNOSTICO BYTESTORM TECH - AUTOMACAO
+========================================
+Data: 23/05/2026 13:10
+
+Scripts disponiveis:
+  - 01-integracao-api.bat
+  - 02-scripts-sob-medida.bat
+  - 03-rotinas-agendadas.bat
+  - 04-etl-dados.bat
+  - 05-rpa.bat
+  - 06-email-notificacoes.bat
+  - 07-planilhas.bat
+  - 08-seguranca.bat
+  - 09-automacao-scripts.bat
+  - 10-integracao-sistemas.bat
+  - 11-service-desk.bat
+  - 12-consultoria-automacao.bat
+
+Recomendacoes por impacto:
+  [Alto] Relatorios manuais diarios => 04-etl-dados.bat + 06-email-notificacoes.bat
+  [Alto] Copia de dados entre sistemas => 10-integracao-sistemas.bat
+  [Medio] Arquivos em pasta compartilhada => 05-rpa.bat
+  [Medio] Planilhas consolidadas => 07-planilhas.bat
+
+Proximos passos:
+  * POC em 1 processo
+  * Medir ROI em horas salvas
+  * Agendar rotina com 03-rotinas-agendadas.bat

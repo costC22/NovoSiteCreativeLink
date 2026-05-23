@@ -1,0 +1,5 @@
+﻿"id","nome","valor","valor_com_imposto","regiao","processado_em"
+"1","Produto A","150000","165000","Sudeste","2026-05-23 13:08:49"
+"2","Produto B","89050","97955","Sul","2026-05-23 13:08:49"
+"3","Produto C","220000","242000","Nordeste","2026-05-23 13:08:49"
+"4","Produto D","45000","49500","Centro-Oeste","2026-05-23 13:08:49"

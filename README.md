@@ -23,10 +23,21 @@ python -m http.server 8000
 
 Abra `http://localhost:8000` no navegador.
 
+## Scripts de automação (.BAT)
+
+Pasta `scripts/` com 12 serviços em batch + PowerShell, menu interativo e logs.
+
+```bat
+scripts\Menu-ByteStorm.bat
+```
+
+Ver `scripts/README.md` para detalhes.
+
 ## Estrutura
 
 ```
 SiteByteStorm/
+├── scripts/         # Automações .bat por serviço do site
 ├── index.html       # Página principal
 ├── solucoes.html    # Soluções de automação
 ├── atendimento.html # Contato
