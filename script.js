@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initForm();
   initScrollEffects();
   initCounters();
+  initReveal();
 });
 
 // Menu mobile
@@ -222,4 +223,40 @@ function initScrollEffects() {
     },
     { passive: true }
   );
+}
+
+// Reveal discreto para cards e secoes
+function initReveal() {
+  var items = document.querySelectorAll(
+    '.service-box, .service-item, .workflow-step, .automacao-card, .tech-item, .value-item, .testimonial-item, .contact-item, .ops-console'
+  );
+
+  if (!items.length) return;
+
+  items.forEach(function (item) {
+    item.classList.add('reveal-ready');
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (item) {
+      item.classList.add('is-visible');
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  items.forEach(function (item) {
+    observer.observe(item);
+  });
 }
