@@ -1,0 +1,4 @@
+Contact: mailto:contato@bytestormtech.com.br
+Canonical: https://bytestormtech.com.br/.well-known/security.txt
+Preferred-Languages: pt-BR, en
+Expires: 2027-07-01T23:59:00Z

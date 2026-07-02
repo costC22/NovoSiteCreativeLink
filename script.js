@@ -87,7 +87,32 @@ function initForm() {
     var name = form.querySelector('[name="name"]');
     var email = form.querySelector('[name="email"]');
     var message = form.querySelector('[name="message"]');
+    var company = form.querySelector('[name="company"]');
+    var honeypot = form.querySelector('[name="_gotcha"]');
+    var fields = [name, email, company, message].filter(Boolean);
+    var suspiciousPattern = /(<\s*script|<\/|javascript:|on\w+\s*=|data:text\/html|<\s*(iframe|object|embed|form))/i;
+    var maxLengthByName = { name: 80, email: 120, company: 120, message: 1200 };
 
+    if (honeypot && honeypot.value.trim()) {
+      e.preventDefault();
+      return;
+    }
+
+    for (var i = 0; i < fields.length; i += 1) {
+      var field = fields[i];
+      field.value = field.value.trim();
+      var maxLength = maxLengthByName[field.name];
+      if (maxLength && field.value.length > maxLength) {
+        e.preventDefault();
+        showNotification('Campo muito longo.', 'error');
+        return;
+      }
+      if (suspiciousPattern.test(field.value)) {
+        e.preventDefault();
+        showNotification('Conteudo nao permitido no formulario.', 'error');
+        return;
+      }
+    }
     if (name && !name.value.trim()) {
       e.preventDefault();
       showNotification('Preencha seu nome.', 'error');

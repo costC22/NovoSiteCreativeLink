@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formspree.io; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; connect-src 'self' https://formspree.io; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>Automação de Sistemas com Scripts | ByteStorm Tech</title>
@@ -449,11 +451,13 @@
             <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Atendimento</h4><p>24/7 - Service Desk</p></div></div>
           </div>
           <form class="tech-card" action="https://formspree.io/f/mldbzboj" method="POST">
+            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input type="hidden" name="_subject" value="Novo contato pelo site ByteStorm Tech" />
             <div class="form-row">
-              <div class="form-group"><label for="name">Nome</label><input type="text" id="name" name="name" required /></div>
-              <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" required /></div>
+              <div class="form-group"><label for="name">Nome</label><input type="text" id="name" name="name" maxlength="80" autocomplete="name" required /></div>
+              <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" maxlength="120" autocomplete="email" required /></div>
             </div>
-            <div class="form-group"><label for="company">Empresa</label><input type="text" id="company" name="company" /></div>
+            <div class="form-group"><label for="company">Empresa</label><input type="text" id="company" name="company" maxlength="120" autocomplete="organization" /></div>
             <div class="form-group">
               <label for="service">Serviço</label>
               <select id="service" name="service">
@@ -466,7 +470,7 @@
                 <option value="consultoria">Consultoria em Automação</option>
               </select>
             </div>
-            <div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" rows="5" required placeholder="Descreva o processo que deseja automatizar..."></textarea></div>
+            <div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" rows="5" maxlength="1200" required placeholder="Descreva o processo que deseja automatizar..."></textarea></div>
             <button type="submit"><i class="fas fa-paper-plane"></i> Solicitar Orçamento</button>
           </form>
         </div>
