@@ -1,10 +1,10 @@
-# ByteStorm Tech - Automação de Sistemas com Scripts
+# ByteStorm Tech - Sites, Automação e Sistemas sob Medida
 
-Repositório do site da ByteStorm Tech — especializada em automação de sistemas com scripts Python, JavaScript e PowerShell.
+Repositório do site da ByteStorm Tech — especializada em desenvolvimento de sites, landing pages, automação de sistemas e integrações com scripts Python, JavaScript e PowerShell.
 
 ## Sobre
 
-A ByteStorm Tech desenvolve automações sob medida: integrações de API, ETL, RPA, rotinas agendadas e service desk 24/7.
+A ByteStorm Tech desenvolve sites profissionais, landing pages e automações sob medida: integrações de API, ETL, RPA, rotinas agendadas e suporte técnico.
 
 ### Serviços
 
@@ -54,4 +54,4 @@ SiteByteStorm/
 
 ---
 
-**ByteStorm Tech** — Scripts que executam. Processos que escalam.
+**ByteStorm Tech** — Sites, automações e integrações para empresas que querem operar melhor.

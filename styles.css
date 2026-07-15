@@ -2497,3 +2497,215 @@ footer {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Website development refresh */
+.hero h1 {
+  max-width: 760px;
+}
+
+.hero-services-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 0.75rem;
+  max-width: 560px;
+  margin: 0 0 1.5rem;
+}
+
+.hero-services-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.75rem 0.9rem;
+  color: #dce8f5;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+}
+
+.hero-services-strip i {
+  color: var(--teal);
+}
+
+.services-six {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.site-build-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, rgba(7, 11, 18, 0.72), rgba(9, 16, 30, 0.94));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-build-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.site-build-copy h2 {
+  max-width: 720px;
+  margin-bottom: 1rem;
+  font-size: 2.55rem;
+  line-height: 1.08;
+}
+
+.site-build-copy p {
+  max-width: 660px;
+  color: var(--text-muted);
+  font-size: 1.06rem;
+  margin-bottom: 1.4rem;
+}
+
+.deliverable-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.deliverable-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: #d7e2ef;
+}
+
+.deliverable-list i {
+  color: var(--teal);
+  margin-top: 0.2rem;
+}
+
+.delivery-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem;
+  background: linear-gradient(180deg, rgba(18, 31, 53, 0.84), rgba(8, 14, 27, 0.9));
+  border: 1px solid rgba(113, 232, 255, 0.22);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-tech);
+}
+
+.delivery-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--cyan));
+}
+
+.delivery-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.delivery-header span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.delivery-header strong {
+  color: var(--text);
+  text-align: right;
+  font-size: 1.05rem;
+}
+
+.delivery-list {
+  display: grid;
+  gap: 0.85rem;
+  padding-top: 1rem;
+}
+
+.delivery-list div {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.delivery-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(0, 240, 200, 0.1);
+  color: var(--teal);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+.delivery-list p {
+  margin: 0;
+  color: #dce8f5;
+}
+
+.service-box-featured,
+.service-item-featured {
+  border-color: rgba(0, 240, 200, 0.42);
+  background: linear-gradient(180deg, rgba(0, 240, 200, 0.1), rgba(8, 14, 27, 0.78));
+}
+
+.project-list .testimonial-item i {
+  font-size: 1.7rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.project-list .author-info h4 {
+  color: var(--text);
+}
+
+.project-list .author-info p {
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .site-build-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-build-copy h2,
+  .site-build-copy p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .deliverable-list {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-build-copy .cta-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-services-strip {
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-build-copy h2 {
+    font-size: 2rem;
+  }
+}
