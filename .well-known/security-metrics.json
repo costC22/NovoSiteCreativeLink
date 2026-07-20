@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-20T21:07:27.681Z",
+  "generatedAt": "2026-07-20T21:20:52.263Z",
   "score": 100,
-  "passed": 10,
-  "total": 10,
+  "passed": 15,
+  "total": 15,
   "checks": [
     {
       "id": "external_form_endpoint_removed",
@@ -42,6 +42,26 @@
     },
     {
       "id": "strict_header_set",
+      "status": "pass"
+    },
+    {
+      "id": "edge_request_shield_present",
+      "status": "pass"
+    },
+    {
+      "id": "edge_ddos_rate_limit_present",
+      "status": "pass"
+    },
+    {
+      "id": "contact_api_rate_limit_present",
+      "status": "pass"
+    },
+    {
+      "id": "sql_injection_patterns_blocked",
+      "status": "pass"
+    },
+    {
+      "id": "probe_and_traversal_patterns_blocked",
       "status": "pass"
     }
   ]

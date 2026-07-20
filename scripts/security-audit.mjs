@@ -9,6 +9,9 @@ const headers = existsSync(join(root, '_headers')) ? readFileSync(join(root, '_h
 const functionsExist = ['contact.mts', 'csp-report.mts', 'security-metrics.mts'].every((file) =>
   existsSync(join(root, 'netlify', 'functions', file))
 );
+const edgeShieldPath = join(root, 'netlify', 'edge-functions', 'request-shield.js');
+const edgeShield = existsSync(edgeShieldPath) ? readFileSync(edgeShieldPath, 'utf8') : '';
+const contactFunction = existsSync(join(root, 'netlify', 'functions', 'contact.mts')) ? readFileSync(join(root, 'netlify', 'functions', 'contact.mts'), 'utf8') : '';
 
 const headerNames = [
   'Content-Security-Policy',
@@ -64,6 +67,26 @@ const checks = [
   {
     id: 'strict_header_set',
     pass: headerNames.filter((name) => headers.includes(name)).length >= 10
+  },
+  {
+    id: 'edge_request_shield_present',
+    pass: /requestShield/.test(edgeShield) && /path: '\/\*'/.test(edgeShield)
+  },
+  {
+    id: 'edge_ddos_rate_limit_present',
+    pass: /rateLimit/.test(edgeShield) && /windowLimit:\s*240/.test(edgeShield) && /aggregateBy:\s*\['ip', 'domain'\]/.test(edgeShield)
+  },
+  {
+    id: 'contact_api_rate_limit_present',
+    pass: /rateLimit/.test(contactFunction) && /windowLimit:\s*10/.test(contactFunction)
+  },
+  {
+    id: 'sql_injection_patterns_blocked',
+    pass: /union/.test(contactFunction) && /information_schema/.test(contactFunction) && /xp_cmdshell/.test(contactFunction)
+  },
+  {
+    id: 'probe_and_traversal_patterns_blocked',
+    pass: /wp-login/.test(edgeShield) && /\.env/.test(edgeShield) && /%2e%2e/.test(edgeShield)
   }
 ];
 

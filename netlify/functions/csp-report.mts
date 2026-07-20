@@ -54,5 +54,10 @@ export default async function cspReport(req) {
 
 export const config = {
   path: '/api/csp-report',
-  method: ['POST']
+  method: ['POST'],
+  rateLimit: {
+    windowLimit: 120,
+    windowSize: 60,
+    aggregateBy: ['ip', 'domain']
+  }
 };

@@ -69,3 +69,9 @@ Para auditar localmente:
 ```bash
 node scripts/security-audit.mjs --check
 ```
+
+### Camada anti-DDoS e injeções
+
+- `netlify/edge-functions/request-shield.js` roda na borda para limitar excesso de requisições e bloquear probes comuns antes de chegar ao site.
+- `/api/contact` tem rate limit próprio, limite de payload, allow-list de campos e bloqueio de padrões de SQL injection, XSS, command injection, SSRF e path traversal.
+- O site não usa banco de dados no front-end; caso um banco seja adicionado no futuro, use queries parametrizadas/prepared statements e conta de menor privilégio.

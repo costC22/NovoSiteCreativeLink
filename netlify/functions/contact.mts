@@ -1,6 +1,7 @@
 const MAX_BODY_BYTES = 15_000;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 5;
+const MAX_FIELDS = 9;
 const ALLOWED_SERVICES = new Set([
   '',
   'site',
@@ -35,7 +36,7 @@ function jsonResponse(body, status, context, extraHeaders = {}) {
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'no-referrer',
       'X-Request-Id': requestId(context),
-      'X-Security-Checks': 'origin,rate-limit,honeypot,validation,sanitization,server-forward',
+      'X-Security-Checks': 'origin,rate-limit,honeypot,field-allow-list,sqli,xss,command-injection,path-traversal,ssrf,validation,sanitization,server-forward',
       ...extraHeaders
     }
   });
@@ -127,6 +128,17 @@ function cleanText(value, maxLength, preserveLines = false) {
 }
 
 function validate(payload) {
+  const allowedFields = new Set(['name', 'email', 'company', 'service', 'message', 'source', 'subject', '_subject', '_gotcha']);
+  const keys = Object.keys(payload || {});
+  if (keys.length > MAX_FIELDS) {
+    return { ok: false, message: 'Muitos campos enviados.' };
+  }
+  for (const key of keys) {
+    if (!allowedFields.has(key)) {
+      return { ok: false, message: 'Campo nao permitido.' };
+    }
+  }
+
   const data = {
     name: cleanText(payload.name, 80),
     email: cleanText(payload.email, 120).toLowerCase(),
@@ -142,7 +154,13 @@ function validate(payload) {
     return { ok: true, bot: true, data };
   }
 
-  const suspiciousPattern = /(<\s*script|<\/|javascript:|on\w+\s*=|data:text\/html|<\s*(iframe|object|embed|form|svg|math))/i;
+  const attackPatterns = [
+    /(<\s*script|<\/|javascript:|on\w+\s*=|data:text\/html|<\s*(iframe|object|embed|form|svg|math))/i,
+    /(?:\bunion\b[\s\S]{0,50}\bselect\b|\bselect\b[\s\S]{0,80}\bfrom\b|\binsert\b[\s\S]{0,60}\binto\b|\bupdate\b[\s\S]{0,60}\bset\b|\bdelete\b[\s\S]{0,60}\bfrom\b|\bdrop\b[\s\S]{0,40}\b(?:table|database)\b|\binformation_schema\b|\b(?:or|and)\b\s+['\"]?\d+['\"]?\s*=\s*['\"]?\d+|--|#|\/\*|\*\/|\bsleep\s*\(|\bbenchmark\s*\(|\bwaitfor\s+delay\b|\bload_file\s*\(|\boutfile\b|\bxp_cmdshell\b|0x[0-9a-f]{6,})/i,
+    /(?:\.\.\/|\.\.\\|%2e%2e|\/etc\/passwd|c:\\windows|\\windows\\system32)/i,
+    /(?:\$\(|`|\|\||&&|;\s*(cat|curl|wget|bash|sh|powershell|cmd|nc|python|perl|ruby)\b)/i,
+    /(?:169\.254\.169\.254|metadata\.google\.internal|localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])/i
+  ];
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!data.name || !data.email || !data.message) {
@@ -157,9 +175,11 @@ function validate(payload) {
   if (!ALLOWED_SERVICES.has(data.service)) {
     return { ok: false, message: 'Servico invalido.' };
   }
-  for (const value of [data.name, data.email, data.company, data.message]) {
-    if (suspiciousPattern.test(value)) {
-      return { ok: false, message: 'Conteudo bloqueado pela politica de seguranca.' };
+  for (const value of [data.name, data.email, data.company, data.service, data.message, data.source, data.subject]) {
+    for (const pattern of attackPatterns) {
+      if (pattern.test(value)) {
+        return { ok: false, message: 'Conteudo bloqueado pela politica de seguranca.' };
+      }
     }
   }
   return { ok: true, data };
@@ -244,5 +264,10 @@ export default async function contact(req, context) {
 
 export const config = {
   path: '/api/contact',
-  method: ['POST', 'OPTIONS']
+  method: ['POST', 'OPTIONS'],
+  rateLimit: {
+    windowLimit: 10,
+    windowSize: 60,
+    aggregateBy: ['ip', 'domain']
+  }
 };
