@@ -55,3 +55,17 @@ SiteByteStorm/
 ---
 
 **ByteStorm Tech** — Sites, automações e integrações para empresas que querem operar melhor.
+
+## Segurança
+
+- O formulário público envia para `/api/contact`; o destino real de e-mail deve ficar somente na variável de ambiente `CONTACT_FORWARD_URL` no Netlify.
+- Não coloque tokens, endpoints privados ou chaves em HTML, CSS ou JavaScript público.
+- A função valida origem, tamanho do payload, campos permitidos, honeypot, padrões suspeitos e limite de tentativas por instância.
+- CSP, HSTS, clickjacking protection, permissions policy e relatórios CSP estão configurados em `_headers`.
+- Métricas públicas: `/api/security-metrics` e `/.well-known/security-metrics.json`.
+
+Para auditar localmente:
+
+```bash
+node scripts/security-audit.mjs --check
+```

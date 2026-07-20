@@ -3254,3 +3254,105 @@ footer .logo,
 header .has-dropdown .dropdown {
   display: none !important;
 }
+
+body.nav-locked {
+  overflow: hidden;
+}
+
+.link-accent {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.link-accent:hover,
+.link-accent:focus-visible {
+  color: var(--cyan);
+}
+
+.text-strong {
+  color: var(--text);
+}
+
+.form-heading {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.content-offset {
+  margin-top: 2rem;
+}
+
+.client-actions-grid {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client-email-action {
+  margin-top: 1rem;
+}
+
+.client-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.client-email-note {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-muted);
+}
+
+.pipeline-fill-92 {
+  width: 92%;
+}
+
+.pipeline-fill-76 {
+  width: 76%;
+}
+
+.pipeline-fill-88 {
+  width: 88%;
+}
+
+.notification-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  max-width: min(320px, calc(100vw - 32px));
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+}
+
+.notification-toast.is-visible {
+  transform: translateX(0);
+}
+
+.notification-toast.is-hiding {
+  transform: translateX(120%);
+}
+
+.notification-success {
+  background: #00c0a3;
+  color: #061018;
+}
+
+.notification-error {
+  background: #e74c3c;
+}
+
+.notification-info {
+  background: #1a1f33;
+}
+
+.contact button[type="submit"].is-loading {
+  cursor: wait;
+  opacity: 0.72;
+}

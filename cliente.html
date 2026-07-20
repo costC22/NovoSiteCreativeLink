@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://formspree.io; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; connect-src 'self' https://formspree.io; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'none'; script-src 'self' 'sha256-x5CHpjrdpUBkaDUb1DkrOwZyQTSs7WECzJNvg8ptpVc='; script-src-attr 'none'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; media-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Área do Cliente | ByteStorm Tech</title>
     <meta name="description" content="Área do cliente ByteStorm Tech. Suporte, relatórios de automações e monitoramento de scripts." />
@@ -61,22 +61,22 @@
 
     <section class="services">
       <div class="container">
-        <div class="service-grid" style="max-width: 800px; margin: 0 auto;">
+        <div class="service-grid client-actions-grid">
           <div class="service-item">
             <i class="fas fa-headset service-icon"></i>
             <h3>Suporte</h3>
             <p>Precisa de ajuda ou quer solicitar uma alteração? Entre em contato pelo e-mail.</p>
-            <a href="mailto:contato@bytestormtech.com.br" class="cta-button primary" style="display: inline-block; margin-top: 1rem;">Enviar e-mail</a>
+            <a href="mailto:contato@bytestormtech.com.br" class="cta-button primary client-email-action">Enviar e-mail</a>
           </div>
           <div class="service-item">
             <i class="fas fa-file-alt service-icon"></i>
             <h3>Relatórios e documentação</h3>
             <p>Relatórios de execução, logs e uptime das automações são enviados por e-mail conforme seu plano.</p>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Dúvidas? Fale com a gente.</p>
+            <p class="client-note">Dúvidas? Fale com a gente.</p>
           </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; color: var(--text-muted);">
-          <strong style="color: var(--text);">E-mail:</strong> <a href="mailto:contato@bytestormtech.com.br" style="color: var(--teal);">contato@bytestormtech.com.br</a>
+        <p class="client-email-note">
+          <strong class="text-strong">E-mail:</strong> <a href="mailto:contato@bytestormtech.com.br" class="link-accent">contato@bytestormtech.com.br</a>
         </p>
       </div>
     </section>

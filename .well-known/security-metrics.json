@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-07-20T21:07:27.681Z",
+  "score": 100,
+  "passed": 10,
+  "total": 10,
+  "checks": [
+    {
+      "id": "external_form_endpoint_removed",
+      "status": "pass"
+    },
+    {
+      "id": "contact_forms_use_api_proxy",
+      "status": "pass"
+    },
+    {
+      "id": "no_browser_storage_for_leads",
+      "status": "pass"
+    },
+    {
+      "id": "dangerous_dom_sinks_removed",
+      "status": "pass"
+    },
+    {
+      "id": "inline_style_attributes_removed",
+      "status": "pass"
+    },
+    {
+      "id": "script_csp_without_unsafe_inline",
+      "status": "pass"
+    },
+    {
+      "id": "connect_src_self_only",
+      "status": "pass"
+    },
+    {
+      "id": "csp_reporting_enabled",
+      "status": "pass"
+    },
+    {
+      "id": "security_functions_present",
+      "status": "pass"
+    },
+    {
+      "id": "strict_header_set",
+      "status": "pass"
+    }
+  ]
+}

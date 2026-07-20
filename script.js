@@ -18,14 +18,14 @@ function initMenu() {
   menuBtn.addEventListener('click', function () {
     nav.classList.toggle('active');
     menuBtn.classList.toggle('active');
-    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    document.body.classList.toggle('nav-locked', nav.classList.contains('active'));
   });
 
   document.querySelectorAll('nav a').forEach(function (link) {
     link.addEventListener('click', function () {
       nav.classList.remove('active');
       menuBtn.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('nav-locked');
     });
   });
 
@@ -33,7 +33,7 @@ function initMenu() {
     if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
       nav.classList.remove('active');
       menuBtn.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('nav-locked');
     }
   });
 }
@@ -66,67 +66,106 @@ function initSmoothScroll() {
   });
 }
 
-// Formulário: validação e notificação (envio real via Formspree)
+// Formulario seguro: validacao no cliente e envio via funcao server-side
 function initForm() {
-  var form = document.querySelector('form[action*="formspree"]');
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    var name = form.querySelector('[name="name"]');
-    var email = form.querySelector('[name="email"]');
-    var message = form.querySelector('[name="message"]');
-    var company = form.querySelector('[name="company"]');
-    var honeypot = form.querySelector('[name="_gotcha"]');
-    var fields = [name, email, company, message].filter(Boolean);
-    var suspiciousPattern = /(<\s*script|<\/|javascript:|on\w+\s*=|data:text\/html|<\s*(iframe|object|embed|form))/i;
-    var maxLengthByName = { name: 80, email: 120, company: 120, message: 1200 };
-
-    if (honeypot && honeypot.value.trim()) {
+  document.querySelectorAll('form[data-secure-contact]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      return;
-    }
-
-    for (var i = 0; i < fields.length; i += 1) {
-      var field = fields[i];
-      field.value = field.value.trim();
-      var maxLength = maxLengthByName[field.name];
-      if (maxLength && field.value.length > maxLength) {
-        e.preventDefault();
-        showNotification('Campo muito longo.', 'error');
-        return;
-      }
-      if (suspiciousPattern.test(field.value)) {
-        e.preventDefault();
-        showNotification('Conteudo nao permitido no formulario.', 'error');
-        return;
-      }
-    }
-    if (name && !name.value.trim()) {
-      e.preventDefault();
-      showNotification('Preencha seu nome.', 'error');
-      return;
-    }
-    if (email && !email.value.trim()) {
-      e.preventDefault();
-      showNotification('Preencha seu e-mail.', 'error');
-      return;
-    }
-    if (message && !message.value.trim()) {
-      e.preventDefault();
-      showNotification('Preencha a mensagem.', 'error');
-      return;
-    }
-
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email && !emailRegex.test(email.value)) {
-      e.preventDefault();
-      showNotification('Use um e-mail válido.', 'error');
-      return;
-    }
-
-    showNotification('Enviando mensagem...', 'info');
-    // Formspree processa o envio; a página de sucesso do Formspree ou redirect exibirá confirmação
+      submitSecureContact(form);
+    });
   });
+}
+
+function submitSecureContact(form) {
+  var validation = validateContactForm(form);
+  if (!validation.ok) {
+    showNotification(validation.message, 'error');
+    return;
+  }
+
+  var submitButton = form.querySelector('button[type="submit"]');
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.classList.add('is-loading');
+    submitButton.setAttribute('aria-busy', 'true');
+  }
+
+  showNotification('Enviando mensagem com seguranca...', 'info');
+
+  fetch(form.getAttribute('action') || '/api/contact', {
+    method: 'POST',
+    headers: { Accept: 'application/json' },
+    body: new FormData(form),
+    credentials: 'same-origin'
+  })
+    .then(function (response) {
+      return response
+        .json()
+        .catch(function () {
+          return {};
+        })
+        .then(function (payload) {
+          if (!response.ok || payload.ok === false) {
+            throw new Error(payload.message || 'Nao foi possivel enviar agora. Tente novamente em alguns minutos.');
+          }
+          form.reset();
+          showNotification(payload.message || 'Mensagem enviada com seguranca.', 'success');
+        });
+    })
+    .catch(function (error) {
+      showNotification(error.message || 'Falha temporaria no envio seguro.', 'error');
+    })
+    .finally(function () {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.classList.remove('is-loading');
+        submitButton.removeAttribute('aria-busy');
+      }
+    });
+}
+
+function validateContactForm(form) {
+  var name = form.querySelector('[name="name"]');
+  var email = form.querySelector('[name="email"]');
+  var message = form.querySelector('[name="message"]');
+  var company = form.querySelector('[name="company"]');
+  var honeypot = form.querySelector('[name="_gotcha"]');
+  var fields = [name, email, company, message].filter(Boolean);
+  var suspiciousPattern = /(<\s*script|<\/|javascript:|on\w+\s*=|data:text\/html|<\s*(iframe|object|embed|form|svg|math))/i;
+  var maxLengthByName = { name: 80, email: 120, company: 120, message: 1200 };
+
+  if (honeypot && honeypot.value.trim()) {
+    return { ok: false, message: 'Envio bloqueado por protecao antispam.' };
+  }
+
+  for (var i = 0; i < fields.length; i += 1) {
+    var field = fields[i];
+    field.value = field.value.trim();
+    var maxLength = maxLengthByName[field.name];
+    if (maxLength && field.value.length > maxLength) {
+      return { ok: false, message: 'Campo muito longo.' };
+    }
+    if (suspiciousPattern.test(field.value)) {
+      return { ok: false, message: 'Conteudo nao permitido no formulario.' };
+    }
+  }
+
+  if (name && !name.value.trim()) {
+    return { ok: false, message: 'Preencha seu nome.' };
+  }
+  if (email && !email.value.trim()) {
+    return { ok: false, message: 'Preencha seu e-mail.' };
+  }
+  if (message && !message.value.trim()) {
+    return { ok: false, message: 'Preencha a mensagem.' };
+  }
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email && !emailRegex.test(email.value)) {
+    return { ok: false, message: 'Use um e-mail valido.' };
+  }
+
+  return { ok: true };
 }
 
 function showNotification(message, type) {
@@ -136,26 +175,19 @@ function showNotification(message, type) {
 
   var el = document.createElement('div');
   el.className = 'notification-toast notification-' + type;
+  el.setAttribute('role', type === 'error' ? 'alert' : 'status');
+  el.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
   el.textContent = message;
-  el.style.cssText =
-    'position:fixed;top:20px;right:20px;padding:1rem 1.5rem;border-radius:8px;color:#fff;font-weight:500;z-index:10000;' +
-    'max-width:320px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform 0.3s ease;';
-
-  var colors = {
-    success: '#00c0a3',
-    error: '#e74c3c',
-    info: '#1a1f33'
-  };
-  el.style.backgroundColor = colors[type] || colors.info;
 
   document.body.appendChild(el);
 
   requestAnimationFrame(function () {
-    el.style.transform = 'translateX(0)';
+    el.classList.add('is-visible');
   });
 
   setTimeout(function () {
-    el.style.transform = 'translateX(120%)';
+    el.classList.remove('is-visible');
+    el.classList.add('is-hiding');
     setTimeout(function () {
       if (el.parentNode) el.parentNode.removeChild(el);
     }, 300);
