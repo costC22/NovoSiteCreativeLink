@@ -3249,3 +3249,8 @@ footer .logo,
     padding: 1rem;
   }
 }
+
+/* Header solutions link: keep legacy flyout markup hidden if cached HTML appears. */
+header .has-dropdown .dropdown {
+  display: none !important;
+}

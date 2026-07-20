@@ -38,21 +38,9 @@ function initMenu() {
   });
 }
 
-// Dropdowns (mobile: clique para abrir)
+// Legacy dropdown disabled: Soluções now opens its own page.
 function initDropdowns() {
-  var hasDropdown = document.querySelectorAll('.has-dropdown');
-
-  hasDropdown.forEach(function (item) {
-    var link = item.querySelector('a');
-    if (!link) return;
-
-    link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        item.classList.toggle('active');
-      }
-    });
-  });
+  return;
 }
 
 // Scroll suave para âncoras
