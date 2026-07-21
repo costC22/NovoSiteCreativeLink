@@ -11,31 +11,79 @@ document.addEventListener('DOMContentLoaded', function () {
 // Menu mobile
 function initMenu() {
   var menuBtn = document.querySelector('.menu-button');
-  var nav = document.querySelector('nav');
+  var nav = document.querySelector('header nav');
 
   if (!menuBtn || !nav) return;
 
-  menuBtn.addEventListener('click', function () {
-    nav.classList.toggle('active');
-    menuBtn.classList.toggle('active');
-    document.body.classList.toggle('nav-locked', nav.classList.contains('active'));
+  var icon = menuBtn.querySelector('i');
+  var mobileQuery = window.matchMedia('(max-width: 768px)');
+
+  nav.id = nav.id || 'primary-navigation';
+  nav.setAttribute('aria-label', 'Navegação principal');
+  menuBtn.setAttribute('aria-controls', nav.id);
+
+  function setMenuState(isOpen, returnFocus) {
+    var open = Boolean(isOpen && mobileQuery.matches);
+    nav.classList.toggle('active', open);
+    menuBtn.classList.toggle('active', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    document.body.classList.toggle('nav-locked', open);
+
+    if (mobileQuery.matches) {
+      nav.setAttribute('aria-hidden', String(!open));
+    } else {
+      nav.removeAttribute('aria-hidden');
+    }
+
+    if (icon) {
+      icon.classList.toggle('fa-bars', !open);
+      icon.classList.toggle('fa-times', open);
+    }
+
+    if (!open && returnFocus) menuBtn.focus();
+  }
+
+  function syncMenuMode() {
+    setMenuState(false, false);
+  }
+
+  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  nav.querySelectorAll('a[href]').forEach(function (link) {
+    var linkPage = link.getAttribute('href').split('#')[0];
+    if (linkPage === currentPage) link.setAttribute('aria-current', 'page');
   });
 
-  document.querySelectorAll('nav a').forEach(function (link) {
+  setMenuState(false, false);
+
+  menuBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+    setMenuState(!nav.classList.contains('active'), false);
+  });
+
+  nav.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
-      nav.classList.remove('active');
-      menuBtn.classList.remove('active');
-      document.body.classList.remove('nav-locked');
+      setMenuState(false, false);
     });
   });
 
   document.addEventListener('click', function (e) {
     if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
-      nav.classList.remove('active');
-      menuBtn.classList.remove('active');
-      document.body.classList.remove('nav-locked');
+      setMenuState(false, false);
     }
   });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && nav.classList.contains('active')) {
+      setMenuState(false, true);
+    }
+  });
+
+  if (typeof mobileQuery.addEventListener === 'function') {
+    mobileQuery.addEventListener('change', syncMenuMode);
+  } else {
+    mobileQuery.addListener(syncMenuMode);
+  }
 }
 
 // Legacy dropdown disabled: Soluções now opens its own page.
