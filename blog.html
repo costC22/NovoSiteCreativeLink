@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'none'; script-src 'self' 'sha256-x5CHpjrdpUBkaDUb1DkrOwZyQTSs7WECzJNvg8ptpVc='; script-src-attr 'none'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; media-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default" />
+    <meta name="description" content="Artigos pr&aacute;ticos sobre sites profissionais, automa&ccedil;&otilde;es, integra&ccedil;&otilde;es, APIs e seguran&ccedil;a para empresas." />
+    <title>Blog ByteStorm Tech | ByteStorm Tech</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'none'; script-src 'self' 'sha256-x5CHpjrdpUBkaDUb1DkrOwZyQTSs7WECzJNvg8ptpVc='; script-src-attr 'none'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; media-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default">
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Blog | ByteStorm Tech - Automação e Scripts</title>
-    <meta name="description" content="Blog ByteStorm Tech. Dicas sobre automação de sistemas, scripts Python, integrações e boas práticas." />
-    <meta name="keywords" content="blog desenvolvimento de sites, dicas site, SEO, ByteStorm Tech" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://bytestormtech.com.br/blog.html" />
-    <meta property="og:title" content="Blog | ByteStorm Tech" />
-    <meta property="og:description" content="Dicas e conteúdos sobre desenvolvimento de sites e suporte." />
+    <meta property="og:title" content="Blog ByteStorm Tech | ByteStorm Tech" />
+    <meta property="og:description" content="Artigos pr&aacute;ticos sobre sites profissionais, automa&ccedil;&otilde;es, integra&ccedil;&otilde;es, APIs e seguran&ccedil;a para empresas." />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bytestormtech.com.br/blog.html" />
+    <meta property="og:image" content="https://bytestormtech.com.br/logo-bytestorm-tech.png" />
+    <meta name="theme-color" content="#0b1220" />
     <link rel="icon" type="image/png" href="favicon-bytestorm.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="tech-bg" aria-hidden="true"><div class="tech-grid"></div></div>
@@ -53,41 +57,108 @@
 
     <section class="page-hero page-hero-tech">
       <div class="container">
-        <nav class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span>Blog</span>
-        </nav>
-        <span class="tech-badge"><i class="fas fa-file-code"></i> Insights</span>
-        <h1>Blog</h1>
-        <p>Dicas e conteúdos sobre automação de sistemas, scripts e integrações para sua empresa.</p>
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blog</span></div>
+        <span class="section-tag"><i class="fas fa-newspaper"></i> Conte&uacute;do t&eacute;cnico</span>
+        <h1>Blog ByteStorm</h1>
+        <p>Estrat&eacute;gias pr&aacute;ticas sobre sites profissionais, automa&ccedil;&otilde;es, integra&ccedil;&otilde;es e seguran&ccedil;a para empresas que querem operar melhor.</p>
       </div>
     </section>
 
-    <section class="services">
+    <main class="content-offset blog-hub">
       <div class="container">
-        <h2>Em breve</h2>
-        <p class="section-sub">Artigos sobre automação, scripts e integrações. Enquanto isso, confira nossas <a href="ferramentas.html" class="link-accent">Ferramentas</a> e <a href="solucoes.html" class="link-accent">Soluções</a>.</p>
-        <div class="service-grid content-offset">
-          <div class="service-item tech-card">
-            <i class="fas fa-robot service-icon"></i>
-            <h3>Por que automatizar processos?</h3>
-            <p>Em breve: como scripts eliminam erros humanos e liberam sua equipe para tarefas estratégicas.</p>
+        <section class="blog-featured" aria-labelledby="blog-destaque">
+          <div class="blog-featured-copy">
+            <span class="blog-eyebrow">Artigo em destaque</span>
+            <h2 id="blog-destaque">Seguran&ccedil;a em sites empresariais: camadas pr&aacute;ticas contra ataques comuns</h2>
+            <p>Um guia direto para reduzir exposi&ccedil;&atilde;o a XSS, abuso de formul&aacute;rios, inje&ccedil;&atilde;o, automa&ccedil;&otilde;es maliciosas e tr&aacute;fego suspeito sem prometer solu&ccedil;&otilde;es milagrosas.</p>
+            <div class="blog-meta" aria-label="Detalhes do artigo">
+              <span class="blog-chip"><i class="fas fa-shield-halved"></i> Seguran&ccedil;a</span>
+              <span class="blog-chip"><i class="fas fa-clock"></i> 8 min</span>
+              <span class="blog-chip"><i class="fas fa-calendar-check"></i> 21 jul 2026</span>
+            </div>
+            <a class="btn-primary blog-featured-link" href="blog-seguranca-sites.html"><i class="fas fa-arrow-right"></i> Ler artigo</a>
           </div>
-          <div class="service-item tech-card">
-            <i class="fas fa-plug service-icon"></i>
-            <h3>Integração de APIs na prática</h3>
-            <p>Em breve: conectando CRM, ERP e planilhas com REST e webhooks.</p>
+          <div class="blog-featured-panel" aria-hidden="true">
+            <div class="signal-line"><span>headers</span><strong>strict</strong></div>
+            <div class="signal-line"><span>forms</span><strong>server-side</strong></div>
+            <div class="signal-line"><span>rate-limit</span><strong>edge</strong></div>
+            <div class="signal-line"><span>logs</span><strong>clean</strong></div>
           </div>
-          <div class="service-item tech-card">
-            <i class="fab fa-python service-icon"></i>
-            <h3>Python para automação empresarial</h3>
-            <p>Em breve: quando usar Python e quais bibliotecas aceleram seus projetos.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
+        <section class="blog-categories" aria-labelledby="categorias-blog">
+          <div>
+            <span class="blog-eyebrow">Navegue por tema</span>
+            <h2 id="categorias-blog">Conte&uacute;dos para decis&atilde;o e execu&ccedil;&atilde;o</h2>
+          </div>
+          <div class="blog-category-list" aria-label="Categorias do blog">
+            <span><i class="fas fa-globe"></i> Sites</span>
+            <span><i class="fas fa-robot"></i> Automa&ccedil;&atilde;o</span>
+            <span><i class="fas fa-plug"></i> Integra&ccedil;&otilde;es</span>
+            <span><i class="fas fa-lock"></i> Seguran&ccedil;a</span>
+            <span><i class="fas fa-chart-line"></i> Opera&ccedil;&atilde;o</span>
+          </div>
+        </section>
+
+        <section class="blog-grid-section" aria-labelledby="ultimos-artigos">
+          <div class="section-header compact">
+            <span class="section-tag"><i class="fas fa-layer-group"></i> Publica&ccedil;&otilde;es</span>
+            <h2 id="ultimos-artigos">Artigos recentes</h2>
+          </div>
+
+          <div class="blog-grid">
+            <article class="blog-card">
+              <div class="blog-card-top">
+                <span class="blog-chip"><i class="fas fa-globe"></i> Sites</span>
+                <span>7 min</span>
+              </div>
+              <h3>Site profissional: o que uma empresa precisa antes de publicar</h3>
+              <p>Entenda a estrutura m&iacute;nima para transformar o site em canal de confian&ccedil;a, capta&ccedil;&atilde;o e atendimento.</p>
+              <a class="blog-card-link" href="blog-site-profissional.html">Abrir artigo <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card-top">
+                <span class="blog-chip"><i class="fas fa-robot"></i> Automa&ccedil;&atilde;o</span>
+                <span>6 min</span>
+              </div>
+              <h3>Automa&ccedil;&atilde;o de processos: por onde come&ccedil;ar sem bagun&ccedil;ar a opera&ccedil;&atilde;o</h3>
+              <p>Um roteiro simples para escolher tarefas repetitivas, mapear regras e criar scripts monitorados com seguran&ccedil;a.</p>
+              <a class="blog-card-link" href="blog-automacao-processos.html">Abrir artigo <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card-top">
+                <span class="blog-chip"><i class="fas fa-plug"></i> Integra&ccedil;&otilde;es</span>
+                <span>7 min</span>
+              </div>
+              <h3>Integra&ccedil;&otilde;es de API: conectando CRM, ERP, planilhas e atendimento</h3>
+              <p>Veja como sincronizar sistemas sem expor tokens no front-end e sem depender de opera&ccedil;&otilde;es manuais.</p>
+              <a class="blog-card-link" href="blog-integracao-apis.html">Abrir artigo <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card-top">
+                <span class="blog-chip"><i class="fas fa-shield-halved"></i> Seguran&ccedil;a</span>
+                <span>8 min</span>
+              </div>
+              <h3>Seguran&ccedil;a em sites empresariais: camadas pr&aacute;ticas contra ataques comuns</h3>
+              <p>Medidas realistas para reduzir risco em formul&aacute;rios, scripts, cabe&ccedil;alhos, depend&ecirc;ncias e tr&aacute;fego suspeito.</p>
+              <a class="blog-card-link" href="blog-seguranca-sites.html">Abrir artigo <i class="fas fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="blog-cta-band" aria-labelledby="blog-cta">
+          <div>
+            <span class="blog-eyebrow">Pr&oacute;ximo passo</span>
+            <h2 id="blog-cta">Quer aplicar isso no seu site ou sistema?</h2>
+            <p>A ByteStorm Tech desenvolve sites, automa&ccedil;&otilde;es e integra&ccedil;&otilde;es com foco em performance, seguran&ccedil;a e opera&ccedil;&atilde;o real.</p>
+          </div>
+          <a class="btn-primary" href="atendimento.html"><i class="fas fa-paper-plane"></i> Falar com a ByteStorm</a>
+        </section>
+      </div>
+    </main>
     <footer>
       <div class="container">
         <div class="footer-content">

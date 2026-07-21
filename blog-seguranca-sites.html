@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Medidas pr&aacute;ticas contra XSS, abuso de formul&aacute;rios, inje&ccedil;&atilde;o, bots, DDoS volum&eacute;trico e exposi&ccedil;&atilde;o de dados no front-end." />
+    <title>Seguran&ccedil;a em sites empresariais: camadas pr&aacute;ticas contra ataques comuns | ByteStorm Tech</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'none'; script-src 'self' 'sha256-x5CHpjrdpUBkaDUb1DkrOwZyQTSs7WECzJNvg8ptpVc='; script-src-attr 'none'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; media-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default">
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bytestormtech.com.br/blog-seguranca-sites.html" />
+    <meta property="og:title" content="Seguran&ccedil;a em sites empresariais: camadas pr&aacute;ticas contra ataques comuns | ByteStorm Tech" />
+    <meta property="og:description" content="Medidas pr&aacute;ticas contra XSS, abuso de formul&aacute;rios, inje&ccedil;&atilde;o, bots, DDoS volum&eacute;trico e exposi&ccedil;&atilde;o de dados no front-end." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://bytestormtech.com.br/blog-seguranca-sites.html" />
+    <meta property="og:image" content="https://bytestormtech.com.br/logo-bytestorm-tech.png" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="icon" type="image/png" href="favicon-bytestorm.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="tech-bg" aria-hidden="true"><div class="tech-grid"></div></div>
+    <div class="top-bar">
+      <div class="container">
+        <span class="status-live">Sites, automações e integrações</span>
+        <div class="top-links">
+          <a href="blog.html">Blog</a>
+          <a href="atendimento.html">Atendimento</a>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo-container">
+          <img src="logo-bytestorm-tech.png" alt="ByteStorm Tech" class="logo-img" />
+        </a>
+        <button class="menu-button" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solucoes.html">Soluções</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="atendimento.html">Atendimento</a></li>
+            <li><a href="cliente.html">Já sou cliente</a></li>
+            <li class="nav-cta"><a href="atendimento.html" class="btn-uptime">Orçamento</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <a href="atendimento.html" class="float-sidebar" aria-label="Atendimento"><i class="fas fa-terminal"></i><span>Atendimento</span></a>
+
+    <section class="page-hero page-hero-tech article-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Blog</a><span>/</span><span>Seguran&ccedil;a</span></div>
+        <span class="section-tag"><i class="fas fa-shield-halved"></i> Seguran&ccedil;a</span>
+        <h1>Seguran&ccedil;a em sites empresariais: camadas pr&aacute;ticas contra ataques comuns</h1>
+        <p>Medidas pr&aacute;ticas contra XSS, abuso de formul&aacute;rios, inje&ccedil;&atilde;o, bots, DDoS volum&eacute;trico e exposi&ccedil;&atilde;o de dados no front-end.</p>
+        <div class="blog-meta" aria-label="Detalhes do artigo">
+          <span class="blog-chip"><i class="fas fa-shield-halved"></i> Seguran&ccedil;a</span>
+          <span class="blog-chip"><i class="fas fa-clock"></i> 8 min</span>
+          <span class="blog-chip"><i class="fas fa-calendar-check"></i> 21 jul 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <main class="content-offset article-shell">
+      <div class="container">
+        <div class="article-layout">
+          <article class="article-content">
+            <p class="article-lead">Seguran&ccedil;a real &eacute; feita em camadas. Um site est&aacute;tico pode ser endurecido com boas pol&iacute;ticas no navegador, mas formul&aacute;rios, integra&ccedil;&otilde;es e dados sens&iacute;veis precisam passar por uma camada de servidor.</p>
+          <h2>O front-end ajuda, mas n&atilde;o guarda segredos</h2>
+          <p>Todo c&oacute;digo enviado ao navegador pode ser lido por quem acessa o site. Por isso, tokens, senhas, chaves privadas, endpoints administrativos e regras sens&iacute;veis n&atilde;o devem ficar no front-end. Eles precisam morar em vari&aacute;veis de ambiente e fun&ccedil;&otilde;es server-side.</p>
+          <p>No navegador, o foco &eacute; reduzir superf&iacute;cie de ataque: Content Security Policy, bloqueio de scripts inline, restri&ccedil;&atilde;o de frames, formul&aacute;rios apontando para a pr&oacute;pria origem e carregamento controlado de fontes, imagens e conex&otilde;es.</p>
+          <h2>Formul&aacute;rios e inje&ccedil;&atilde;o</h2>
+          <p>Todo dado recebido deve ser tratado como n&atilde;o confi&aacute;vel. A camada de backend precisa validar campos, limitar tamanho, filtrar formato esperado e recusar m&eacute;todos indevidos. Quando houver banco de dados, consultas devem ser parametrizadas; montar SQL por concatena&ccedil;&atilde;o de texto abre porta para SQL injection.</p>
+          <p>Tamb&eacute;m vale reduzir informa&ccedil;&atilde;o em mensagens de erro. O visitante n&atilde;o precisa saber detalhes internos de stack, nomes de tabelas, tokens, caminhos ou configura&ccedil;&otilde;es.</p>
+          <h2>DDoS, bots e tr&aacute;fego suspeito</h2>
+          <p>Nenhum arquivo HTML sozinho segura um ataque volum&eacute;trico grande. Prote&ccedil;&atilde;o contra DDoS depende de borda: CDN, WAF, cache, rate limit por IP, bloqueio por padr&atilde;o de rota e regras de desafio quando o volume foge do normal.</p>
+          <p>Para sites empresariais, a combina&ccedil;&atilde;o mais realista &eacute; publicar atr&aacute;s de uma plataforma com prote&ccedil;&atilde;o de borda, limitar endpoints din&acirc;micos, registrar tentativas rejeitadas e acompanhar m&eacute;tricas de erro, origem e volume.</p>
+          <h2>M&eacute;tricas de seguran&ccedil;a</h2>
+          <p>M&eacute;trica n&atilde;o &eacute; enfeite. Ela ajuda a saber se o site continua protegido ap&oacute;s altera&ccedil;&otilde;es. Um painel simples pode acompanhar presen&ccedil;a de headers, pontua&ccedil;&atilde;o de auditoria, rotas sens&iacute;veis, depend&ecirc;ncias externas, CSP reports e status dos endpoints.</p>
+          <p>O ideal &eacute; revisar essas informa&ccedil;&otilde;es a cada publica&ccedil;&atilde;o. Seguran&ccedil;a n&atilde;o termina no deploy; ela acompanha o ciclo de mudan&ccedil;a do site.</p>
+            <h2>Camadas recomendadas</h2>
+            <ul class="article-checklist">
+            <li><i class="fas fa-check"></i><span>CSP forte e sem scripts inline desnecess&aacute;rios</span></li>
+            <li><i class="fas fa-check"></i><span>Headers de seguran&ccedil;a aplicados no deploy</span></li>
+            <li><i class="fas fa-check"></i><span>Formul&aacute;rios enviados para endpoint server-side</span></li>
+            <li><i class="fas fa-check"></i><span>Tokens fora do front-end e fora do Git</span></li>
+            <li><i class="fas fa-check"></i><span>Rate limit e WAF na borda</span></li>
+            <li><i class="fas fa-check"></i><span>Queries parametrizadas quando houver banco</span></li>
+            </ul>
+            <section class="article-cta" aria-labelledby="cta-blog-seguranca-sites">
+              <h2 id="cta-blog-seguranca-sites">Quer transformar esse plano em projeto?</h2>
+              <p>A ByteStorm Tech cria sites, automa&ccedil;&otilde;es e integra&ccedil;&otilde;es com arquitetura enxuta, visual profissional e camadas de seguran&ccedil;a desde o in&iacute;cio.</p>
+              <a class="btn-primary" href="atendimento.html"><i class="fas fa-paper-plane"></i> Solicitar diagn&oacute;stico</a>
+            </section>
+          </article>
+
+          <aside class="article-sidebar" aria-label="Resumo do artigo">
+            <div class="article-summary">
+              <h3>Resumo pr&aacute;tico</h3>
+              <ul>
+              <li>CSP e headers reduzem abuso no navegador</li>
+              <li>Formul&aacute;rios devem validar no servidor</li>
+              <li>DDoS exige CDN, WAF e rate limit</li>
+              <li>SQL injection se previne com queries parametrizadas</li>
+              </ul>
+            </div>
+            <div class="article-next">
+              <h3>Continue lendo</h3>
+              <a href="blog.html"><i class="fas fa-arrow-left"></i> Voltar para o blog</a>
+              <a href="atendimento.html"><i class="fas fa-comments"></i> Falar com a ByteStorm</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="logo-bytestorm-tech.png" alt="ByteStorm Tech" class="logo" />
+            <p>Sites, automações e sistemas sob medida para sua empresa</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Navegação</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="atendimento.html">Atendimento</a></li>
+                <li><a href="blog.html">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Contato</h4>
+              <ul>
+                <li><i class="fas fa-envelope"></i> contato@bytestormtech.com.br</li>
+                <li><i class="fas fa-map-marker-alt"></i> Osasco, SP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 ByteStorm Tech. Todos os direitos reservados.</p></div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
