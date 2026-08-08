@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initMenu();
   initDropdowns();
   initSmoothScroll();
+  initPlanSelection();
   initForm();
   initScrollEffects();
   initCounters();
@@ -112,6 +113,25 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+// Preseleciona somente planos conhecidos ao abrir a pagina de atendimento.
+function initPlanSelection() {
+  var select = document.querySelector('select[name="service"]');
+  if (!select) return;
+
+  var plans = {
+    starter: 'site-starter',
+    business: 'site-business',
+    premium: 'site-premium',
+    enterprise: 'site-enterprise'
+  };
+  var requestedPlan = new URLSearchParams(window.location.search).get('plan');
+  var serviceValue = plans[requestedPlan];
+
+  if (serviceValue && select.querySelector('option[value="' + serviceValue + '"]')) {
+    select.value = serviceValue;
+  }
 }
 
 // Formulario seguro: validacao no cliente e envio via funcao server-side

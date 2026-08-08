@@ -5,6 +5,10 @@ const MAX_FIELDS = 9;
 const ALLOWED_SERVICES = new Set([
   '',
   'site',
+  'site-starter',
+  'site-business',
+  'site-premium',
+  'site-enterprise',
   'landing-page',
   'manutencao-site',
   'automacao',

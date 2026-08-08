@@ -4794,3 +4794,280 @@ body.nav-locked {
     width: 200px;
   }
 }
+
+/* Site plans and launch pricing */
+.pricing-section {
+  padding: 5rem 0;
+  border-top: 1px solid rgba(34, 211, 238, 0.16);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(120deg, rgba(0, 240, 200, 0.055), transparent 36%),
+    linear-gradient(240deg, rgba(51, 153, 255, 0.055), transparent 34%),
+    #070c15;
+}
+
+.pricing-heading {
+  max-width: 780px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pricing-plan {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid rgba(125, 153, 184, 0.22);
+  border-radius: 8px;
+  background: rgba(11, 20, 34, 0.92);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.pricing-plan.is-featured {
+  border-color: rgba(0, 240, 200, 0.58);
+  background:
+    linear-gradient(145deg, rgba(0, 240, 200, 0.085), transparent 48%),
+    rgba(10, 23, 36, 0.96);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+.pricing-plan-enterprise {
+  border-color: rgba(255, 86, 102, 0.3);
+}
+
+.plan-badge {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(0, 240, 200, 0.36);
+  border-radius: 5px;
+  background: rgba(0, 240, 200, 0.1);
+  color: #70f7df;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.plan-header {
+  min-height: 126px;
+  padding-right: 0.5rem;
+}
+
+.pricing-plan.is-featured .plan-header {
+  padding-right: 8.6rem;
+}
+
+.plan-code {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #62d9ff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.plan-header h3 {
+  margin: 0 0 0.55rem;
+  color: var(--text);
+  font-size: 1.42rem;
+}
+
+.plan-header p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.plan-price {
+  display: grid;
+  min-height: 126px;
+  align-content: center;
+  margin: 1.25rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.plan-price > span,
+.plan-price > small {
+  color: #91a7bd;
+  font-size: 0.8rem;
+}
+
+.plan-price strong {
+  display: block;
+  margin: 0.18rem 0;
+  color: #f6fbff;
+  font-size: 2.35rem;
+  line-height: 1.08;
+}
+
+.plan-price sup {
+  position: relative;
+  top: -0.45rem;
+  color: var(--teal);
+  font-size: 0.95rem;
+}
+
+.plan-price-consult strong {
+  color: #ff9aa5;
+  font-size: 2rem;
+}
+
+.plan-features {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-features li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: start;
+  color: #c7d5e4;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.plan-features i {
+  margin-top: 0.22rem;
+  color: var(--teal);
+  font-size: 0.74rem;
+}
+
+.pricing-plan .cta-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pricing-note {
+  display: flex;
+  max-width: 920px;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 1.5rem auto 0;
+  color: #96a9bd;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.pricing-note i {
+  margin-top: 0.22rem;
+  color: #62d9ff;
+}
+
+.site-price-entry {
+  display: grid;
+  gap: 0.25rem;
+  margin: 1.35rem 0;
+  padding: 0.85rem 0 0.85rem 1rem;
+  border-left: 3px solid var(--teal);
+}
+
+.site-price-entry > span {
+  color: #62d9ff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.site-price-entry strong {
+  color: #f6fbff;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.site-price-entry strong small {
+  color: #a9bacb;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.site-price-entry p {
+  max-width: 590px;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.site-build-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-build-actions .cta-button {
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-header {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 3.5rem 0;
+  }
+
+  .pricing-plan {
+    padding: 1.2rem;
+  }
+
+  .pricing-plan.is-featured .plan-header {
+    padding-right: 0;
+    padding-top: 2.35rem;
+  }
+
+  .plan-badge {
+    top: 1.15rem;
+    right: auto;
+    left: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-price strong {
+    font-size: 2rem;
+  }
+
+  .plan-price-consult strong {
+    font-size: 1.7rem;
+  }
+
+  .pricing-note {
+    text-align: left;
+  }
+
+  .site-build-actions {
+    flex-direction: column;
+  }
+
+  .site-build-actions .cta-button {
+    width: 100%;
+  }
+}
