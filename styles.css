@@ -4615,6 +4615,173 @@ body.nav-locked {
   }
 }
 
+/* TabFlow product */
+.tabflow-product-section {
+  --tabflow-cyan: #4be4ff;
+  --tabflow-blue: #5d73ff;
+  --tabflow-magenta: #d65cff;
+  border-top-color: rgba(91, 118, 255, 0.28);
+  border-bottom: 1px solid rgba(214, 92, 255, 0.18);
+  background:
+    linear-gradient(112deg, rgba(57, 86, 221, 0.14), transparent 42%),
+    linear-gradient(252deg, rgba(189, 66, 229, 0.08), transparent 38%),
+    #080e19;
+}
+
+.tabflow-product-section::before {
+  right: 8%;
+  left: 8%;
+  background: linear-gradient(90deg, transparent, var(--tabflow-cyan), var(--tabflow-blue), var(--tabflow-magenta), transparent);
+}
+
+.tabflow-product-grid {
+  grid-template-areas: "visual copy";
+  grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.14fr);
+  gap: 4rem;
+}
+
+.tabflow-product-copy {
+  grid-area: copy;
+}
+
+.tabflow-status {
+  border-color: rgba(91, 118, 255, 0.5);
+  background: rgba(79, 102, 238, 0.12);
+  color: #bac4ff;
+}
+
+.tabflow-status i {
+  color: var(--tabflow-cyan);
+}
+
+.tabflow-product-facts i {
+  color: var(--tabflow-cyan);
+}
+
+.tabflow-privacy-copy {
+  max-width: 690px;
+  margin: 0 0 1.35rem;
+  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--tabflow-magenta);
+  background: rgba(124, 72, 198, 0.08);
+  color: #b9c8d8;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.tabflow-product-actions {
+  margin-bottom: 1rem;
+}
+
+.tabflow-product-actions .cta-button:first-child {
+  border-color: rgba(77, 219, 255, 0.42);
+  color: #dff9ff;
+}
+
+.tabflow-product-actions .cta-button:first-child:hover,
+.tabflow-product-actions .cta-button:first-child:focus-visible {
+  border-color: var(--tabflow-cyan);
+  background: rgba(75, 228, 255, 0.1);
+}
+
+.tabflow-product-note i {
+  color: var(--tabflow-magenta);
+}
+
+.tabflow-product-visual {
+  position: relative;
+  grid-area: visual;
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid rgba(93, 115, 255, 0.32);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(145deg, rgba(64, 101, 225, 0.15), rgba(9, 17, 31, 0.84) 52%, rgba(176, 61, 213, 0.09));
+  background-size: 44px 44px, 44px 44px, auto;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+.tabflow-product-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.46)) drop-shadow(0 0 24px rgba(85, 112, 255, 0.24));
+}
+
+.tabflow-route {
+  position: absolute;
+  z-index: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tabflow-cyan), var(--tabflow-blue), transparent);
+}
+
+.tabflow-route-one {
+  top: 32%;
+  right: 8%;
+  left: 8%;
+}
+
+.tabflow-route-two {
+  right: 15%;
+  bottom: 29%;
+  left: 15%;
+}
+
+.tabflow-local-label {
+  position: absolute;
+  z-index: 3;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(75, 228, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(5, 14, 27, 0.9);
+  color: #9ceeff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+  .tabflow-product-grid {
+    grid-template-areas:
+      "copy"
+      "visual";
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabflow-product-visual {
+    min-height: 270px;
+  }
+
+  .tabflow-product-image {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabflow-product-visual {
+    min-height: 230px;
+  }
+
+  .tabflow-product-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 /* Upcoming AI Detector product */
 .upcoming-product-section {
   position: relative;
