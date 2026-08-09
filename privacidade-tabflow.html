@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'none'; script-src 'self' 'sha256-x5CHpjrdpUBkaDUb1DkrOwZyQTSs7WECzJNvg8ptpVc='; script-src-attr 'none'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; media-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Política de Privacidade do TabFlow | ByteStorm Tech</title>
+    <meta name="description" content="Política de privacidade da extensão TabFlow. Saiba quais dados de abas e sessões são processados e como permanecem armazenados localmente no Chrome." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bytestormtech.com.br/privacidade-tabflow.html" />
+    <link rel="icon" type="image/png" href="tabflow.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="extension-privacy.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body class="extension-privacy-body">
+    <div class="tech-bg" aria-hidden="true"><div class="tech-grid"></div></div>
+
+    <div class="top-bar">
+      <div class="container">
+        <span class="status-live">Sites, automações e integrações</span>
+        <div class="top-links">
+          <a href="blog.html">Blog</a>
+          <a href="atendimento.html">Atendimento</a>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo-container">
+          <img src="logo-bytestorm-tech.png" alt="ByteStorm Tech" class="logo-img" />
+        </a>
+        <button class="menu-button" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solucoes.html">Soluções</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="atendimento.html">Atendimento</a></li>
+            <li><a href="cliente.html">Já sou cliente</a></li>
+            <li class="nav-cta"><a href="atendimento.html" class="btn-uptime">Orçamento</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-hero page-hero-tech professional-page-hero extension-privacy-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação estrutural">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="produtos.html">Produtos</a>
+          <span>/</span>
+          <span>Privacidade do TabFlow</span>
+        </nav>
+        <div class="extension-privacy-heading">
+          <img src="tabflow.png" alt="Ícone do TabFlow" width="128" height="128" />
+          <div>
+            <span class="tech-badge"><i class="fas fa-shield-halved"></i> privacidade por padrão</span>
+            <h1>Política de Privacidade do TabFlow</h1>
+            <p>Entenda quais informações de abas e sessões são processadas, por que são necessárias e quais controles permanecem com você.</p>
+          </div>
+        </div>
+        <p class="privacy-updated"><i class="fas fa-calendar-check"></i> Última atualização: 9 de agosto de 2026</p>
+      </div>
+    </section>
+
+    <main class="extension-privacy-page">
+      <section class="privacy-summary" aria-labelledby="privacy-summary-title">
+        <div class="container">
+          <div class="privacy-summary-heading">
+            <span class="section-tag">// resumo_de_privacidade</span>
+            <h2 id="privacy-summary-title">Seu contexto permanece no seu navegador.</h2>
+            <p>O núcleo do TabFlow funciona sem conta e sem backend. A extensão organiza abas e sessões localmente, sem telemetria remota da ByteStorm Tech.</p>
+          </div>
+          <div class="privacy-summary-grid">
+            <article class="privacy-summary-item">
+              <i class="fas fa-cloud-arrow-up" aria-hidden="true"></i>
+              <span>Envio à ByteStorm</span>
+              <strong>Nenhum</strong>
+              <p>URLs, títulos, sessões e preferências não são transmitidos aos nossos servidores.</p>
+            </article>
+            <article class="privacy-summary-item">
+              <i class="fas fa-user-lock" aria-hidden="true"></i>
+              <span>Conta TabFlow</span>
+              <strong>Não necessária</strong>
+              <p>Não há cadastro, login, perfil de usuário ou sincronização própria em nuvem.</p>
+            </article>
+            <article class="privacy-summary-item">
+              <i class="fas fa-hard-drive" aria-hidden="true"></i>
+              <span>Armazenamento</span>
+              <strong>Local no Chrome</strong>
+              <p>Sessões e configurações ficam em <code>chrome.storage.local</code>.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-document-section">
+        <div class="container privacy-document-layout">
+          <aside class="privacy-index" aria-label="Índice da política">
+            <span class="privacy-index-label">Nesta política</span>
+            <a href="#escopo">1. Escopo</a>
+            <a href="#dados">2. Dados processados</a>
+            <a href="#uso">3. Como usamos</a>
+            <a href="#armazenamento">4. Armazenamento</a>
+            <a href="#permissoes">5. Permissões</a>
+            <a href="#limites">6. Limites de acesso</a>
+            <a href="#compartilhamento">7. Compartilhamento</a>
+            <a href="#controles">8. Seus controles</a>
+            <a href="#acoes">9. Ações sensíveis</a>
+            <a href="#seguranca">10. Segurança</a>
+            <a href="#terceiros">11. Terceiros e mudanças</a>
+            <a href="#contato">12. Contato</a>
+          </aside>
+
+          <article class="privacy-document">
+            <div class="privacy-lead">
+              <p>
+                Esta Política de Privacidade se aplica à extensão TabFlow, desenvolvida e mantida pela ByteStorm Tech.
+                O TabFlow processa metadados de abas porque essas informações são necessárias para pesquisar, organizar,
+                salvar e restaurar os conjuntos escolhidos pelo usuário.
+              </p>
+            </div>
+
+            <section id="escopo" class="privacy-policy-section">
+              <span class="privacy-section-number">01</span>
+              <h2>Escopo desta política</h2>
+              <p>
+                O TabFlow organiza abas abertas, cria grupos nativos do Chrome e permite salvar sessões para retomá-las depois.
+                Esta política descreve o tratamento realizado pela extensão. Ela não cobre o conteúdo nem as práticas dos sites
+                visitados, do Google Chrome ou de outros serviços independentes.
+              </p>
+            </section>
+
+            <section id="dados" class="privacy-policy-section">
+              <span class="privacy-section-number">02</span>
+              <h2>Dados processados pela extensão</h2>
+              <p>Para oferecer as funções solicitadas, o TabFlow pode processar localmente:</p>
+              <ul class="privacy-list">
+                <li>Metadados das abas abertas, como título, URL, domínio, favicon, estado fixado, posição, janela e grupo.</li>
+                <li>O nome atribuído pelo usuário a cada sessão e as datas de criação e atualização.</li>
+                <li>As abas salvas na sessão, incluindo URL, título, favicon e estado fixado.</li>
+                <li>Preferências de visualização, restauração, detecção de duplicidades, confirmação e limite de abas por sessão.</li>
+              </ul>
+              <p>
+                URLs e títulos podem revelar informações sobre a navegação e devem ser tratados como dados do usuário.
+                O TabFlow não solicita nome, e-mail, telefone, endereço, dados financeiros ou credenciais de acesso.
+              </p>
+            </section>
+
+            <section id="uso" class="privacy-policy-section">
+              <span class="privacy-section-number">03</span>
+              <h2>Como as informações são usadas</h2>
+              <p>Os dados são utilizados exclusivamente no navegador para:</p>
+              <ul class="privacy-list">
+                <li>Listar e pesquisar abas por título, URL ou domínio.</li>
+                <li>Exibir a janela atual ou todas as janelas quando essa preferência for ativada.</li>
+                <li>Sugerir agrupamentos locais por domínio e palavras recorrentes do título.</li>
+                <li>Criar grupos nativos do Chrome após a confirmação do usuário.</li>
+                <li>Salvar, renomear, restaurar e excluir sessões.</li>
+                <li>Comparar URLs para indicar possíveis duplicidades.</li>
+              </ul>
+              <p>Essas informações não são usadas para publicidade, perfilamento, venda de dados ou treinamento de modelos de inteligência artificial.</p>
+            </section>
+
+            <section id="armazenamento" class="privacy-policy-section">
+              <span class="privacy-section-number">04</span>
+              <h2>Armazenamento local e retenção</h2>
+              <p>
+                Sessões e preferências são gravadas em <code>chrome.storage.local</code>, na área reservada à extensão no perfil do Chrome.
+                A versão atual não possui conta, backend próprio nem sincronização com servidores da ByteStorm Tech.
+              </p>
+              <p>
+                Os dados permanecem armazenados até que o usuário exclua uma sessão, altere ou limpe as configurações, remova os dados
+                da extensão ou desinstale o TabFlow, conforme os controles e o comportamento do navegador utilizado.
+              </p>
+            </section>
+
+            <section id="permissoes" class="privacy-policy-section">
+              <span class="privacy-section-number">05</span>
+              <h2>Permissões utilizadas</h2>
+              <p>O TabFlow solicita somente as permissões necessárias às funcionalidades atuais:</p>
+              <div class="privacy-permission-grid">
+                <div class="privacy-permission-item">
+                  <code>tabs</code>
+                  <p>Lê metadados das abas abertas, direciona o foco, restaura sessões e fecha apenas as abas escolhidas.</p>
+                </div>
+                <div class="privacy-permission-item">
+                  <code>storage</code>
+                  <p>Armazena localmente sessões e preferências e confirma a gravação antes da ação Salvar e fechar.</p>
+                </div>
+                <div class="privacy-permission-item privacy-permission-wide">
+                  <code>tabGroups</code>
+                  <p>Lê informações de grupos existentes e cria grupos nativos do Chrome após uma ação explícita do usuário.</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="limites" class="privacy-policy-section">
+              <span class="privacy-section-number">06</span>
+              <h2>O que o TabFlow não acessa</h2>
+              <div class="privacy-notice privacy-notice-neutral">
+                <i class="fas fa-shield" aria-hidden="true"></i>
+                <p>O manifesto da extensão não solicita permissões globais de sites e não injeta scripts nas páginas visitadas.</p>
+              </div>
+              <ul class="privacy-list">
+                <li>Não lê o conteúdo interno das páginas, textos de formulários ou campos de senha.</li>
+                <li>Não acessa cookies, dados financeiros, mensagens ou arquivos pessoais.</li>
+                <li>Não solicita as permissões <code>history</code>, <code>cookies</code>, <code>sessions</code> ou <code>scripting</code>.</li>
+                <li>Não monitora o histórico completo de navegação fora das abas abertas consultadas pelo usuário.</li>
+              </ul>
+            </section>
+
+            <section id="compartilhamento" class="privacy-policy-section">
+              <span class="privacy-section-number">07</span>
+              <h2>Compartilhamento, venda e telemetria</h2>
+              <p>
+                O TabFlow não vende, aluga, compartilha ou transfere os dados armazenados pela extensão. A versão atual não contém
+                publicidade, ferramentas de análise remota, rastreadores, autenticação própria ou código remoto. URLs, títulos,
+                sessões e preferências não são enviados à ByteStorm Tech.
+              </p>
+              <p>Não existem terceiros contratados pela ByteStorm Tech para processar os dados locais do TabFlow.</p>
+            </section>
+
+            <section id="controles" class="privacy-policy-section">
+              <span class="privacy-section-number">08</span>
+              <h2>Seus controles e exclusão</h2>
+              <p>O usuário mantém controle sobre as informações e pode:</p>
+              <ul class="privacy-list">
+                <li>Escolher quais abas serão salvas, agrupadas, restauradas ou fechadas.</li>
+                <li>Renomear e excluir sessões salvas.</li>
+                <li>Restaurar uma sessão inteira ou apenas as abas selecionadas.</li>
+                <li>Alterar o modo de restauração, a visualização de janelas e a comparação de duplicidades.</li>
+                <li>Remover todos os dados locais ao limpar os dados da extensão ou desinstalá-la.</li>
+              </ul>
+            </section>
+
+            <section id="acoes" class="privacy-policy-section">
+              <span class="privacy-section-number">09</span>
+              <h2>Ações sensíveis e confirmações</h2>
+              <p>
+                Sugestões são apenas recomendações locais. O TabFlow não reorganiza nem fecha abas silenciosamente. A criação de grupos,
+                a exclusão de sessões e o fechamento de duplicidades exigem ação explícita. A opção Salvar e fechar grava primeiro a sessão
+                local e somente depois solicita o fechamento das abas selecionadas.
+              </p>
+              <p>A confirmação antes de fechar está ativada por padrão e pode ser controlada nas configurações da extensão.</p>
+            </section>
+
+            <section id="seguranca" class="privacy-policy-section">
+              <span class="privacy-section-number">10</span>
+              <h2>Segurança e uso limitado</h2>
+              <p>
+                O TabFlow adota uma arquitetura local, permissões restritas às funções declaradas e código empacotado com a própria extensão.
+                Como os dados permanecem no perfil do navegador, a segurança do dispositivo, do sistema operacional e do perfil do Chrome
+                também é importante para impedir acesso não autorizado.
+              </p>
+              <div class="privacy-compliance">
+                <i class="fab fa-chrome" aria-hidden="true"></i>
+                <p>
+                  O uso de informações recebidas das APIs do Google está em conformidade com a Política de Dados do Usuário da Chrome Web Store,
+                  incluindo os requisitos de Uso Limitado.
+                </p>
+              </div>
+            </section>
+
+            <section id="terceiros" class="privacy-policy-section">
+              <span class="privacy-section-number">11</span>
+              <h2>Chrome, sites de terceiros e alterações</h2>
+              <p>
+                O TabFlow funciona sobre APIs fornecidas pelo Google Chrome. Favicons e outros metadados são disponibilizados pelo navegador;
+                a exibição de um favicon pode depender do cache ou do endereço de recurso do site de origem. O tratamento realizado pelo Chrome,
+                pelo sistema operacional ou pelos sites visitados segue as políticas próprias dessas partes e não é controlado pela ByteStorm Tech.
+              </p>
+              <p>
+                Esta política poderá ser atualizada para refletir mudanças no produto, nos requisitos da Chrome Web Store ou na legislação aplicável.
+                Se uma versão futura adicionar backend, sincronização, telemetria ou novas práticas de dados, a política e as divulgações da extensão
+                serão atualizadas antes da ativação dessas mudanças. A data da versão vigente permanecerá visível no início desta página.
+              </p>
+            </section>
+
+            <section id="contato" class="privacy-policy-section privacy-contact-section">
+              <span class="privacy-section-number">12</span>
+              <h2>Contato</h2>
+              <p>Para dúvidas, solicitações ou informações sobre o TabFlow e esta Política de Privacidade, fale com a equipe responsável:</p>
+              <div class="privacy-contact-list">
+                <a href="mailto:contato@bytestormtech.com.br"><i class="fas fa-envelope"></i> contato@bytestormtech.com.br</a>
+                <a href="tel:+5515981724862"><i class="fas fa-phone"></i> (15) 98172-4862</a>
+                <span><i class="fas fa-building"></i> ByteStorm Tech, Osasco, SP, Brasil</span>
+              </div>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section class="band band-tech">
+      <div class="container">
+        <p>Conheça os produtos e serviços desenvolvidos pela equipe. <a href="produtos.html" class="band-link">Ver Produtos</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="logo-bytestorm-tech.png" alt="ByteStorm Tech" class="logo" />
+            <p>Sites, automações e sistemas sob medida para sua empresa</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Navegação</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="ferramentas.html">Ferramentas</a></li>
+                <li><a href="atendimento.html">Atendimento</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Serviços</h4>
+              <ul>
+                <li><a href="desenvolvimento-sites.html">Desenvolvimento de Sites</a></li>
+                <li><a href="landing-pages.html">Landing Pages</a></li>
+                <li><a href="automacoes.html">Automação com Scripts</a></li>
+                <li><a href="integracoes.html">Integração de APIs</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Contato</h4>
+              <ul>
+                <li><i class="fas fa-envelope"></i> contato@bytestormtech.com.br</li>
+                <li><i class="fas fa-phone"></i> <a href="tel:+5515981724862">(15) 98172-4862</a></li>
+                <li><i class="fas fa-map-marker-alt"></i> Osasco, SP</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright"><p>&copy; 2026 ByteStorm Tech. Todos os direitos reservados.</p></div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
