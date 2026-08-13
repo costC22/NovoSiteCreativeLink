@@ -4615,11 +4615,11 @@ body.nav-locked {
   }
 }
 
-/* TabFlow product */
-.tabflow-product-section {
-  --tabflow-cyan: #4be4ff;
-  --tabflow-blue: #5d73ff;
-  --tabflow-magenta: #d65cff;
+/* AbaNexo product */
+.abanexo-product-section {
+  --abanexo-cyan: #4be4ff;
+  --abanexo-blue: #5d73ff;
+  --abanexo-magenta: #d65cff;
   border-top-color: rgba(91, 118, 255, 0.28);
   border-bottom: 1px solid rgba(214, 92, 255, 0.18);
   background:
@@ -4628,67 +4628,67 @@ body.nav-locked {
     #080e19;
 }
 
-.tabflow-product-section::before {
+.abanexo-product-section::before {
   right: 8%;
   left: 8%;
-  background: linear-gradient(90deg, transparent, var(--tabflow-cyan), var(--tabflow-blue), var(--tabflow-magenta), transparent);
+  background: linear-gradient(90deg, transparent, var(--abanexo-cyan), var(--abanexo-blue), var(--abanexo-magenta), transparent);
 }
 
-.tabflow-product-grid {
+.abanexo-product-grid {
   grid-template-areas: "visual copy";
   grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.14fr);
   gap: 4rem;
 }
 
-.tabflow-product-copy {
+.abanexo-product-copy {
   grid-area: copy;
 }
 
-.tabflow-status {
+.abanexo-status {
   border-color: rgba(91, 118, 255, 0.5);
   background: rgba(79, 102, 238, 0.12);
   color: #bac4ff;
 }
 
-.tabflow-status i {
-  color: var(--tabflow-cyan);
+.abanexo-status i {
+  color: var(--abanexo-cyan);
 }
 
-.tabflow-product-facts i {
-  color: var(--tabflow-cyan);
+.abanexo-product-facts i {
+  color: var(--abanexo-cyan);
 }
 
-.tabflow-privacy-copy {
+.abanexo-privacy-copy {
   max-width: 690px;
   margin: 0 0 1.35rem;
   padding: 0.9rem 1rem;
-  border-left: 2px solid var(--tabflow-magenta);
+  border-left: 2px solid var(--abanexo-magenta);
   background: rgba(124, 72, 198, 0.08);
   color: #b9c8d8;
   font-size: 0.9rem;
   line-height: 1.65;
 }
 
-.tabflow-product-actions {
+.abanexo-product-actions {
   margin-bottom: 1rem;
 }
 
-.tabflow-product-actions .cta-button:first-child {
+.abanexo-product-actions .cta-button:first-child {
   border-color: rgba(77, 219, 255, 0.42);
   color: #dff9ff;
 }
 
-.tabflow-product-actions .cta-button:first-child:hover,
-.tabflow-product-actions .cta-button:first-child:focus-visible {
-  border-color: var(--tabflow-cyan);
+.abanexo-product-actions .cta-button:first-child:hover,
+.abanexo-product-actions .cta-button:first-child:focus-visible {
+  border-color: var(--abanexo-cyan);
   background: rgba(75, 228, 255, 0.1);
 }
 
-.tabflow-product-note i {
-  color: var(--tabflow-magenta);
+.abanexo-product-note i {
+  color: var(--abanexo-magenta);
 }
 
-.tabflow-product-visual {
+.abanexo-product-visual {
   position: relative;
   grid-area: visual;
   min-height: 340px;
@@ -4703,7 +4703,7 @@ body.nav-locked {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 24px 60px rgba(0, 0, 0, 0.3);
 }
 
-.tabflow-product-image {
+.abanexo-product-image {
   position: relative;
   z-index: 2;
   display: block;
@@ -4713,26 +4713,26 @@ body.nav-locked {
   filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.46)) drop-shadow(0 0 24px rgba(85, 112, 255, 0.24));
 }
 
-.tabflow-route {
+.abanexo-route {
   position: absolute;
   z-index: 1;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--tabflow-cyan), var(--tabflow-blue), transparent);
+  background: linear-gradient(90deg, transparent, var(--abanexo-cyan), var(--abanexo-blue), transparent);
 }
 
-.tabflow-route-one {
+.abanexo-route-one {
   top: 32%;
   right: 8%;
   left: 8%;
 }
 
-.tabflow-route-two {
+.abanexo-route-two {
   right: 15%;
   bottom: 29%;
   left: 15%;
 }
 
-.tabflow-local-label {
+.abanexo-local-label {
   position: absolute;
   z-index: 3;
   right: 1.25rem;
@@ -4752,7 +4752,7 @@ body.nav-locked {
 }
 
 @media (max-width: 992px) {
-  .tabflow-product-grid {
+  .abanexo-product-grid {
     grid-template-areas:
       "copy"
       "visual";
@@ -4761,22 +4761,22 @@ body.nav-locked {
 }
 
 @media (max-width: 768px) {
-  .tabflow-product-visual {
+  .abanexo-product-visual {
     min-height: 270px;
   }
 
-  .tabflow-product-image {
+  .abanexo-product-image {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (max-width: 480px) {
-  .tabflow-product-visual {
+  .abanexo-product-visual {
     min-height: 230px;
   }
 
-  .tabflow-product-image {
+  .abanexo-product-image {
     width: 150px;
     height: 150px;
   }

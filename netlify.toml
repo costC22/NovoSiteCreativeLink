@@ -1,3 +1,9 @@
 [functions]
 directory = "netlify/functions"
 node_bundler = "esbuild"
+
+[[redirects]]
+from = "/privacidade-tabflow.html"
+to = "/privacidade-abanexo.html"
+status = 301
+force = true
