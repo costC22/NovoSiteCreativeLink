@@ -4645,13 +4645,13 @@ body.nav-locked {
 }
 
 .abanexo-status {
-  border-color: rgba(91, 118, 255, 0.5);
-  background: rgba(79, 102, 238, 0.12);
-  color: #bac4ff;
+  border-color: rgba(48, 224, 188, 0.52);
+  background: rgba(23, 180, 150, 0.13);
+  color: #aaf7e7;
 }
 
 .abanexo-status i {
-  color: var(--abanexo-cyan);
+  color: #3be0bd;
 }
 
 .abanexo-product-facts i {
@@ -4673,19 +4673,19 @@ body.nav-locked {
   margin-bottom: 1rem;
 }
 
-.abanexo-product-actions .cta-button:first-child {
+.abanexo-product-actions .cta-button.secondary {
   border-color: rgba(77, 219, 255, 0.42);
   color: #dff9ff;
 }
 
-.abanexo-product-actions .cta-button:first-child:hover,
-.abanexo-product-actions .cta-button:first-child:focus-visible {
+.abanexo-product-actions .cta-button.secondary:hover,
+.abanexo-product-actions .cta-button.secondary:focus-visible {
   border-color: var(--abanexo-cyan);
   background: rgba(75, 228, 255, 0.1);
 }
 
 .abanexo-product-note i {
-  color: var(--abanexo-magenta);
+  color: #3be0bd;
 }
 
 .abanexo-product-visual {
