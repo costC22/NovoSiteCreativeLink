@@ -2,7 +2,7 @@ const MAX_URL_LENGTH = 2048;
 const MAX_QUERY_LENGTH = 1200;
 const MAX_EDGE_CONTENT_LENGTH = 20_000;
 const ALLOWED_METHODS = new Set(['GET', 'HEAD', 'POST', 'OPTIONS']);
-const POST_ALLOWED_PATHS = new Set(['/api/contact', '/api/csp-report']);
+const POST_ALLOWED_PATHS = new Set(['/', '/api/contact', '/api/csp-report']);
 
 const BENIGN_QUERY_PARAM = /^(?:utm_[a-z0-9_]+|fbclid|gclid|gbraid|wbraid|igsh|igshid|mibextid|mc_cid|mc_eid|ref|source|fb_action_ids|fb_action_types)$/i;
 const SUSPICIOUS_USER_AGENT = /(?:sqlmap|nikto|nmap|masscan|acunetix|netsparker|nessus|openvas|wpscan|dirbuster|gobuster|zgrab|libwww-perl|python-requests|java\/|curl\/|wget\/)/i;

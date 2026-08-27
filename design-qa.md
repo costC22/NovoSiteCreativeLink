@@ -49,3 +49,12 @@ final result: passed
 - P1: none.
 - P2: none.
 - P3: none.
+
+## Alignment and contact regression
+
+- Solution directory: 7 cards validated at 415 px each on desktop, with no text or child overflow.
+- About section: two-column layout restored at 1280 px, with three readable value cards.
+- Client area: two balanced 468 px action cards and working support CTAs.
+- Contact CTAs: links open `atendimento.html#contact`; service-desk actions preselect the matching service.
+- Contact form: protected API remains primary; Netlify Forms stores the submission when the forwarding channel returns 502/503.
+- Focused Playwright QA: desktop and 390x844 mobile passed with no horizontal overflow; API and fallback requests both verified.

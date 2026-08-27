@@ -2165,3 +2165,240 @@ footer {
     padding: 0 14px;
   }
 }
+
+
+/* Alignment and contact flow corrections */
+.solution-directory-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.solution-card-link {
+  display: grid;
+  min-height: 280px;
+  grid-template-areas:
+    "icon tag"
+    "title title"
+    "description description"
+    "action action";
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  align-items: start;
+  align-content: stretch;
+  column-gap: 14px;
+  row-gap: 16px;
+  color: var(--stitch-text);
+}
+
+.solution-card-link > i {
+  grid-area: icon;
+  width: 44px;
+  height: 44px;
+}
+
+.solution-card-link > .section-tag {
+  grid-area: tag;
+  align-self: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.solution-card-link > h3 {
+  grid-area: title;
+  width: 100%;
+  margin: 0;
+  font-size: 22px;
+}
+
+.solution-card-link > p {
+  grid-area: description;
+  width: 100%;
+  margin: 0;
+  color: var(--stitch-muted);
+  line-height: 1.65;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.solution-card-link > strong {
+  display: inline-flex;
+  grid-area: action;
+  align-items: center;
+  gap: 8px;
+  color: var(--stitch-cyan);
+  font-size: 14px;
+}
+
+.about-content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  grid-template-columns: minmax(0, 0.8fr) minmax(620px, 1.2fr);
+  align-items: stretch;
+  gap: 48px;
+  text-align: left;
+}
+
+.about-content > p {
+  align-self: center;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.about-values {
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.value-item {
+  display: flex;
+  min-height: 230px;
+  padding: 26px 22px;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+
+.value-item i {
+  margin-bottom: 18px;
+}
+
+.value-item h4,
+.value-item p {
+  width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.value-item h4 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.value-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.client-actions-grid {
+  display: grid;
+  width: 100%;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.client-actions-grid .service-item {
+  display: flex;
+  min-height: 330px;
+  padding: 32px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.client-actions-grid .service-item > p:first-of-type {
+  flex: 1;
+}
+
+.client-actions-grid .client-email-action {
+  width: auto;
+  margin-top: auto;
+}
+
+.client-email-note {
+  margin-top: 28px;
+}
+
+.band-tech::before {
+  pointer-events: none;
+}
+
+.band .container,
+.band-tech .container {
+  position: relative;
+  z-index: 1;
+}
+
+.band-link {
+  display: inline-flex;
+  min-height: 42px;
+  margin-left: 8px;
+  padding: 8px 14px;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(0, 209, 255, 0.55);
+  border-radius: var(--stitch-radius);
+  background: rgba(0, 209, 255, 0.08);
+  color: var(--stitch-cyan);
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.band-link:hover,
+.band-link:focus-visible {
+  border-color: var(--stitch-cyan);
+  background: rgba(0, 209, 255, 0.16);
+  color: #fff;
+}
+
+.band-link i {
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.band-link:hover i {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1120px) {
+  .solution-directory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-content {
+    max-width: 960px;
+    margin-inline: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .about-content > p {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-directory-grid,
+  .client-actions-grid,
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-card-link,
+  .client-actions-grid .service-item,
+  .value-item {
+    min-height: 0;
+  }
+
+  .solution-card-link {
+    padding: 24px;
+  }
+
+  .client-actions-grid .service-item {
+    padding: 24px;
+  }
+
+  .band-link {
+    width: 100%;
+    margin: 14px 0 0;
+    justify-content: center;
+  }
+}

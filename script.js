@@ -126,8 +126,18 @@ function initPlanSelection() {
     premium: 'site-premium',
     enterprise: 'site-enterprise'
   };
-  var requestedPlan = new URLSearchParams(window.location.search).get('plan');
+  var params = new URLSearchParams(window.location.search);
+  var requestedPlan = params.get('plan');
+  var requestedService = params.get('service');
   var serviceValue = plans[requestedPlan];
+
+  if (
+    requestedService &&
+    /^[a-z0-9-]{1,40}$/.test(requestedService) &&
+    select.querySelector('option[value="' + requestedService + '"]')
+  ) {
+    serviceValue = requestedService;
+  }
 
   if (serviceValue && select.querySelector('option[value="' + serviceValue + '"]')) {
     select.value = serviceValue;
@@ -141,6 +151,30 @@ function initForm() {
       e.preventDefault();
       submitSecureContact(form);
     });
+  });
+}
+
+function submitNetlifyFormFallback(form) {
+  var payload = new URLSearchParams(new FormData(form));
+  payload.set('form-name', form.getAttribute('name') || 'bytestorm-contato');
+
+  return fetch(form.getAttribute('action') || '/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    body: payload.toString(),
+    credentials: 'same-origin'
+  }).then(function (response) {
+    if (!response.ok) {
+      throw new Error('Nao foi possivel registrar sua mensagem agora. Tente novamente em alguns minutos.');
+    }
+
+    return {
+      ok: true,
+      message: 'Mensagem recebida. Nossa equipe retornara em ate 24 horas uteis.'
+    };
   });
 }
 
@@ -160,7 +194,7 @@ function submitSecureContact(form) {
 
   showNotification('Enviando mensagem com seguranca...', 'info');
 
-  fetch(form.getAttribute('action') || '/api/contact', {
+  fetch(form.getAttribute('data-api-action') || '/api/contact', {
     method: 'POST',
     headers: { Accept: 'application/json' },
     body: new FormData(form),
@@ -173,12 +207,18 @@ function submitSecureContact(form) {
           return {};
         })
         .then(function (payload) {
+          if (response.status === 502 || response.status === 503) {
+            return submitNetlifyFormFallback(form);
+          }
           if (!response.ok || payload.ok === false) {
             throw new Error(payload.message || 'Nao foi possivel enviar agora. Tente novamente em alguns minutos.');
           }
-          form.reset();
-          showNotification(payload.message || 'Mensagem enviada com seguranca.', 'success');
+          return payload;
         });
+    })
+    .then(function (payload) {
+      form.reset();
+      showNotification(payload.message || 'Mensagem enviada com seguranca.', 'success');
     })
     .catch(function (error) {
       showNotification(error.message || 'Falha temporaria no envio seguro.', 'error');

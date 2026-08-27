@@ -132,7 +132,7 @@ function cleanText(value, maxLength, preserveLines = false) {
 }
 
 function validate(payload) {
-  const allowedFields = new Set(['name', 'email', 'company', 'service', 'message', 'source', 'subject', '_subject', '_gotcha']);
+  const allowedFields = new Set(['name', 'email', 'company', 'service', 'message', 'source', 'subject', '_subject', '_gotcha', 'form-name']);
   const keys = Object.keys(payload || {});
   if (keys.length > MAX_FIELDS) {
     return { ok: false, message: 'Muitos campos enviados.' };
@@ -150,6 +150,7 @@ function validate(payload) {
     service: cleanText(payload.service, 60),
     message: cleanText(payload.message, 1200, true),
     source: cleanText(payload.source, 40),
+    formName: cleanText(payload['form-name'], 40),
     subject: cleanText(payload.subject || payload._subject || 'Novo contato pelo site ByteStorm Tech', 120),
     honeypot: cleanText(payload._gotcha, 80)
   };
@@ -179,7 +180,10 @@ function validate(payload) {
   if (!ALLOWED_SERVICES.has(data.service)) {
     return { ok: false, message: 'Servico invalido.' };
   }
-  for (const value of [data.name, data.email, data.company, data.service, data.message, data.source, data.subject]) {
+  if (data.formName && data.formName !== 'bytestorm-contato') {
+    return { ok: false, message: 'Formulario invalido.' };
+  }
+  for (const value of [data.name, data.email, data.company, data.service, data.message, data.source, data.subject, data.formName]) {
     for (const pattern of attackPatterns) {
       if (pattern.test(value)) {
         return { ok: false, message: 'Conteudo bloqueado pela politica de seguranca.' };
