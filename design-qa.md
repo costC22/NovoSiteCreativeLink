@@ -38,7 +38,7 @@ final result: passed
 
 ## Security and code quality
 
-- `node scripts/security-audit.mjs --check`: 15/15, score 100.
+- `node scripts/security-audit.mjs --check`: 16/16, score 100.
 - `node --check script.js`: passed.
 - `git diff --check`: passed.
 - Content Security Policy, server-side contact proxy, rate limiting and edge request protections remain intact.
@@ -56,5 +56,5 @@ final result: passed
 - About section: two-column layout restored at 1280 px, with three readable value cards.
 - Client area: two balanced 468 px action cards and working support CTAs.
 - Contact CTAs: links open `atendimento.html#contact`; service-desk actions preselect the matching service.
-- Contact form: protected API remains primary; Netlify Forms stores the submission when the forwarding channel returns 502/503.
-- Focused Playwright QA: desktop and 390x844 mobile passed with no horizontal overflow; API and fallback requests both verified.
+- Contact form: the protected API validates and stores submissions in site-scoped Netlify Blobs; the forwarding channel remains optional.
+- Focused Playwright QA: desktop and 390x844 mobile passed with no horizontal overflow; the protected API request and successful client state were verified.

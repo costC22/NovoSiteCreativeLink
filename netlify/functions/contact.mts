@@ -1,3 +1,5 @@
+import { getStore } from '@netlify/blobs';
+
 const MAX_BODY_BYTES = 15_000;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 5;
@@ -40,7 +42,7 @@ function jsonResponse(body, status, context, extraHeaders = {}) {
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'no-referrer',
       'X-Request-Id': requestId(context),
-      'X-Security-Checks': 'origin,rate-limit,honeypot,field-allow-list,sqli,xss,command-injection,path-traversal,ssrf,validation,sanitization,server-forward',
+      'X-Security-Checks': 'origin,rate-limit,honeypot,field-allow-list,sqli,xss,command-injection,path-traversal,ssrf,validation,sanitization,durable-storage,server-forward',
       ...extraHeaders
     }
   });
@@ -193,6 +195,32 @@ function validate(payload) {
   return { ok: true, data };
 }
 
+async function storeContact(data, context) {
+  const receivedAt = new Date().toISOString();
+  const day = receivedAt.slice(0, 10).replace(/-/g, '/');
+  const key = day + '/' + Date.now() + '-' + crypto.randomUUID() + '.json';
+  const store = getStore({ name: 'contact-submissions', consistency: 'strong' });
+
+  try {
+    await store.setJSON(key, {
+      name: data.name,
+      email: data.email,
+      company: data.company,
+      service: data.service,
+      message: data.message,
+      source: data.source || 'site',
+      subject: data.subject,
+      receivedAt,
+      status: 'new',
+      requestId: requestId(context)
+    });
+    return { ok: true, key };
+  } catch (error) {
+    console.error('contact_storage_error', { name: error?.name || 'Error' });
+    return { ok: false };
+  }
+}
+
 async function forwardContact(data) {
   const endpoint = env('CONTACT_FORWARD_URL');
   if (!endpoint) {
@@ -262,12 +290,14 @@ export default async function contact(req, context) {
     return jsonResponse({ ok: true, message: 'Mensagem recebida.' }, 200, context, corsHeaders(req));
   }
 
+  const stored = await storeContact(validation.data, context);
   const forwarded = await forwardContact(validation.data);
-  if (!forwarded.ok) {
-    return jsonResponse({ ok: false, message: forwarded.message }, forwarded.status, context, corsHeaders(req));
+
+  if (!stored.ok && !forwarded.ok) {
+    return jsonResponse({ ok: false, message: 'Falha temporaria no recebimento. Tente novamente em alguns minutos.' }, 503, context, corsHeaders(req));
   }
 
-  return jsonResponse({ ok: true, message: 'Mensagem enviada com seguranca.' }, 200, context, corsHeaders(req));
+  return jsonResponse({ ok: true, message: 'Mensagem recebida com seguranca. Retornaremos em ate 24 horas uteis.' }, 200, context, corsHeaders(req));
 }
 
 export const config = {

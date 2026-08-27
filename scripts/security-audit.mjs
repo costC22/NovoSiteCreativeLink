@@ -12,6 +12,7 @@ const functionsExist = ['contact.mts', 'csp-report.mts', 'security-metrics.mts']
 const edgeShieldPath = join(root, 'netlify', 'edge-functions', 'request-shield.js');
 const edgeShield = existsSync(edgeShieldPath) ? readFileSync(edgeShieldPath, 'utf8') : '';
 const contactFunction = existsSync(join(root, 'netlify', 'functions', 'contact.mts')) ? readFileSync(join(root, 'netlify', 'functions', 'contact.mts'), 'utf8') : '';
+const packageJson = existsSync(join(root, 'package.json')) ? readFileSync(join(root, 'package.json'), 'utf8') : '';
 
 const headerNames = [
   'Content-Security-Policy',
@@ -34,7 +35,11 @@ const checks = [
   },
   {
     id: 'contact_forms_use_api_proxy',
-    pass: htmlFiles.every((file) => !/formspree\.io/i.test(readFileSync(join(root, file), 'utf8')))
+    pass: htmlFiles.every((file) => {
+      const html = readFileSync(join(root, file), 'utf8');
+      const forms = html.match(/<form\b[^>]*data-secure-contact[^>]*>/gi) || [];
+      return forms.every((form) => /\saction=["']\/api\/contact["']/i.test(form));
+    })
   },
   {
     id: 'no_browser_storage_for_leads',
@@ -79,6 +84,10 @@ const checks = [
   {
     id: 'contact_api_rate_limit_present',
     pass: /rateLimit/.test(contactFunction) && /windowLimit:\s*10/.test(contactFunction)
+  },
+  {
+    id: 'contact_durable_storage_present',
+    pass: /getStore/.test(contactFunction) && /contact-submissions/.test(contactFunction) && /setJSON/.test(contactFunction) && /@netlify\/blobs/.test(packageJson)
   },
   {
     id: 'sql_injection_patterns_blocked',

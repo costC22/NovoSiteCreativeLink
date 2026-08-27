@@ -154,30 +154,6 @@ function initForm() {
   });
 }
 
-function submitNetlifyFormFallback(form) {
-  var payload = new URLSearchParams(new FormData(form));
-  payload.set('form-name', form.getAttribute('name') || 'bytestorm-contato');
-
-  return fetch(form.getAttribute('action') || '/', {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    body: payload.toString(),
-    credentials: 'same-origin'
-  }).then(function (response) {
-    if (!response.ok) {
-      throw new Error('Nao foi possivel registrar sua mensagem agora. Tente novamente em alguns minutos.');
-    }
-
-    return {
-      ok: true,
-      message: 'Mensagem recebida. Nossa equipe retornara em ate 24 horas uteis.'
-    };
-  });
-}
-
 function submitSecureContact(form) {
   var validation = validateContactForm(form);
   if (!validation.ok) {
@@ -194,7 +170,7 @@ function submitSecureContact(form) {
 
   showNotification('Enviando mensagem com seguranca...', 'info');
 
-  fetch(form.getAttribute('data-api-action') || '/api/contact', {
+  fetch(form.getAttribute('action') || '/api/contact', {
     method: 'POST',
     headers: { Accept: 'application/json' },
     body: new FormData(form),
@@ -207,9 +183,6 @@ function submitSecureContact(form) {
           return {};
         })
         .then(function (payload) {
-          if (response.status === 502 || response.status === 503) {
-            return submitNetlifyFormFallback(form);
-          }
           if (!response.ok || payload.ok === false) {
             throw new Error(payload.message || 'Nao foi possivel enviar agora. Tente novamente em alguns minutos.');
           }
