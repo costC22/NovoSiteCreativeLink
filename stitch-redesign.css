@@ -2402,3 +2402,28 @@ footer {
     justify-content: center;
   }
 }
+
+/* Service checklist alignment correction */
+.service-features li {
+  position: relative;
+  min-height: 44px;
+  padding: 12px 0 12px 28px;
+  align-items: center;
+}
+
+.service-features li::before {
+  top: 50%;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 255, 204, 0.42);
+  border-radius: 50%;
+  background: rgba(0, 255, 204, 0.08);
+  color: var(--stitch-green);
+  font-size: 11px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
