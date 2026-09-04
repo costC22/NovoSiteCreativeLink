@@ -32,7 +32,7 @@ function initMenu() {
 
   var page = window.location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
   nav.querySelectorAll('a[href]').forEach(function (link) {
-    var target = link.getAttribute('href').split('#')[0].replace(/\.html$/, '');
+    var target = new URL(link.href).pathname.split('/').pop().replace(/\.html$/, '') || 'index';
     if (target === page) link.setAttribute('aria-current', 'page');
     link.addEventListener('click', function () { setOpen(false, false); });
   });

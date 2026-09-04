@@ -75,6 +75,13 @@ try {
     await page.goto(base + '/atendimento?plan=business');
     assert.equal(await page.locator('#service').inputValue(), 'site-business');
     assert.equal(await page.locator('header a[href="atendimento.html"]').getAttribute('aria-current'), 'page');
+    // Netlify rewrites static navigation links to root-relative pretty URLs.
+    await page.route('**/atendimento?netlify-test=1', async route => {
+      const html = await fs.readFile(path.join(root, 'atendimento.html'), 'utf8');
+      await route.fulfill({ contentType: 'text/html', body: html.replace(/href="atendimento\.html"/g, 'href="/atendimento"') });
+    });
+    await page.goto(base + '/atendimento?netlify-test=1');
+    assert.equal(await page.locator('header a[href="/atendimento"]').getAttribute('aria-current'), 'page');
     let requests = 0;
     let mode = 'failure';
     let release;
