@@ -24,6 +24,9 @@ Legacy `styles.css` and `extension-privacy.css` remain in the repository for
 historical compatibility but are no longer loaded by public pages.
 
 ## Identity
+The home hero photo depicts website development on a desktop monitor and phone.
+Do not restore the laptop/staircase photo; the user rejected its unclear relevance.
+
 Graphite header/footer, white and cool gray reading surfaces, cyan primary
 actions, dark cyan text links. Product icon colors stay intact. No decorative
 terminal windows, invented operational dashboards, social-proof badges,
