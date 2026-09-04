@@ -49,7 +49,9 @@ header .nav-cta a:hover { background: #8ceaff; color: #062e38; }
 .section-sub { max-width: 720px; margin-top: 16px; }
 .split-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 42px; }
 .split-heading > p { max-width: 510px; }
-.hero { position: relative; padding: 66px 0 72px; min-height: 580px; background: #28292b url('studio-wide.webp?v=development') center right / cover no-repeat; color: white; }
+.hero { position: relative; padding: 66px 0 72px; min-height: 580px; background: #28292b; color: white; }
+.hero::before { content: ""; position: absolute; inset: 0 0 0 auto; width: min(48%, 627px); background: url('studio-detail@2x.webp') right center / 100% auto no-repeat; background-image: -webkit-image-set(url('studio-detail.webp') 1x, url('studio-detail@2x.webp') 2x); background-image: image-set(url('studio-detail.webp') 1x, url('studio-detail@2x.webp') 2x); -webkit-mask-image: linear-gradient(to right, transparent, #000 5%); mask-image: linear-gradient(to right, transparent, #000 5%); pointer-events: none; }
+.hero > .container { position: relative; }
 .hero-content { max-width: 580px; }
 .hero .eyebrow { color: #a5edf7; }
 .hero h1 { font-size: 58px; max-width: 580px; line-height: 1.12; }
@@ -305,7 +307,7 @@ footer { padding: 60px 0 0; background: var(--brand-ink); color: white; }
   .home-pricing-head { align-items: start; flex-direction: column; gap: 20px; }
   .hero-content { max-width: 520px; }
   .hero h1 { font-size: 50px; }
-  .hero { background-position: 45% center; }
+  .hero::before { width: calc(100% - 580px); }
   .detail-layout, .contact-content { gap: 50px; }
   .article-layout { gap: 40px; }
   .footer-content { grid-template-columns: 1fr; gap: 25px; }
@@ -320,7 +322,8 @@ footer { padding: 60px 0 0; background: var(--brand-ink); color: white; }
   header > .container { gap: 16px; }
   .logo-img { width: 160px; height: 54px; }
   header nav { padding-inline: 22px; }
-  .hero { padding: 38px 0 190px; min-height: 0; background-size: auto 270px; background-position: right bottom; background-color: #28292b; }
+  .hero { padding: 38px 0 190px; min-height: 0; }
+  .hero::before { top: auto; width: 180px; height: 180px; background-image: url('studio-detail.webp'); }
   .hero-content { max-width: 500px; }
   .hero h1 { font-size: 38px; max-width: 470px; }
   .hero p { font-size: 16px; max-width: 490px; margin-top: 20px; }
@@ -399,7 +402,7 @@ footer { padding: 60px 0 0; background: var(--brand-ink); color: white; }
   .secure-contact-form { padding: 22px 18px; }
   .footer-links { grid-template-columns: 1fr; gap: 12px; }
   .hero h1 { font-size: 35px; }
-  .hero { padding-bottom: 194px; background-size: auto 180px; }
+  .hero { padding-bottom: 194px; }
   .hero-note { max-width: none; }
   .page-actions .cta-button, .product-page-actions .cta-button { width: 100%; }
   .product-coming { align-items: start; font-size: 13px; }

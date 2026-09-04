@@ -26,6 +26,9 @@ historical compatibility but are no longer loaded by public pages.
 ## Identity
 The home hero photo depicts website development on a desktop monitor and phone.
 Do not restore the laptop/staircase photo; the user rejected its unclear relevance.
+Use the detail crop at a maximum 627 CSS pixels, with lossless 627px and 1254px
+image-set sources for normal and Retina displays. The charcoal wall is CSS;
+do not stretch a low-resolution panorama across the entire viewport again.
 
 Graphite header/footer, white and cool gray reading surfaces, cyan primary
 actions, dark cyan text links. Product icon colors stay intact. No decorative
