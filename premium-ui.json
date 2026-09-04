@@ -1,0 +1,13 @@
+{
+  "profile": "public-site",
+  "sourceRoots": ["."],
+  "locale": "pt-BR",
+  "ownership": { "Select/Listbox": "native", "Date": "native" },
+  "requiredCommands": ["unit", "briefing-browser", "security"],
+  "commands": {
+    "unit": "node --test tests/briefing.test.mjs",
+    "briefing-browser": "node tests/briefing-browser.mjs",
+    "security": "node scripts/security-audit.mjs --check"
+  },
+  "evidence": { "failurePaths": "tests/briefing-browser.mjs" }
+}

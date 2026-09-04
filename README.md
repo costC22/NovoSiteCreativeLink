@@ -75,3 +75,26 @@ node scripts/security-audit.mjs --check
 - `netlify/edge-functions/request-shield.js` roda na borda para limitar excesso de requisições e bloquear probes comuns antes de chegar ao site.
 - `/api/contact` tem rate limit próprio, limite de payload, allow-list de campos e bloqueio de padrões de SQL injection, XSS, command injection, SSRF e path traversal.
 - O site não usa banco de dados no front-end; caso um banco seja adicionado no futuro, use queries parametrizadas/prepared statements e conta de menor privilégio.
+
+## Briefing de projeto
+
+- Página pública: `https://bytestormtech.com.br/briefing`, acessível pelo botão **Briefing** no menu e pela página de Atendimento.
+- O formulário fornecido foi integrado em oito etapas. CSS e JavaScript são arquivos locais separados, compatíveis com a CSP do site.
+- Respostas ficam somente na aba durante o preenchimento. Falhas de rede preservam os campos; a confirmação só aparece após a gravação no servidor. O resumo pode ser baixado ou copiado após o recebimento.
+- `/api/briefing` valida os campos, autorização de uso, origem, tamanho real do corpo e anexos. A rota tem limite próprio de seis requisições por minuto por IP/domínio, além da proteção de borda.
+- Anexos: até três, com 1 MiB por arquivo e 2 MiB no total, nos formatos PNG, JPG, WEBP, PDF e ZIP. A assinatura do arquivo é conferida; isso não substitui antivírus. Arquivos não são executados, extraídos nem disponibilizados publicamente.
+- **Onde receber:** painel do projeto na Netlify, seção **Blobs**, store `briefing-submissions`. Cada registro JSON contém protocolo, data, respostas em `data` e anexos em `files` (conteúdo `dataBase64`). Acesso administrativo exige autenticação Netlify. Não há endpoint público para listar ou ler respostas.
+- Esta integração não envia notificações por e-mail automaticamente. A equipe deve acompanhar os recebimentos no painel, restringir o acesso administrativo e remover registros que não sejam mais necessários.
+- Repetir um envio após timeout não duplica o registro: o mesmo identificador e conteúdo retornam o mesmo protocolo.
+- O servidor estático `python -m http.server` permite visualizar a página, mas não executa a API. Para envio local com as funções Netlify, use `netlify dev`.
+
+### Verificação do briefing
+
+```bash
+npm ci --ignore-scripts
+node --test tests/briefing.test.mjs
+node tests/briefing-browser.mjs
+node scripts/security-audit.mjs --check
+```
+
+O teste de navegador aceita `PLAYWRIGHT_MODULE` e `CHROME_PATH` para indicar as instalações locais. Os testes usam armazenamento simulado, sem enviar dados de clientes. Capturas são gravadas em `test-results/briefing` e ficam fora da publicação.

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>Briefing de Projeto | ByteStorm Tech</title>
+
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; img-src 'self' data: https://bytestormtech.com.br; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; style-src-attr 'none'; script-src 'self' 'sha256-x5CHpjrdpUBkaDUb1DkrOwZyQTSs7WECzJNvg8ptpVc='; script-src-attr 'none'; connect-src 'self'; manifest-src 'self'; worker-src 'none'; media-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default"><meta name="description" content="Envie o briefing do seu projeto para a ByteStorm Tech. Sites, sistemas, automações e integrações sob medida."><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="canonical" href="https://bytestormtech.com.br/briefing.html"><link rel="icon" type="image/png" href="favicon-bytestorm.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="briefing.css"></head>
+
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="logo" href="index.html" aria-label="ByteStorm Tech - início"><img src="logo-bytestorm-tech.png" alt="ByteStorm Tech" width="220" height="70"></a><nav class="briefing-nav" aria-label="Navegação do briefing"><a href="index.html">Voltar ao site</a><a href="atendimento.html">Atendimento</a></nav>
+
+    <h1>Briefing de Projeto</h1>
+    <div class="accent-line"></div>
+    <p class="sidebar-copy">
+      Queremos entender seu negócio, seus objetivos e as necessidades do projeto para propor uma solução digital sob medida.
+    </p>
+
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon">
+          <i class="fas fa-bullseye" aria-hidden="true"></i>
+        </div>
+        <div>
+          <strong>Foco no seu objetivo</strong>
+          <p>Alinhamos tecnologia e estratégia ao resultado que sua empresa precisa.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">
+          <i class="fas fa-shield-halved" aria-hidden="true"></i>
+        </div>
+        <div>
+          <strong>Escopo bem definido</strong>
+          <p>As respostas ajudam a reduzir retrabalho e deixam expectativas mais claras.</p>
+        </div>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+        </div>
+        <div>
+          <strong>Processo mais rápido</strong>
+          <p>O briefing vira base para proposta, planejamento e início do desenvolvimento.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="support">
+      <div class="support-card">
+        <strong>Dúvidas durante o preenchimento?</strong>
+        <p>Você pode falar diretamente com a equipe da ByteStorm Tech antes de enviar o briefing.</p>
+      <a href="mailto:contato@bytestormtech.com.br">Falar com a equipe</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="form-shell">
+      <div class="stepper-wrap">
+        <div class="stepper" id="stepper">
+          <button type="button" class="step-indicator active" data-index="0" aria-controls="briefing-step-1"><span class="step-dot">1</span><span class="step-label">Boas-vindas</span></button>
+          <button type="button" class="step-indicator" data-index="1" aria-controls="briefing-step-2"><span class="step-dot">2</span><span class="step-label">Informações do projeto</span></button>
+          <button type="button" class="step-indicator" data-index="2" aria-controls="briefing-step-3"><span class="step-dot">3</span><span class="step-label">Sobre sua empresa</span></button>
+          <button type="button" class="step-indicator" data-index="3" aria-controls="briefing-step-4"><span class="step-dot">4</span><span class="step-label">Requisitos e funcionalidades</span></button>
+          <button type="button" class="step-indicator" data-index="4" aria-controls="briefing-step-5"><span class="step-dot">5</span><span class="step-label">Design e conteúdo</span></button>
+          <button type="button" class="step-indicator" data-index="5" aria-controls="briefing-step-6"><span class="step-dot">6</span><span class="step-label">Recursos técnicos</span></button>
+          <button type="button" class="step-indicator" data-index="6" aria-controls="briefing-step-7"><span class="step-dot">7</span><span class="step-label">Prazo e investimento</span></button>
+          <button type="button" class="step-indicator" data-index="7" aria-controls="briefing-step-8"><span class="step-dot">8</span><span class="step-label">Revisão e envio</span></button>
+        </div>
+      </div>
+
+      <noscript><p class="note">Ative o JavaScript para preencher o briefing ou entre em contato pelo e-mail contato@bytestormtech.com.br.</p></noscript><form id="briefingForm" name="briefing-bytestorm" method="POST" enctype="multipart/form-data" novalidate="" action="/api/briefing">
+        <input type="hidden" name="form-name" value="briefing-bytestorm">
+        <p hidden=""><label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+        <div class="form-area">
+
+          <!-- 1 -->
+          <section class="step active" data-step="1" id="briefing-step-1" aria-labelledby="briefing-title-1">
+            <div class="welcome">
+              <div>
+                <h2 tabindex="-1" id="briefing-title-1">Conte um pouco sobre o projeto que você quer tirar do papel.</h2>
+                <p>
+                  Este briefing foi criado para entendermos o cenário antes de falar em layout ou tecnologia.
+                  Quanto mais contexto você compartilhar, mais precisa será a proposta da ByteStorm Tech.
+                </p>
+                <div class="welcome-list">
+                  <div class="welcome-row"><i>✓</i><span>Leva aproximadamente 8 a 12 minutos.</span></div>
+                  <div class="welcome-row"><i>✓</i><span>Você pode voltar às etapas anteriores a qualquer momento.</span></div>
+                  <div class="welcome-row"><i>✓</i><span>Suas respostas permanecem nesta aba até o envio.</span></div>
+                </div>
+              </div>
+
+              <div class="welcome-card">
+                <strong>O que vamos entender</strong>
+                <div class="info-line"><span>Negócio</span><b>contexto e público</b></div>
+                <div class="info-line"><span>Projeto</span><b>objetivos e escopo</b></div>
+                <div class="info-line"><span>Design</span><b>marca e referências</b></div>
+                <div class="info-line"><span>Tecnologia</span><b>integrações e recursos</b></div>
+                <div class="info-line"><span>Comercial</span><b>prazo e investimento</b></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2 -->
+          <section class="step" data-step="2" id="briefing-step-2" aria-labelledby="briefing-title-2">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-2">Informações do projeto</h2>
+              <p>Vamos identificar o responsável, o tipo de solução e o principal objetivo do projeto.</p>
+            </div>
+
+            <div class="grid">
+              <div class="field col-6">
+                <label for="empresa">Nome da empresa <span class="required">*</span></label>
+                <input id="empresa" name="empresa" type="text" required="" placeholder="Digite o nome da sua empresa" maxlength="200" autocomplete="organization">
+                <div class="error">Informe o nome da empresa.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="responsavel">Responsável pelo projeto <span class="required">*</span></label>
+                <input id="responsavel" name="responsavel" type="text" required="" placeholder="Seu nome completo" maxlength="200" autocomplete="name">
+                <div class="error">Informe quem será o responsável pelo projeto.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="email">E-mail <span class="required">*</span></label>
+                <input id="email" name="email" type="email" required="" placeholder="seuemail@empresa.com.br" maxlength="200" autocomplete="email">
+                <div class="help">Utilizaremos este contato para retorno sobre o projeto.</div>
+                <div class="error">Informe um e-mail válido.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="telefone">WhatsApp / telefone <span class="required">*</span></label>
+                <input id="telefone" name="telefone" type="tel" required="" placeholder="(11) 99999-9999" maxlength="200" autocomplete="tel" inputmode="tel">
+                <div class="error">Informe um telefone de contato.</div>
+              </div>
+
+              <div class="field">
+                <span class="label">Tipo de projeto <span class="required">*</span></span>
+                <div class="card-options" id="tipoProjeto">
+                  <div class="option">
+                    <input id="tipo1" type="radio" name="tipo_projeto" value="Site institucional" required="">
+                    <label for="tipo1">
+                      <span class="option-icon"><i class="fas fa-globe" aria-hidden="true"></i></span>
+                      <span class="option-title">Site institucional</span>
+                    </label>
+                  </div>
+                  <div class="option">
+                    <input id="tipo2" type="radio" name="tipo_projeto" value="Landing page">
+                    <label for="tipo2">
+                      <span class="option-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+                      <span class="option-title">Landing page</span>
+                    </label>
+                  </div>
+                  <div class="option">
+                    <input id="tipo3" type="radio" name="tipo_projeto" value="Sistema web">
+                    <label for="tipo3">
+                      <span class="option-icon"><i class="fas fa-desktop" aria-hidden="true"></i></span>
+                      <span class="option-title">Sistema web</span>
+                    </label>
+                  </div>
+                  <div class="option">
+                    <input id="tipo4" type="radio" name="tipo_projeto" value="E-commerce">
+                    <label for="tipo4">
+                      <span class="option-icon"><i class="fas fa-cart-shopping" aria-hidden="true"></i></span>
+                      <span class="option-title">E-commerce</span>
+                    </label>
+                  </div>
+                <div class="option"><input id="tipo5" type="radio" name="tipo_projeto" value="Automação"><label for="tipo5"><span class="option-icon"><i class="fas fa-gears" aria-hidden="true"></i></span><span class="option-title">Automação</span></label></div><div class="option"><input id="tipo6" type="radio" name="tipo_projeto" value="Integração de sistemas"><label for="tipo6"><span class="option-icon"><i class="fas fa-plug" aria-hidden="true"></i></span><span class="option-title">Integração de sistemas</span></label></div></div>
+                <div class="error" id="projectTypeError">Selecione um tipo de projeto.</div>
+              </div>
+
+              <div class="field col-7">
+                <label for="objetivo_principal">Objetivo principal do projeto <span class="required">*</span></label>
+                <textarea id="objetivo_principal" name="objetivo_principal" required="" placeholder="Explique o que você espera alcançar com este projeto." maxlength="2400"></textarea>
+                <div class="error">Descreva o objetivo principal.</div>
+              </div>
+
+              <div class="field col-5">
+                <label for="acao_principal">Qual ação você quer que o visitante realize? <span class="required">*</span></label>
+                <select id="acao_principal" name="acao_principal" required="">
+                  <option value="">Selecione</option>
+                  <option>Entrar em contato</option>
+                  <option>Solicitar orçamento</option>
+                  <option>Comprar</option>
+                  <option>Agendar atendimento</option>
+                  <option>Criar conta / fazer login</option>
+                  <option>Baixar material</option>
+                  <option>Conhecer a empresa</option>
+                  <option>Outra</option>
+                </select>
+                <div class="error">Selecione a ação principal.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="problema_atual">Qual problema motivou este projeto? <span class="required">*</span></label>
+                <textarea id="problema_atual" name="problema_atual" required="" placeholder="Ex.: site desatualizado, pouca geração de contatos, processo manual, ausência de presença digital..." maxlength="2400"></textarea>
+                <div class="error">Explique o problema atual.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="criterio_sucesso">Como você saberá que o projeto deu certo? <span class="required">*</span></label>
+                <textarea id="criterio_sucesso" name="criterio_sucesso" required="" placeholder="Ex.: aumento de leads, redução de atendimento manual, mais vendas, melhor apresentação da marca..." maxlength="2400"></textarea>
+                <div class="error">Defina um critério de sucesso.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3 -->
+          <section class="step" data-step="3" id="briefing-step-3" aria-labelledby="briefing-title-3">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-3">Sobre sua empresa</h2>
+              <p>Essas informações ajudam a direcionar linguagem, arquitetura do conteúdo e experiência do usuário.</p>
+            </div>
+
+            <div class="grid">
+              <div class="field col-6">
+                <label for="segmento">Segmento de atuação <span class="required">*</span></label>
+                <input id="segmento" name="segmento" type="text" required="" placeholder="Ex.: varejo, indústria, serviços B2B, saúde..." maxlength="200">
+                <div class="error">Informe o segmento da empresa.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="site_atual">Site atual <span class="optional">(se houver)</span></label>
+                <input id="site_atual" name="site_atual" type="url" placeholder="https://suaempresa.com.br" maxlength="500">
+              </div>
+
+              <div class="field col-7">
+                <label for="descricao_empresa">O que a empresa faz? <span class="required">*</span></label>
+                <textarea id="descricao_empresa" name="descricao_empresa" required="" placeholder="Descreva produtos, serviços, principais diferenciais e como sua empresa gera valor." maxlength="2400"></textarea>
+                <div class="error">Descreva brevemente a empresa.</div>
+              </div>
+
+              <div class="field col-5">
+                <label for="regiao_atendimento">Onde a empresa atende? <span class="required">*</span></label>
+                <textarea id="regiao_atendimento" name="regiao_atendimento" required="" placeholder="Ex.: Grande São Paulo, Brasil inteiro, atendimento internacional..." maxlength="2400"></textarea>
+                <div class="error">Informe a região de atendimento.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="publico_alvo">Quem é o público-alvo? <span class="required">*</span></label>
+                <textarea id="publico_alvo" name="publico_alvo" required="" placeholder="Perfil, idade, região, cargo, tipo de empresa, necessidade ou comportamento." maxlength="2400"></textarea>
+                <div class="error">Descreva o público-alvo.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="diferenciais">Quais são os principais diferenciais da empresa?</label>
+                <textarea id="diferenciais" name="diferenciais" placeholder="O que faz um cliente escolher sua empresa em vez de outra?" maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="concorrentes">Principais concorrentes <span class="optional">(opcional)</span></label>
+                <textarea id="concorrentes" name="concorrentes" placeholder="Nomes ou links de empresas que concorrem diretamente com você." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="objeções">Quais dúvidas ou objeções seus clientes costumam ter?</label>
+                <textarea id="objeções" name="objecoes_clientes" placeholder="Ex.: preço, prazo, confiança, suporte, garantia, dificuldade de entender o serviço..." maxlength="2400"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4 -->
+          <section class="step" data-step="4" id="briefing-step-4" aria-labelledby="briefing-title-4">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-4">Requisitos e funcionalidades</h2>
+              <p>Selecione o que o projeto deve oferecer. Não precisa conhecer os termos técnicos; descreva também o fluxo desejado.</p>
+            </div>
+
+            <div class="grid">
+              <div class="field">
+                <span class="label">Páginas ou áreas previstas</span>
+                <div class="check-grid">
+                  <div class="check"><input id="p1" type="checkbox" name="paginas" value="Home"><label for="p1">Home</label></div>
+                  <div class="check"><input id="p2" type="checkbox" name="paginas" value="Sobre"><label for="p2">Sobre</label></div>
+                  <div class="check"><input id="p3" type="checkbox" name="paginas" value="Serviços"><label for="p3">Serviços</label></div>
+                  <div class="check"><input id="p4" type="checkbox" name="paginas" value="Produtos"><label for="p4">Produtos</label></div>
+                  <div class="check"><input id="p5" type="checkbox" name="paginas" value="Portfólio"><label for="p5">Portfólio / cases</label></div>
+                  <div class="check"><input id="p6" type="checkbox" name="paginas" value="Blog"><label for="p6">Blog / notícias</label></div>
+                  <div class="check"><input id="p7" type="checkbox" name="paginas" value="FAQ"><label for="p7">FAQ</label></div>
+                  <div class="check"><input id="p8" type="checkbox" name="paginas" value="Contato"><label for="p8">Contato</label></div>
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="label">Funcionalidades necessárias</span>
+                <div class="check-grid">
+                  <div class="check"><input id="f1" type="checkbox" name="funcionalidades" value="Formulário de contato"><label for="f1">Formulário de contato</label></div>
+                  <div class="check"><input id="f2" type="checkbox" name="funcionalidades" value="Integração com WhatsApp"><label for="f2">WhatsApp</label></div>
+                  <div class="check"><input id="f3" type="checkbox" name="funcionalidades" value="Área do cliente / Login"><label for="f3">Área do cliente / Login</label></div>
+                  <div class="check"><input id="f4" type="checkbox" name="funcionalidades" value="Pagamentos online"><label for="f4">Pagamentos online</label></div>
+                  <div class="check"><input id="f5" type="checkbox" name="funcionalidades" value="Agendamento"><label for="f5">Agendamento</label></div>
+                  <div class="check"><input id="f6" type="checkbox" name="funcionalidades" value="Relatórios / Dashboard"><label for="f6">Relatórios / Dashboard</label></div>
+                  <div class="check"><input id="f7" type="checkbox" name="funcionalidades" value="Upload de arquivos"><label for="f7">Upload de arquivos</label></div>
+                  <div class="check"><input id="f8" type="checkbox" name="funcionalidades" value="Busca"><label for="f8">Busca</label></div>
+                  <div class="check"><input id="f9" type="checkbox" name="funcionalidades" value="Notificações por e-mail"><label for="f9">Notificações por e-mail</label></div>
+                  <div class="check"><input id="f10" type="checkbox" name="funcionalidades" value="Integração com APIs"><label for="f10">Integração com APIs</label></div>
+                  <div class="check"><input id="f11" type="checkbox" name="funcionalidades" value="Painel administrativo"><label for="f11">Painel administrativo</label></div>
+                  <div class="check"><input id="f12" type="checkbox" name="funcionalidades" value="Chat / atendimento"><label for="f12">Chat / atendimento</label></div>
+                </div>
+              </div>
+
+              <div class="field col-6">
+                <label for="fluxo_usuario">Existe algum fluxo específico que o usuário precisa realizar?</label>
+                <textarea id="fluxo_usuario" name="fluxo_usuario" placeholder="Ex.: escolher serviço → selecionar data → preencher cadastro → pagar → receber confirmação." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="outras_funcionalidades">Outras funcionalidades ou regras</label>
+                <textarea id="outras_funcionalidades" name="outras_funcionalidades" placeholder="Descreva recursos que não apareceram na lista ou regras importantes do negócio." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="volume">Existe uma estimativa de volume de usuários, pedidos ou acessos?</label>
+                <input id="volume" name="volume_estimado" type="text" placeholder="Ex.: 5 mil acessos/mês, 300 pedidos/dia, 50 usuários internos..." maxlength="200">
+              </div>
+
+              <div class="field col-6">
+                <label for="perfis_usuario">O sistema terá diferentes perfis de acesso?</label>
+                <input id="perfis_usuario" name="perfis_usuario" type="text" placeholder="Ex.: administrador, operador, cliente, vendedor, gestor..." maxlength="200">
+              </div>
+            </div>
+          </section>
+
+          <!-- 5 -->
+          <section class="step" data-step="5" id="briefing-step-5" aria-labelledby="briefing-title-5">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-5">Design e conteúdo</h2>
+              <p>Queremos preservar a identidade da marca e entender qual sensação o projeto deve transmitir.</p>
+            </div>
+
+            <div class="grid">
+              <div class="field">
+                <span class="label">O que sua empresa já possui?</span>
+                <div class="pill-row">
+                  <div class="pill"><input id="a1" type="checkbox" name="ativos" value="Logotipo"><label for="a1">Logotipo</label></div>
+                  <div class="pill"><input id="a2" type="checkbox" name="ativos" value="Manual da marca"><label for="a2">Manual da marca</label></div>
+                  <div class="pill"><input id="a3" type="checkbox" name="ativos" value="Paleta de cores"><label for="a3">Paleta de cores</label></div>
+                  <div class="pill"><input id="a4" type="checkbox" name="ativos" value="Fotos profissionais"><label for="a4">Fotos</label></div>
+                  <div class="pill"><input id="a5" type="checkbox" name="ativos" value="Vídeos"><label for="a5">Vídeos</label></div>
+                  <div class="pill"><input id="a6" type="checkbox" name="ativos" value="Textos"><label for="a6">Textos</label></div>
+                  <div class="pill"><input id="a7" type="checkbox" name="ativos" value="Nenhum"><label for="a7">Ainda não possui</label></div>
+                </div>
+              </div>
+
+              <div class="field col-6">
+                <label for="personalidade_marca">Como a marca deve ser percebida? <span class="required">*</span></label>
+                <textarea id="personalidade_marca" name="personalidade_marca" required="" placeholder="Ex.: moderna, séria, premium, acessível, técnica, inovadora, minimalista..." maxlength="2400"></textarea>
+                <div class="error">Descreva a percepção desejada da marca.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="evitar_design">Existe algo que você não quer no design?</label>
+                <textarea id="evitar_design" name="evitar_design" placeholder="Cores, estilos, elementos, tipos de layout ou referências que não combinam com a empresa." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="referencias">Referências visuais</label>
+                <textarea id="referencias" name="referencias" placeholder="Cole links de sites, sistemas ou páginas que você considera boas referências e diga o que gosta em cada uma." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="conteudo_status">Como está o conteúdo do projeto?</label>
+                <select id="conteudo_status" name="conteudo_status">
+                  <option value="">Selecione</option>
+                  <option>Já temos todos os textos e imagens</option>
+                  <option>Temos parte do conteúdo</option>
+                  <option>Precisamos revisar o conteúdo existente</option>
+                  <option>Precisamos criar os textos</option>
+                  <option>Ainda não sabemos</option>
+                </select>
+              </div>
+
+              <div class="field col-6">
+                <label for="referencias_arquivos">Arquivos e referências <span class="optional">(opcional)</span></label>
+                <div class="upload">
+                  <input type="file" name="referencias_arquivos" multiple="" accept=".png,.jpg,.jpeg,.webp,.pdf,.zip" id="referencias_arquivos" aria-describedby="uploadHelp">
+                  <div>
+                    <i class="fas fa-cloud-arrow-up" aria-hidden="true"></i>
+                    <strong>Clique ou arraste os arquivos aqui</strong>
+                    <span id="uploadHelp">Até 3 arquivos: 1 MB por arquivo e 2 MB no total. PNG, JPG, WEBP, PDF ou ZIP.</span>
+                  </div>
+                </div><ul id="fileList" class="file-list" aria-label="Arquivos selecionados"></ul><p id="uploadError" class="error" hidden=""></p>
+              </div>
+
+              <div class="field col-6">
+                <label for="observacoes_design">Observações sobre design e conteúdo</label>
+                <textarea id="observacoes_design" name="observacoes_design" placeholder="Inclua qualquer detalhe que possa ajudar a equipe a entender a direção visual ou editorial." maxlength="2400"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- 6 -->
+          <section class="step" data-step="6" id="briefing-step-6" aria-labelledby="briefing-title-6">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-6">Recursos técnicos</h2>
+              <p>Agora precisamos mapear integrações, infraestrutura e necessidades relacionadas a segurança, dados e operação.</p>
+            </div>
+
+            <div class="grid">
+              <div class="field col-4">
+                <label for="dominio">Possui domínio?</label>
+                <select id="dominio" name="dominio">
+                  <option value="">Selecione</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                  <option>Não sei</option>
+                </select>
+              </div>
+
+              <div class="field col-4">
+                <label for="hospedagem">Possui hospedagem?</label>
+                <select id="hospedagem" name="hospedagem">
+                  <option value="">Selecione</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                  <option>Não sei</option>
+                </select>
+              </div>
+
+              <div class="field col-4">
+                <label for="email_corporativo">Possui e-mail corporativo?</label>
+                <select id="email_corporativo" name="email_corporativo">
+                  <option value="">Selecione</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                  <option>Não sei</option>
+                </select>
+              </div>
+
+              <div class="field col-6">
+                <label for="integracoes">Quais sistemas precisam ser integrados?</label>
+                <textarea id="integracoes" name="integracoes" placeholder="Ex.: ERP, CRM, WhatsApp, gateway de pagamento, API própria, Google Calendar, sistema legado..." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="automacoes">Há processos que deveriam ser automatizados?</label>
+                <textarea id="automacoes" name="automacoes" placeholder="Ex.: envio de orçamento, cadastro, alertas, geração de relatórios, integração entre sistemas..." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field">
+                <span class="label">Medição e marketing</span>
+                <div class="check-grid">
+                  <div class="check"><input id="m1" type="checkbox" name="medicao_marketing" value="Google Analytics"><label for="m1">Google Analytics</label></div>
+                  <div class="check"><input id="m2" type="checkbox" name="medicao_marketing" value="Google Tag Manager"><label for="m2">Tag Manager</label></div>
+                  <div class="check"><input id="m3" type="checkbox" name="medicao_marketing" value="Meta Pixel"><label for="m3">Meta Pixel</label></div>
+                  <div class="check"><input id="m4" type="checkbox" name="medicao_marketing" value="SEO"><label for="m4">SEO</label></div>
+                </div>
+              </div>
+
+              <div class="field col-6">
+                <label for="dados_coletados">Quais dados pessoais o projeto coletará?</label>
+                <textarea id="dados_coletados" name="dados_coletados" placeholder="Ex.: nome, e-mail, telefone, CPF, endereço, dados de pagamento..." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="requisitos_seguranca">Há requisitos de segurança, LGPD ou compliance?</label>
+                <textarea id="requisitos_seguranca" name="requisitos_seguranca" placeholder="Ex.: controle de acesso, logs, retenção de dados, aceite de termos, política interna, auditoria..." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="manutencao">Após a entrega, haverá necessidade de manutenção contínua?</label>
+                <select id="manutencao" name="manutencao">
+                  <option value="">Selecione</option>
+                  <option>Sim, suporte recorrente</option>
+                  <option>Sim, atualizações de conteúdo</option>
+                  <option>Talvez</option>
+                  <option>Não no momento</option>
+                </select>
+              </div>
+
+              <div class="field col-6">
+                <label for="infra_existente">Existe alguma infraestrutura ou tecnologia que precisa ser mantida?</label>
+                <input id="infra_existente" name="infra_existente" type="text" placeholder="Ex.: WordPress, sistema interno, banco de dados, servidor, provedor específico..." maxlength="200">
+              </div>
+            </div>
+          </section>
+
+          <!-- 7 -->
+          <section class="step" data-step="7" id="briefing-step-7" aria-labelledby="briefing-title-7">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-7">Prazo e investimento</h2>
+              <p>Essas respostas ajudam a alinhar viabilidade, prioridade e formato da proposta comercial.</p>
+            </div>
+
+            <div class="grid">
+              <div class="field col-4">
+                <label for="prazo_desejado">Data desejada para entrega</label>
+                <input id="prazo_desejado" name="prazo_desejado" type="date">
+              </div>
+
+              <div class="field col-4">
+                <label for="prioridade">Nível de prioridade <span class="required">*</span></label>
+                <select id="prioridade" name="prioridade" required="">
+                  <option value="">Selecione</option>
+                  <option>Sem urgência</option>
+                  <option>Prioridade normal</option>
+                  <option>Alta prioridade</option>
+                  <option>Existe uma data fixa</option>
+                </select>
+                <div class="error">Selecione a prioridade.</div>
+              </div>
+
+              <div class="field col-4">
+                <label for="orcamento">Faixa de investimento <span class="required">*</span></label>
+                <select id="orcamento" name="orcamento" required="">
+                  <option value="">Selecione uma faixa</option>
+                  <option>Até R$ 2.000</option>
+                  <option>R$ 2.000 a R$ 5.000</option>
+                  <option>R$ 5.000 a R$ 10.000</option>
+                  <option>R$ 10.000 a R$ 20.000</option>
+                  <option>Acima de R$ 20.000</option>
+                  <option>Prefiro receber uma recomendação</option>
+                </select>
+                <div class="error">Selecione uma faixa de investimento.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="decisores">Quem participa da decisão e aprovação? <span class="required">*</span></label>
+                <textarea id="decisores" name="decisores" required="" placeholder="Informe nomes, cargos ou áreas envolvidas." maxlength="2400"></textarea>
+                <div class="error">Informe quem participa da decisão.</div>
+              </div>
+
+              <div class="field col-6">
+                <label for="processo_aprovacao">Como funciona o processo de aprovação?</label>
+                <textarea id="processo_aprovacao" name="processo_aprovacao" placeholder="Ex.: aprovação do diretor, reunião com marketing, compras, jurídico, conselho..." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="essencial">O que é indispensável no projeto?</label>
+                <textarea id="essencial" name="requisitos_essenciais" placeholder="Liste os itens que não podem ficar de fora da primeira entrega." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field col-6">
+                <label for="opcional">O que pode ficar para uma segunda fase?</label>
+                <textarea id="opcional" name="requisitos_opcionais" placeholder="Funcionalidades desejáveis, mas que podem ser priorizadas depois." maxlength="2400"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="observacoes_finais">Observações adicionais</label>
+                <textarea id="observacoes_finais" name="observacoes_finais" placeholder="Conte qualquer detalhe importante sobre o projeto, restrições, expectativas ou contexto que ainda não apareceu no formulário." maxlength="2400"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- 8 -->
+          <section class="step" data-step="8" id="briefing-step-8" aria-labelledby="briefing-title-8">
+            <div class="section-head">
+              <h2 tabindex="-1" id="briefing-title-8">Revise antes de enviar</h2>
+              <p>Confira o resumo das respostas. Você pode voltar para qualquer etapa antes de concluir.</p>
+            </div>
+
+            <div class="review" id="review"></div>
+
+            <label class="consent">
+              <input id="consentimento" name="consentimento" type="checkbox" required="" value="yes">
+              <span>Confirmo que as informações acima representam a necessidade atual do projeto e autorizo a ByteStorm Tech a utilizá-las para análise, contato e elaboração de proposta.</span>
+            </label><p id="consent-error" class="error" hidden=""></p>
+
+            <div class="note">Suas informações serão usadas para analisar o projeto e preparar a proposta. Não envie senhas, credenciais, dados de cartão ou documentos pessoais.</div>
+          </section>
+        </div>
+
+        <p id="briefingStatus" class="briefing-status" role="status" aria-live="polite" hidden=""></p><div class="actions" id="actions">
+          <div class="autosave" id="saveStatus">Respostas mantidas nesta aba</div>
+          <div class="action-buttons">
+            <button type="button" class="btn btn-secondary" id="backBtn" disabled="">Voltar</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Começar</button>
+          </div>
+        </div>
+      </form>
+
+      <section class="done" id="done">
+        <div class="done-inner">
+          <div class="done-icon">✓</div>
+          <h2 tabindex="-1">Briefing recebido</h2>
+          <p id="doneMessage">As informações foram organizadas e estão prontas para análise da ByteStorm Tech.</p><p id="receipt" class="receipt"></p>
+          <div class="done-actions">
+            <button type="button" class="btn btn-secondary" id="downloadBtn">Baixar resumo</button>
+            <button type="button" class="btn btn-secondary" id="copyBtn">Copiar resumo</button>
+            <button type="button" class="btn btn-primary" id="newBtn">Preencher novo briefing</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+
+
+
+
+<script type="module" src="briefing.js"></script></body></html>

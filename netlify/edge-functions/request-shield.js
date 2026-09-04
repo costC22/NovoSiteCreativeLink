@@ -2,7 +2,8 @@ const MAX_URL_LENGTH = 2048;
 const MAX_QUERY_LENGTH = 1200;
 const MAX_EDGE_CONTENT_LENGTH = 20_000;
 const ALLOWED_METHODS = new Set(['GET', 'HEAD', 'POST', 'OPTIONS']);
-const POST_ALLOWED_PATHS = new Set(['/api/contact', '/api/csp-report']);
+const POST_ALLOWED_PATHS = new Set(['/api/contact', '/api/csp-report', '/api/briefing']);
+const MAX_BRIEFING_CONTENT_LENGTH = 2 * 1024 * 1024 + 256 * 1024;
 
 const BENIGN_QUERY_PARAM = /^(?:utm_[a-z0-9_]+|fbclid|gclid|gbraid|wbraid|igsh|igshid|mibextid|mc_cid|mc_eid|ref|source|fb_action_ids|fb_action_types)$/i;
 const SUSPICIOUS_USER_AGENT = /(?:sqlmap|nikto|nmap|masscan|acunetix|netsparker|nessus|openvas|wpscan|dirbuster|gobuster|zgrab|libwww-perl|python-requests|java\/|curl\/|wget\/)/i;
@@ -80,7 +81,8 @@ export default async function requestShield(request, context) {
   if (request.url.length > MAX_URL_LENGTH || url.search.length > MAX_QUERY_LENGTH) {
     return block(414, 'url-too-large');
   }
-  if (contentLength > MAX_EDGE_CONTENT_LENGTH) {
+  const maxBody = url.pathname === '/api/briefing' ? MAX_BRIEFING_CONTENT_LENGTH : MAX_EDGE_CONTENT_LENGTH;
+  if (contentLength > maxBody) {
     return block(413, 'payload-too-large');
   }
   if (SUSPICIOUS_USER_AGENT.test(userAgent)) {

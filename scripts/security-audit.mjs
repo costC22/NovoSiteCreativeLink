@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 const root = process.cwd();
 const htmlFiles = readdirSync(root).filter((file) => file.endsWith('.html'));
-const publicFiles = [...htmlFiles, 'script.js', 'styles.css', '_headers'].filter((file) => existsSync(join(root, file)));
+const publicFiles = [...htmlFiles, 'script.js', 'styles.css', 'briefing.js', 'briefing-schema.js', 'briefing.css', '_headers'].filter((file) => existsSync(join(root, file)));
 const publicText = publicFiles.map((file) => readFileSync(join(root, file), 'utf8')).join('\n');
 const headers = existsSync(join(root, '_headers')) ? readFileSync(join(root, '_headers'), 'utf8') : '';
 const functionsExist = ['contact.mts', 'csp-report.mts', 'security-metrics.mts'].every((file) =>
