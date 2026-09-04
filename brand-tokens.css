@@ -1,0 +1,26 @@
+:root {
+  --brand-ink: #101417;
+  --brand-charcoal: #1b2125;
+  --brand-paper: #ffffff;
+  --brand-soft: #f3f5f6;
+  --brand-text: #20272c;
+  --brand-muted: #56616a;
+  --brand-line: #d8dfe3;
+  --brand-cyan: #08c7ed;
+  --brand-link: #006b82;
+  --brand-success: #08764c;
+  --brand-danger: #b52a3c;
+  --brand-radius: 6px;
+  --brand-font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --brand-heading: 'Manrope', 'Inter', system-ui, sans-serif;
+  --scroll-thumb: #819098;
+  --scroll-track: #eef1f3;
+  --scroll-hover: #52636e;
+}
+* { scrollbar-width: thin; scrollbar-color: var(--scroll-thumb) var(--scroll-track); }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: var(--scroll-track); }
+*::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border: 2px solid var(--scroll-track); border-radius: 6px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--scroll-hover); }
+*::-webkit-scrollbar-thumb:active { background: var(--brand-link); }
+@media (forced-colors: active) { * { scrollbar-color: auto; } }

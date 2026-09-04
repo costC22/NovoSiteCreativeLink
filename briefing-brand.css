@@ -1,0 +1,53 @@
+/* Task-focused adapter for the shared ByteStorm identity. */
+:root {
+  --bg: var(--brand-soft); --panel: var(--brand-paper); --panel-2: var(--brand-soft);
+  --field: var(--brand-paper); --border: var(--brand-line); --border-soft: var(--brand-line);
+  --text: var(--brand-text); --muted: var(--brand-muted); --muted-2: var(--brand-muted);
+  --blue: var(--brand-link); --blue-2: var(--brand-cyan);
+  --danger: var(--brand-danger); --success: var(--brand-success); --shadow: none;
+}
+body { background: var(--brand-soft); color: var(--brand-text); font-family: var(--brand-font); }
+.app { background: var(--brand-soft); }
+.sidebar { background: var(--brand-ink); color: white; border-color: #35434b; }
+.sidebar h1 { color: white; }
+.sidebar-copy, .benefit p, .support-card p { color: #becbd1; }
+.benefits, .support-card { border-color: #35434b; }
+.benefit-icon, .support-card { background: transparent; }
+.benefit-icon, .briefing-nav a, .support-card a { color: var(--brand-cyan); }
+.accent-line { background: var(--brand-cyan); }
+.form-shell { background: white; border: 0; border-radius: 6px; box-shadow: none; }
+.stepper-wrap { background: white; border-color: var(--brand-line); }
+.step-indicator { color: var(--brand-muted); }
+.step-indicator:not(:last-child)::after { background: var(--brand-line); }
+.step-indicator.done:not(:last-child)::after, .step-indicator.active:not(:last-child)::after { background: var(--brand-link); }
+.step-dot { background: white; border-color: #a4b4bd; color: var(--brand-muted); }
+.step-indicator.active .step-dot { border-color: var(--brand-link); color: var(--brand-link); box-shadow: 0 0 0 3px #d8f4fa; }
+.step-indicator.done .step-dot { background: var(--brand-link); border-color: var(--brand-link); color: white; }
+.step-indicator.active .step-label, .step-indicator.done .step-label { color: var(--brand-text); }
+label, .label, .option-title, .check label, .pill label, .upload strong, .info-line b { color: var(--brand-text); }
+.required { color: var(--brand-link); }
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="date"], input[type="number"], select, textarea { border-color: #a5b4bd; border-radius: 4px; color-scheme: light; }
+input::placeholder, textarea::placeholder { color: #64727b; }
+input:focus, select:focus, textarea:focus { background: white; border-color: var(--brand-link); box-shadow: none; }
+.option label, .check label, .pill label { background: white; border-color: #a5b4bd; border-radius: 6px; }
+.option label:hover, .check label:hover, .pill label:hover { border-color: var(--brand-link); background: #f2fafc; }
+.option input:checked + label, .check input:checked + label, .pill input:checked + label { border-color: var(--brand-link); background: #ebf9fc; color: var(--brand-text); box-shadow: inset 0 0 0 1px var(--brand-link); }
+.option-icon { color: var(--brand-muted); }
+.option input:checked + label .option-icon, .review-card h3, .review-card button, .upload > i { color: var(--brand-link); }
+.check input:checked + label::before { border-color: var(--brand-link); background-color: var(--brand-link); }
+.upload, .note, .welcome-card, .review-card { background: var(--brand-soft); border-color: var(--brand-line); border-radius: 6px; }
+.upload.dragging { background: #dff4f8; border-color: var(--brand-link); }
+.note, .consent, .review-card p, .welcome-row, .autosave { color: var(--brand-muted); }
+.welcome-row i { background: var(--brand-link); }
+.welcome-card { border: 0; border-left: 2px solid var(--brand-line); border-radius: 0; background: transparent; }
+.info-line, .actions { border-color: var(--brand-line); }
+.actions { background: var(--brand-soft); }
+.btn { border-radius: 6px; min-height: 46px; }
+.btn-primary { background: var(--brand-cyan); border-color: var(--brand-cyan); color: #062e38; box-shadow: none; }
+.btn-primary:hover { background: #85e7fa; border-color: #85e7fa; }
+.btn-secondary { background: white; border-color: #a5b4bd; color: var(--brand-text); }
+.btn-secondary:hover { background: #edf4f7; border-color: var(--brand-link); }
+.error, .briefing-status, .file-list button { color: var(--brand-danger); }
+.briefing-status { border-color: var(--brand-danger); background: #fff4f5; }
+.consent input { accent-color: var(--brand-link); }
+.form-area .welcome h2 { line-height: 1.2; }

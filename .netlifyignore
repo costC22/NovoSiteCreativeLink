@@ -2,5 +2,6 @@ node_modules/
 tests/
 test-results/
 DESIGN.md
+design-qa.md
 premium-ui.json
 premium-audit.json

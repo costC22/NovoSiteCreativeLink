@@ -1,60 +1,35 @@
-# Design QA - ByteStorm Tech Stitch Redesign
+# Global Redesign QA
 
-final result: passed
+Updated: 2026-09-04.
 
-## Source of truth
+## Scope
+All 22 public content/form pages use the new identity. Prices, installation URLs,
+contacts, product statuses, privacy text and the eight-step briefing are retained.
+Google Search Console verification and server-side protections are unchanged.
 
-- Package: `stitch_website_redesign_project.zip`
-- SHA-256: `2B3CE1179B9B3D8C559F90DDDA115C6BF1A12D8F9ED06708CA1D577591375C19`
-- Design system: Cyber-Precision Modernism
-- Global CSS source: `bytestorm_tech_global_styles_css.txt`
-- Reference screens: Home, Produtos, Blog, Atendimento, Workflow and Portfolio
+## Evidence
+Local screenshots and the 110-layout-check report are in `test-results/site/`.
+Briefing workflow screenshots are in `test-results/briefing/`.
+These artifacts and tests are excluded from Netlify publication.
+The security scanner is a regression check, not a claim of immunity to attacks.
 
-## Visual comparison
+## Visual References and Asset
+12ui draft reference: candidate A, run
+`12ui-redesign-bytestorm-tech-a-z5rCF0`. Branch export:
+`../bytestorm-design-final/branch/pages/`.
+The working website retains its own routes and API handlers.
 
-- Home: preserved the original commercial content while matching the Stitch split hero, gradient emphasis, command-center panel, compact navigation and pricing hierarchy.
-- Products: retained LiveFast, AbaNexo and AI Detector de Golpes, applying the Stitch dark surfaces, technical labels, cyan/blue accents and product showcase composition.
-- Blog: adopted the Stitch editorial image treatment, featured two-column article and image-led cards while preserving the existing ByteStorm articles.
-- Atendimento and solution pages: unified typography, spacing, cards, forms, buttons, headers and footers with the same visual system.
-- AgentSpark legal pages: preserved the approved legal text while replacing isolated inline styling with the shared Stitch theme.
-- The exported Produtos PNG has a washed light preview, while its HTML, official CSS and design guide define the dark palette. The implementation follows the code and official tokens for cross-page consistency.
+Production opening asset: `studio-wide.webp` (1942 x 809, 98,424 bytes).
+Generated with the built-in image_gen tool, then converted to WebP without
+changing its composition. The generated source remains under the Codex image
+output directory. Original logos/icons were not altered.
 
-## Responsive states
-
-- Desktop captures: 1600x1000, 1600x1280, 1440x1100, 1331x1600 and 886x1600.
-- Mobile captures: 390x844.
-- Mobile menu tested open and closed with an opaque `rgb(17, 24, 39)` surface, no backdrop blur and correct `aria-expanded` state.
-- No horizontal overflow was detected.
-
-## Functional and accessibility checks
-
-- 22 HTML documents validated.
-- 44 browser render checks completed across desktop and mobile.
-- All local links and image references resolve.
-- All product names, release states, privacy link and Chrome Web Store links are preserved.
-- Header logo, active navigation state, keyboard focus styles and mobile navigation are visible and usable.
-- No replacement characters or encoding corruption were found.
-- No browser console or page errors were found.
-
-## Security and code quality
-
-- `node scripts/security-audit.mjs --check`: 16/16, score 100.
-- `node --check script.js`: passed.
-- `git diff --check`: passed.
-- Content Security Policy, server-side contact proxy, rate limiting and edge request protections remain intact.
-
-## Findings
-
-- P0: none.
-- P1: none.
-- P2: none.
-- P3: none.
-
-## Alignment and contact regression
-
-- Solution directory: 7 cards validated at 415 px each on desktop, with no text or child overflow.
-- About section: two-column layout restored at 1280 px, with three readable value cards.
-- Client area: two balanced 468 px action cards and working support CTAs.
-- Contact CTAs: links open `atendimento.html#contact`; service-desk actions preselect the matching service.
-- Contact form: the protected API validates and stores submissions in site-scoped Netlify Blobs; the forwarding channel remains optional.
-- Focused Playwright QA: desktop and 390x844 mobile passed with no horizontal overflow; the protected API request and successful client state were verified.
+Image prompt:
+Create one refined photographic website background asset for ByteStorm Tech, a
+Brazilian independent web development and automation studio. Ultra-wide landscape.
+The left 55% is uninterrupted naturally lit charcoal plaster wall and dark desk,
+quiet negative space for HTML text. On the right, a black laptop fully in frame
+with a crisp architectural photograph of pale concrete stairs on its screen.
+No text, logos, fake headlines, code, charts, people, neon, particles or dashboards.
+Restrained natural daylight, legible materials and delicate shadows.
+Only the photograph, no website panels, navigation, cards or buttons.

@@ -3,10 +3,11 @@
   "sourceRoots": ["."],
   "locale": "pt-BR",
   "ownership": { "Select/Listbox": "native", "Date": "native" },
-  "requiredCommands": ["unit", "briefing-browser", "security"],
+  "requiredCommands": ["unit", "briefing-browser", "site-browser", "security"],
   "commands": {
     "unit": "node --test tests/briefing.test.mjs",
     "briefing-browser": "node tests/briefing-browser.mjs",
+    "site-browser": "node tests/site-browser.mjs",
     "security": "node scripts/security-audit.mjs --check"
   },
   "evidence": { "failurePaths": "tests/briefing-browser.mjs" }
