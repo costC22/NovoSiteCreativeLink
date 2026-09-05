@@ -41,6 +41,9 @@ by viewport-width scaling. Cards and controls use 6px radii; use unframed bands
 for sections and rows for services. Desktop public content is bounded at 1248px.
 
 ## Content
+The official Instagram contact is https://www.instagram.com/bytestormit/ and
+appears as @bytestormit in contact areas and standard public-page footers.
+
 Starter R$ 990, Business R$ 1.990 and Premium R$ 3.990 are starting prices per
 website project, not monthly subscriptions. Systems and automations are quoted
 separately. Do not invent discounts, installments, client counts or guarantees.
