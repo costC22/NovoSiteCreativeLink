@@ -1,4 +1,9 @@
 {
+  "type": "module",
+  "scripts": {
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "test:cloudflare": "node --test tests/cloudflare-functions.test.mjs"
+  },
   "dependencies": {
     "@netlify/blobs": "11.0.1"
   }
