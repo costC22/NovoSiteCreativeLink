@@ -1,0 +1,7 @@
+name = "bytestormtech"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-09-14"
+
+[[kv_namespaces]]
+binding = "BYTESTORM_DATA"
+id = "7078605c98a64926af85e3383a400605"
